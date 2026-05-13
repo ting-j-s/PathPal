@@ -194,19 +194,19 @@ http://127.0.0.1:8000
 # 地图坐标诊断
 python backend/scripts/diagnose_map_coordinates.py
 
-# 数据校验（5829 checks）
+# 数据校验（384,969 checks）
 python backend/scripts/validate_data.py
 
-# 算法测试（101 tests）
+# 算法测试（113 tests）
 pytest tests/test_algorithms -q
 
-# 服务层测试（50 tests）
+# 服务层测试（55 tests）
 pytest tests/test_services -q
 
 # API 路由测试（39 tests）
 pytest tests/test_routes -q
 
-# 全部测试（190 tests）
+# 全部测试（207 tests）
 pytest tests/ -q
 
 # 前端文件检查
@@ -236,12 +236,13 @@ python backend/scripts/e2e_smoke_check.py
 
 - [x] 第 0 步：项目设计、目录规划、文档骨架
 - [x] 第 1 步：生成符合课程要求的数据集 + 数据校验脚本
-- [x] 第 2 步：实现核心算法（Graph、Dijkstra、Top-K、排序、查找、附近查询）+ 算法单元测试（101 tests）
-- [x] 第 3 步：实现后端服务和路由 + 服务/路由测试（61 tests） — Total: 162 passed
+- [x] 第 2 步：实现核心算法（Graph、Dijkstra、Top-K、排序、查找、附近查询）+ 算法单元测试（113 tests）
+- [x] 第 3 步：实现后端服务和路由 + 服务/路由测试（94 tests） — Total: 207 passed
 - [x] 第 4 步：实现前端页面（5 个 HTML + 7 个 JS + 1 个 CSS + Leaflet 地图）
 - [x] 第 5 步：端到端验收、smoke 检查、测试报告、阶段完成报告、答辩演示脚本
-- [x] 地图真实性修正：新增 MAP_BUPT_REAL + MAP_SCENIC_REAL，前端 show_tile 逻辑，新增 API，测试 176 passed
-- [x] 地图展示与坐标修复：修复 BUPT 坐标偏移、抽象模板 (0,0) 坐标、前端分层管理（baseLayer/routeLayer/markerLayer）、完整内部路网绘制、新增 map-layers API、新增坐标诊断脚本，测试 190 passed
+- [x] 地图真实性修正：新增 MAP_BUPT_REAL + MAP_SCENIC_REAL，前端 show_tile 逻辑，新增 API
+- [x] 地图展示与坐标修复：修复 BUPT 坐标偏移、抽象模板 (0,0) 坐标、前端分层管理（baseLayer/routeLayer/markerLayer）、完整内部路网绘制、新增 map-layers API、新增坐标诊断脚本
+- [x] 附近查询优化：单源 Dijkstra (O(F×V²) → O(V²+F log F))，多目标复选框交互替换文本输入，测试 207 passed
 
 ## 课程信息
 

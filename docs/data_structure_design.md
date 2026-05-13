@@ -335,4 +335,4 @@ internal_maps.json           │
 
 ### 当前数据规模验证
 
-所有数据约束已通过 `validate_data.py` 校验（4228 checks passed）。详见 [data_validation_report.md](data_validation_report.md)。
+所有数据约束已通过 `validate_data.py` 校验（384,969 checks passed）。详见 [data_validation_report.md](data_validation_report.md)。

@@ -44,7 +44,7 @@ pytest tests/ -q
 
 | 测试项 | 命令 | 结果 | 说明 |
 |--------|------|------|------|
-| 数据校验 | `python backend/scripts/validate_data.py` | 4228/4228 passed | 所有数据完整性校验通过 |
+| 数据校验 | `python backend/scripts/validate_data.py` | 384969/384969 passed | 所有数据完整性校验通过 |
 | Graph 测试 | `pytest tests/test_algorithms/test_graph.py -q` | passed | 邻接表图构建、节点/边加载 |
 | Sorting 测试 | `pytest tests/test_algorithms/test_sorting.py -q` | passed | 快排/归并/堆排/多键排序 |
 | Search 测试 | `pytest tests/test_algorithms/test_search.py -q` | passed | 线性/哈希/关键词/字段过滤 |

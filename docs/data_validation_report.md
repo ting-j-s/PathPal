@@ -93,7 +93,7 @@
 ## 校验结果
 
 ```
-Validation Summary: 4228/4228 passed
+Validation Summary: 384969/384969 passed
   All validation checks passed.
 ```
 

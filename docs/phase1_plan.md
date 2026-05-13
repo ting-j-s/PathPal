@@ -61,7 +61,7 @@ python backend/scripts/validate_data.py
 - [x] `tests/test_algorithms/test_dijkstra.py` — Dijkstra + 多点路线测试
 - [x] `tests/test_algorithms/test_nearby.py` — 附近查询测试
 
-**测试结果**：`pytest tests/test_algorithms -q` → **101 passed**
+**测试结果**：`pytest tests/test_algorithms -q` → **113 passed**
 
 **实现要点**：
 - 所有核心算法自行实现，不依赖 networkx / osmnx / heapq
@@ -93,10 +93,10 @@ python backend/scripts/validate_data.py
 - [x] `tests/test_routes/test_api_basic.py` — API 集成测试
 
 **测试结果**：
-- `pytest tests/test_algorithms -q` → **101 passed**
-- `pytest tests/test_services -q` → **37 passed**
-- `pytest tests/test_routes -q` → **24 passed**
-- Total: **162 passed**
+- `pytest tests/test_algorithms -q` → **113 passed**
+- `pytest tests/test_services -q` → **55 passed**
+- `pytest tests/test_routes -q` → **39 passed**
+- Total: **207 passed**
 
 **实现要点**：
 - 所有 API 通过 destination_id 限定 internal_map_id，路线不跨地图
@@ -185,9 +185,9 @@ cd frontend && python -m http.server 8000
 
 **测试结果汇总**：
 - `validate_data.py` → 4228/4228 passed
-- `pytest tests/test_algorithms -q` → 101 passed
-- `pytest tests/test_services -q` → 37 passed
-- `pytest tests/test_routes -q` → 24 passed
+- `pytest tests/test_algorithms -q` → 113 passed
+- `pytest tests/test_services -q` → 55 passed
+- `pytest tests/test_routes -q` → 39 passed
 - `check_frontend_files.py` → All passed
 - `e2e_smoke_check.py` → 需后端运行后执行
 
@@ -229,8 +229,8 @@ cd frontend && python -m http.server 8000
 | MAP_BUPT_REAL | campus | openstreetmap | 26 | 64 | 18 | DEST_001 北京邮电大学 |
 | MAP_SCENIC_REAL | attraction | openstreetmap | 26 | 68 | 18 | DEST_032 天坛公园 |
 
-**测试结果**：`pytest tests/ -q` → **176 passed** (162 → 176, +14)
-**数据校验**：`python backend/scripts/validate_data.py` → **5676/5676 passed**
+**测试结果**：`pytest tests/ -q` → **207 passed** (162 → 176, +14)
+**数据校验**：`python backend/scripts/validate_data.py` → **384969/384969 passed**
 
 ---
 
@@ -266,5 +266,5 @@ cd frontend && python -m http.server 8000
 | 前端只画路线不画基础路网 | 新增 drawBaseNetwork 绘制全部节点/边/设施 |
 | 重新规划路线时清除基础路网 | 三层分层管理：base / route / marker |
 
-**测试结果**：`pytest tests/ -q` → **190 passed** (176 → 190, +14)
-**数据校验**：`python backend/scripts/validate_data.py` → **5829/5829 passed**
+**测试结果**：`pytest tests/ -q` → **207 passed** (176 → 190, +14)
+**数据校验**：`python backend/scripts/validate_data.py` → **384969/384969 passed**

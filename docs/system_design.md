@@ -36,10 +36,10 @@
 ├─────────────────────────────────────────────────────────────┤
 │                 数据层 (JSON Files)                          │
 │  ├─ destinations.json    217 目的地                         │
-│  ├─ internal_maps.json   3 个地图模板                       │
-│  ├─ internal_nodes.json  112 个内部节点                     │
-│  ├─ internal_edges.json  284 条道路边                       │
-│  ├─ facilities.json      52 个服务设施（12 类别）           │
+│  ├─ internal_maps.json   5 个地图模板                       │
+│  ├─ internal_nodes.json  12,008 个内部节点                  │
+│  ├─ internal_edges.json  26,298 条道路边                    │
+│  ├─ facilities.json      1,695 个服务设施（12 类别）        │
 │  ├─ users.json           12 个用户                          │
 │  └─ indoor_graphs.json   1 个室内建筑 Demo                  │
 └─────────────────────────────────────────────────────────────┘
@@ -83,7 +83,7 @@
 | sorting.py | 快速排序、归并排序、堆排序、多键排序 |
 | search.py | 线性查找、哈希索引、关键词匹配、字段过滤 |
 | topk.py | 小顶堆 Top-K、快速选择 Top-K |
-| dijkstra.py | Dijkstra（4 种权函数）+ 多点贪心 TSP |
+| dijkstra.py | Dijkstra（4 种权函数）+ 单源全节点 + 路径重建 + 多点贪心 TSP |
 | nearby.py | 道路距离附近设施查询 |
 
 所有算法自行实现，不依赖 networkx、osmnx、heapq 等库。
@@ -125,13 +125,14 @@
 用户请求 → nearby_routes.py
   → NearbyService
     → data_loader 通过 destination_id 获取 graph + facilities
-    → algorithms.nearby 计算每个设施的道路距离
-    → 类别/关键词过滤
+    → algorithms.dijkstra_all_distances 一次单源 Dijkstra，得到所有节点最短距离
+    → algorithms.nearby 查表 O(1) 获取每个设施道路距离 + 按需回溯路径
+    → 类别/关键词/半径过滤
     → algorithms.sorting.merge_sort 按 road_distance 升序
-    → 返回 facilities + road_distance + path + note
+    → 返回 facilities + road_distance + path + route_geometry + note
 ```
 
-排序依据为道路网络最短路径距离，不使用经纬度直线距离。
+排序依据为道路网络最短路径距离，不使用经纬度直线距离。单个设施查询 O(1) 查表，整体复杂度 O(V² + F log F)。
 
 ### 室内导航流程（Demo）
 
@@ -146,7 +147,7 @@
 ## 关键设计决策
 
 1. **内部地图复用**：217 个目的地通过 `internal_map_id` 复用 3 套内部地图模板（校园/景区/综合），避免为每个目的地单独制作地图
-2. **按需构建图**：每次请求从 JSON 全量加载 nodes + edges，按 `map_id` 筛选构建邻接表（节点数 ≤ 40，构建时间可忽略）
+2. **按需构建图**：每次请求从 JSON 全量加载 nodes + edges，按 `map_id` 筛选构建邻接表（抽象模板 ≤ 40 节点，OSM 真实地图 ≤ 12,008 节点；均使用 O(V²) Dijkstra，构建时间可忽略）
 3. **内存缓存**：data_loader 对每个 JSON 文件只读一次，后续请求命中缓存
 4. **无状态服务**：不持久化 session，user_id 通过请求参数传递
 5. **自定义算法**：所有排序、搜索、最短路、Top-K 算法均自行实现，不依赖第三方库

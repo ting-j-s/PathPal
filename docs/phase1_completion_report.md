@@ -127,13 +127,13 @@
 
 | 测试类型 | 数量 | 状态 |
 |----------|------|------|
-| 数据校验 | 4228 checks | PASS |
-| 算法单元测试 | 101 tests | PASS |
-| 服务层测试 | 37 tests | PASS |
-| API 路由测试 | 24 tests | PASS |
+| 数据校验 | 384,969 checks | PASS |
+| 算法单元测试 | 113 tests | PASS |
+| 服务层测试 | 55 tests | PASS |
+| API 路由测试 | 39 tests | PASS |
 | 前端文件检查 | All passed | PASS |
 | E2E Smoke 检查 | 见运行结果 | TBD |
-| **总计自动化** | **162 tests** | **PASS** |
+| **总计自动化** | **207 tests** | **PASS** |
 
 ## 9. 课程要求对应关系
 
