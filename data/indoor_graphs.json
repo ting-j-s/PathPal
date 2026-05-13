@@ -1,0 +1,197 @@
+{
+  "indoor_maps": [
+    {
+      "building_id": "BUILDING_BUPT_MAIN",
+      "name": "北京邮电大学主楼",
+      "floors": 2,
+      "nodes": [
+        {
+          "id": "IN_B101",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "name": "主楼大门",
+          "type": "entrance",
+          "floor": 1,
+          "latitude": 39.962,
+          "longitude": 116.35
+        },
+        {
+          "id": "IN_B102",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "name": "一层大厅",
+          "type": "hall",
+          "floor": 1,
+          "latitude": 39.962050000000005,
+          "longitude": 116.35
+        },
+        {
+          "id": "IN_B103",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "name": "一层电梯",
+          "type": "elevator",
+          "floor": 1,
+          "latitude": 39.96210000000001,
+          "longitude": 116.35
+        },
+        {
+          "id": "IN_B201",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "name": "201教室",
+          "type": "classroom",
+          "floor": 2,
+          "latitude": 39.96210000000001,
+          "longitude": 116.34994999999999
+        },
+        {
+          "id": "IN_B202",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "name": "202教室",
+          "type": "classroom",
+          "floor": 2,
+          "latitude": 39.96210000000001,
+          "longitude": 116.35005
+        },
+        {
+          "id": "IN_B203",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "name": "二层电梯",
+          "type": "elevator",
+          "floor": 2,
+          "latitude": 39.96210000000001,
+          "longitude": 116.35
+        },
+        {
+          "id": "IN_B204",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "name": "教师办公室",
+          "type": "office",
+          "floor": 2,
+          "latitude": 39.96215,
+          "longitude": 116.35
+        },
+        {
+          "id": "IN_B205",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "name": "二层洗手间",
+          "type": "toilet",
+          "floor": 2,
+          "latitude": 39.96215,
+          "longitude": 116.35005
+        }
+      ],
+      "edges": [
+        {
+          "id": "IN_E001",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B101",
+          "to": "IN_B102",
+          "distance": 8,
+          "type": "corridor"
+        },
+        {
+          "id": "IN_E002",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B102",
+          "to": "IN_B101",
+          "distance": 8,
+          "type": "corridor"
+        },
+        {
+          "id": "IN_E003",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B102",
+          "to": "IN_B103",
+          "distance": 6,
+          "type": "corridor"
+        },
+        {
+          "id": "IN_E004",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B103",
+          "to": "IN_B102",
+          "distance": 6,
+          "type": "corridor"
+        },
+        {
+          "id": "IN_E005",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B103",
+          "to": "IN_B203",
+          "distance": 3,
+          "type": "elevator"
+        },
+        {
+          "id": "IN_E006",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B203",
+          "to": "IN_B103",
+          "distance": 3,
+          "type": "elevator"
+        },
+        {
+          "id": "IN_E007",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B203",
+          "to": "IN_B201",
+          "distance": 8,
+          "type": "corridor"
+        },
+        {
+          "id": "IN_E008",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B201",
+          "to": "IN_B203",
+          "distance": 8,
+          "type": "corridor"
+        },
+        {
+          "id": "IN_E009",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B203",
+          "to": "IN_B202",
+          "distance": 8,
+          "type": "corridor"
+        },
+        {
+          "id": "IN_E010",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B202",
+          "to": "IN_B203",
+          "distance": 8,
+          "type": "corridor"
+        },
+        {
+          "id": "IN_E011",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B203",
+          "to": "IN_B204",
+          "distance": 6,
+          "type": "corridor"
+        },
+        {
+          "id": "IN_E012",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B204",
+          "to": "IN_B203",
+          "distance": 6,
+          "type": "corridor"
+        },
+        {
+          "id": "IN_E013",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B204",
+          "to": "IN_B205",
+          "distance": 5,
+          "type": "corridor"
+        },
+        {
+          "id": "IN_E014",
+          "building_id": "BUILDING_BUPT_MAIN",
+          "from": "IN_B205",
+          "to": "IN_B204",
+          "distance": 5,
+          "type": "corridor"
+        }
+      ]
+    }
+  ]
+}

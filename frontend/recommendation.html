@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathPal — 旅游推荐</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <span class="brand">PathPal <small>路伴</small></span>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="recommendation.html" class="active">旅游推荐</a>
+        <a href="route_planning.html">路线规划</a>
+        <a href="nearby.html">场所查询</a>
+        <a href="indoor_navigation.html">室内导航 Demo</a>
+    </nav>
+</header>
+
+<div class="page-container">
+
+    <section class="page-hero">
+        <h1>旅游推荐</h1>
+        <p>从 217 个景区/校园目的地中智能推荐，支持热度 Top-K、评分 Top-K、用户兴趣匹配、关键词搜索与类别过滤</p>
+    </section>
+
+    <!-- 功能说明 -->
+    <section class="card">
+        <h2>功能说明</h2>
+        <ul style="margin-left:18px; line-height:1.8;">
+            <li>从 <strong>217</strong> 个景区/校园目的地中推荐</li>
+            <li>支持 <strong>热度 Top-K</strong>、<strong>评分 Top-K</strong>、<strong>用户兴趣推荐</strong></li>
+            <li>支持名称、类别、关键词查询</li>
+            <li>推荐对象是<strong>目的地</strong>（景区或校园），不涉及内部路线</li>
+            <li>所有推荐使用<strong>自实现 Top-K 堆算法</strong>，不用完整排序后切片</li>
+        </ul>
+    </section>
+
+    <!-- 操作区 -->
+    <section class="card">
+        <h2>操作区</h2>
+
+        <div class="form-row" style="align-items:center;">
+            <button id="btn-hot">热度 Top-10 推荐</button>
+            <button id="btn-rating">评分 Top-10 推荐</button>
+        </div>
+
+        <div class="form-row" style="align-items:flex-end;">
+            <div class="form-group">
+                <label for="input-user-id">用户 ID</label>
+                <input type="text" id="input-user-id" value="USER_001" style="width:160px;">
+            </div>
+            <button id="btn-interest" class="success">兴趣推荐 Top-10</button>
+        </div>
+
+        <div class="form-row" style="align-items:flex-end;">
+            <div class="form-group">
+                <label for="input-keyword">关键词搜索</label>
+                <input type="text" id="input-keyword" placeholder="例如: 故宫" style="width:200px;">
+            </div>
+            <div class="form-group">
+                <label for="select-sort">排序方式</label>
+                <select id="select-sort">
+                    <option value="">不排序</option>
+                    <option value="popularity">按热度</option>
+                    <option value="rating">按评分</option>
+                </select>
+            </div>
+            <button id="btn-search">搜索</button>
+        </div>
+
+        <div class="form-row" style="align-items:flex-end;">
+            <div class="form-group">
+                <label for="input-category">类别过滤</label>
+                <input type="text" id="input-category" placeholder="例如: park, museum" style="width:200px;">
+            </div>
+            <div class="form-group">
+                <label for="select-cat-sort">排序方式</label>
+                <select id="select-cat-sort">
+                    <option value="">不排序</option>
+                    <option value="popularity">按热度</option>
+                    <option value="rating">按评分</option>
+                </select>
+            </div>
+            <button id="btn-category" class="secondary">类别过滤</button>
+        </div>
+
+        <div class="form-row" style="align-items:flex-end;">
+            <div class="form-group">
+                <label for="select-type">目的地类型</label>
+                <select id="select-type">
+                    <option value="">全部</option>
+                    <option value="campus">校园</option>
+                    <option value="attraction">景区</option>
+                </select>
+            </div>
+            <button id="btn-list">列出目的地</button>
+        </div>
+    </section>
+
+    <!-- 结果展示区 -->
+    <section class="card">
+        <h2>推荐结果</h2>
+        <div id="result-container">
+            <p class="hint">点击上方按钮开始推荐</p>
+        </div>
+    </section>
+
+    <!-- 算法与数据结构说明区 -->
+    <section class="card">
+        <h2>算法与数据结构说明</h2>
+        <div class="algo-detail">
+            <p><strong>数据结构：</strong>数组 (Array) + 哈希索引 (Hash Index) / 线性查找 (Linear Search)</p>
+            <p><strong>热度推荐：</strong>Top-K Heap — 小顶堆维护大小为 K，取 Top-K 最大元素，时间复杂度 O(N log K)</p>
+            <p><strong>评分推荐：</strong>Top-K Heap — 同热度推荐，按 rating 降序取 Top-K</p>
+            <p><strong>兴趣推荐：</strong>兴趣匹配分 + Top-K Heap — 计算用户兴趣与目的地的匹配分后，用 Top-K 堆取前 K 个</p>
+            <p style="margin-top:4px;">
+                <code>interest_score = match_count × 10 + popularity × 0.2 + rating × 10</code>
+            </p>
+            <p><strong>关键词搜索：</strong>线性查找 (Linear Search) — 在 name / category / keywords / tags / description 中匹配</p>
+            <p><strong>类别过滤：</strong>精确字段过滤 (Exact Filter) + Quick Sort 排序</p>
+            <p><strong>排序算法：</strong>快速排序 (Quick Sort) — Lomuto 分区，O(N log N)</p>
+            <p style="margin-top:8px;"><strong>为什么不用完整排序？</strong>用户通常只看前 10 个目的地，Top-K 堆只需 O(N log K)，优于完整排序的 O(N log N)。</p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>PathPal 路伴 &copy; 2025 数据结构课程设计</p>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/recommendation.js"></script>
+</body>
+</html>

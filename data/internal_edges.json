@@ -1,0 +1,4490 @@
+[
+  {
+    "id": "EDGE_CAM_001",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_001",
+    "to": "NODE_CAM_002",
+    "distance": 207,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_002",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_002",
+    "to": "NODE_CAM_001",
+    "distance": 207,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_003",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_002",
+    "to": "NODE_CAM_003",
+    "distance": 211,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_004",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_003",
+    "to": "NODE_CAM_002",
+    "distance": 211,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_005",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_004",
+    "to": "NODE_CAM_005",
+    "distance": 203,
+    "congestion": 0.75,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_006",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_005",
+    "to": "NODE_CAM_004",
+    "distance": 203,
+    "congestion": 0.75,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_007",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_005",
+    "to": "NODE_CAM_006",
+    "distance": 212,
+    "congestion": 0.92,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_008",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_006",
+    "to": "NODE_CAM_005",
+    "distance": 212,
+    "congestion": 0.92,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_009",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_007",
+    "to": "NODE_CAM_008",
+    "distance": 210,
+    "congestion": 0.75,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_010",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_008",
+    "to": "NODE_CAM_007",
+    "distance": 210,
+    "congestion": 0.75,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_011",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_008",
+    "to": "NODE_CAM_009",
+    "distance": 204,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_012",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_009",
+    "to": "NODE_CAM_008",
+    "distance": 204,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_013",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_001",
+    "to": "NODE_CAM_004",
+    "distance": 205,
+    "congestion": 1.0,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_014",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_004",
+    "to": "NODE_CAM_001",
+    "distance": 205,
+    "congestion": 1.0,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_015",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_004",
+    "to": "NODE_CAM_007",
+    "distance": 181,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_016",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_007",
+    "to": "NODE_CAM_004",
+    "distance": 181,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_017",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_002",
+    "to": "NODE_CAM_005",
+    "distance": 203,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_018",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_005",
+    "to": "NODE_CAM_002",
+    "distance": 203,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_019",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_005",
+    "to": "NODE_CAM_008",
+    "distance": 205,
+    "congestion": 0.91,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_020",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_008",
+    "to": "NODE_CAM_005",
+    "distance": 205,
+    "congestion": 0.91,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_021",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_003",
+    "to": "NODE_CAM_006",
+    "distance": 188,
+    "congestion": 0.95,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_022",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_006",
+    "to": "NODE_CAM_003",
+    "distance": 188,
+    "congestion": 0.95,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_023",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_006",
+    "to": "NODE_CAM_009",
+    "distance": 200,
+    "congestion": 0.93,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_024",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_009",
+    "to": "NODE_CAM_006",
+    "distance": 200,
+    "congestion": 0.93,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_025",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_010",
+    "to": "NODE_CAM_008",
+    "distance": 156,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_026",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_008",
+    "to": "NODE_CAM_010",
+    "distance": 156,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_027",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_011",
+    "to": "NODE_CAM_002",
+    "distance": 155,
+    "congestion": 0.76,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_028",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_002",
+    "to": "NODE_CAM_011",
+    "distance": 155,
+    "congestion": 0.76,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_029",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_012",
+    "to": "NODE_CAM_004",
+    "distance": 156,
+    "congestion": 0.83,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_030",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_004",
+    "to": "NODE_CAM_012",
+    "distance": 156,
+    "congestion": 0.83,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_031",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_013",
+    "to": "NODE_CAM_006",
+    "distance": 163,
+    "congestion": 0.82,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_032",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_006",
+    "to": "NODE_CAM_013",
+    "distance": 163,
+    "congestion": 0.82,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_CAM_033",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_014",
+    "to": "NODE_CAM_001",
+    "distance": 10843937,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_034",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_001",
+    "to": "NODE_CAM_014",
+    "distance": 10843937,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_035",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_015",
+    "to": "NODE_CAM_002",
+    "distance": 10844123,
+    "congestion": 0.99,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_036",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_002",
+    "to": "NODE_CAM_015",
+    "distance": 10844123,
+    "congestion": 0.99,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_037",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_016",
+    "to": "NODE_CAM_003",
+    "distance": 10844320,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_038",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_003",
+    "to": "NODE_CAM_016",
+    "distance": 10844320,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_039",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_017",
+    "to": "NODE_CAM_004",
+    "distance": 10844022,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_040",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_004",
+    "to": "NODE_CAM_017",
+    "distance": 10844022,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_041",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_018",
+    "to": "NODE_CAM_005",
+    "distance": 10844203,
+    "congestion": 0.93,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_042",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_005",
+    "to": "NODE_CAM_018",
+    "distance": 10844203,
+    "congestion": 0.93,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_043",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_019",
+    "to": "NODE_CAM_006",
+    "distance": 10844395,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_044",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_006",
+    "to": "NODE_CAM_019",
+    "distance": 10844395,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_045",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_020",
+    "to": "NODE_CAM_007",
+    "distance": 10844098,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_046",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_007",
+    "to": "NODE_CAM_020",
+    "distance": 10844098,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_047",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_021",
+    "to": "NODE_CAM_001",
+    "distance": 10843937,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_048",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_001",
+    "to": "NODE_CAM_021",
+    "distance": 10843937,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_049",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_022",
+    "to": "NODE_CAM_002",
+    "distance": 10844123,
+    "congestion": 0.85,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_050",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_002",
+    "to": "NODE_CAM_022",
+    "distance": 10844123,
+    "congestion": 0.85,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_051",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_023",
+    "to": "NODE_CAM_006",
+    "distance": 10844395,
+    "congestion": 0.85,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_052",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_006",
+    "to": "NODE_CAM_023",
+    "distance": 10844395,
+    "congestion": 0.85,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_053",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_024",
+    "to": "NODE_CAM_005",
+    "distance": 10844203,
+    "congestion": 0.91,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_054",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_005",
+    "to": "NODE_CAM_024",
+    "distance": 10844203,
+    "congestion": 0.91,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_055",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_025",
+    "to": "NODE_CAM_008",
+    "distance": 10844295,
+    "congestion": 0.85,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_056",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_008",
+    "to": "NODE_CAM_025",
+    "distance": 10844295,
+    "congestion": 0.85,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_057",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_026",
+    "to": "NODE_CAM_009",
+    "distance": 10844478,
+    "congestion": 0.92,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_058",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_009",
+    "to": "NODE_CAM_026",
+    "distance": 10844478,
+    "congestion": 0.92,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_059",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_027",
+    "to": "NODE_CAM_003",
+    "distance": 10844320,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_060",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_003",
+    "to": "NODE_CAM_027",
+    "distance": 10844320,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_061",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_028",
+    "to": "NODE_CAM_007",
+    "distance": 10844099,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_062",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_007",
+    "to": "NODE_CAM_028",
+    "distance": 10844099,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_063",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_029",
+    "to": "NODE_CAM_008",
+    "distance": 10844296,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_064",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_008",
+    "to": "NODE_CAM_029",
+    "distance": 10844296,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_065",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_030",
+    "to": "NODE_CAM_002",
+    "distance": 10844123,
+    "congestion": 1.0,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_066",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_002",
+    "to": "NODE_CAM_030",
+    "distance": 10844123,
+    "congestion": 1.0,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_067",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_031",
+    "to": "NODE_CAM_009",
+    "distance": 10844478,
+    "congestion": 0.9,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_068",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_009",
+    "to": "NODE_CAM_031",
+    "distance": 10844478,
+    "congestion": 0.9,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_CAM_069",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_032",
+    "to": "NODE_CAM_005",
+    "distance": 10844203,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_070",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_005",
+    "to": "NODE_CAM_032",
+    "distance": 10844203,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_071",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_033",
+    "to": "NODE_CAM_007",
+    "distance": 10844098,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_072",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_007",
+    "to": "NODE_CAM_033",
+    "distance": 10844098,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_073",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_034",
+    "to": "NODE_CAM_002",
+    "distance": 10844123,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_074",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_002",
+    "to": "NODE_CAM_034",
+    "distance": 10844123,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_075",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_035",
+    "to": "NODE_CAM_009",
+    "distance": 10844478,
+    "congestion": 0.94,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_076",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_009",
+    "to": "NODE_CAM_035",
+    "distance": 10844478,
+    "congestion": 0.94,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_077",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_036",
+    "to": "NODE_CAM_003",
+    "distance": 10844320,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_078",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_003",
+    "to": "NODE_CAM_036",
+    "distance": 10844320,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_079",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_037",
+    "to": "NODE_CAM_004",
+    "distance": 10844022,
+    "congestion": 0.91,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_080",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_004",
+    "to": "NODE_CAM_037",
+    "distance": 10844022,
+    "congestion": 0.91,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_081",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_002",
+    "to": "NODE_CAM_006",
+    "distance": 288,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_082",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_006",
+    "to": "NODE_CAM_002",
+    "distance": 288,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_083",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_004",
+    "to": "NODE_CAM_008",
+    "distance": 287,
+    "congestion": 0.91,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_084",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_008",
+    "to": "NODE_CAM_004",
+    "distance": 287,
+    "congestion": 0.91,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_085",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_005",
+    "to": "NODE_CAM_009",
+    "distance": 289,
+    "congestion": 0.85,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_086",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_009",
+    "to": "NODE_CAM_005",
+    "distance": 289,
+    "congestion": 0.85,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_087",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_003",
+    "to": "NODE_CAM_005",
+    "distance": 289,
+    "congestion": 0.73,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_088",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_005",
+    "to": "NODE_CAM_003",
+    "distance": 289,
+    "congestion": 0.73,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_089",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_006",
+    "to": "NODE_CAM_008",
+    "distance": 292,
+    "congestion": 0.68,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_CAM_090",
+    "map_id": "MAP_CAMPUS_001",
+    "from": "NODE_CAM_008",
+    "to": "NODE_CAM_006",
+    "distance": 292,
+    "congestion": 0.68,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_001",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_001",
+    "to": "NODE_SCE_002",
+    "distance": 215,
+    "congestion": 0.83,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_002",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_002",
+    "to": "NODE_SCE_001",
+    "distance": 215,
+    "congestion": 0.83,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_003",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_002",
+    "to": "NODE_SCE_003",
+    "distance": 195,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_004",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_003",
+    "to": "NODE_SCE_002",
+    "distance": 195,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_005",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_004",
+    "to": "NODE_SCE_005",
+    "distance": 200,
+    "congestion": 0.99,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_006",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_005",
+    "to": "NODE_SCE_004",
+    "distance": 200,
+    "congestion": 0.99,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_007",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_005",
+    "to": "NODE_SCE_006",
+    "distance": 213,
+    "congestion": 0.96,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_008",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_006",
+    "to": "NODE_SCE_005",
+    "distance": 213,
+    "congestion": 0.96,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_009",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_007",
+    "to": "NODE_SCE_008",
+    "distance": 208,
+    "congestion": 0.78,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_010",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_008",
+    "to": "NODE_SCE_007",
+    "distance": 208,
+    "congestion": 0.78,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_011",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_008",
+    "to": "NODE_SCE_009",
+    "distance": 196,
+    "congestion": 0.85,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_012",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_009",
+    "to": "NODE_SCE_008",
+    "distance": 196,
+    "congestion": 0.85,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_013",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_001",
+    "to": "NODE_SCE_004",
+    "distance": 203,
+    "congestion": 0.75,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_014",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_004",
+    "to": "NODE_SCE_001",
+    "distance": 203,
+    "congestion": 0.75,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_015",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_004",
+    "to": "NODE_SCE_007",
+    "distance": 197,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_016",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_007",
+    "to": "NODE_SCE_004",
+    "distance": 197,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_017",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_002",
+    "to": "NODE_SCE_005",
+    "distance": 184,
+    "congestion": 0.96,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_018",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_005",
+    "to": "NODE_SCE_002",
+    "distance": 184,
+    "congestion": 0.96,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_019",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_005",
+    "to": "NODE_SCE_008",
+    "distance": 210,
+    "congestion": 0.79,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_020",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_008",
+    "to": "NODE_SCE_005",
+    "distance": 210,
+    "congestion": 0.79,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_021",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_003",
+    "to": "NODE_SCE_006",
+    "distance": 211,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_022",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_006",
+    "to": "NODE_SCE_003",
+    "distance": 211,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_023",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_006",
+    "to": "NODE_SCE_009",
+    "distance": 190,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_024",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_009",
+    "to": "NODE_SCE_006",
+    "distance": 190,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_025",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_010",
+    "to": "NODE_SCE_008",
+    "distance": 159,
+    "congestion": 0.79,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_026",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_008",
+    "to": "NODE_SCE_010",
+    "distance": 159,
+    "congestion": 0.79,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_027",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_011",
+    "to": "NODE_SCE_002",
+    "distance": 167,
+    "congestion": 0.94,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_028",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_002",
+    "to": "NODE_SCE_011",
+    "distance": 167,
+    "congestion": 0.94,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_029",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_012",
+    "to": "NODE_SCE_004",
+    "distance": 160,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_030",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_004",
+    "to": "NODE_SCE_012",
+    "distance": 160,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_031",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_013",
+    "to": "NODE_SCE_006",
+    "distance": 161,
+    "congestion": 0.94,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_032",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_006",
+    "to": "NODE_SCE_013",
+    "distance": 161,
+    "congestion": 0.94,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_033",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_014",
+    "to": "NODE_SCE_002",
+    "distance": 139,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_034",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_002",
+    "to": "NODE_SCE_014",
+    "distance": 139,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_SCE_035",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_015",
+    "to": "NODE_SCE_001",
+    "distance": 10845512,
+    "congestion": 0.8,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_036",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_001",
+    "to": "NODE_SCE_015",
+    "distance": 10845512,
+    "congestion": 0.8,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_037",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_016",
+    "to": "NODE_SCE_002",
+    "distance": 10845709,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_038",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_002",
+    "to": "NODE_SCE_016",
+    "distance": 10845709,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_039",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_017",
+    "to": "NODE_SCE_003",
+    "distance": 10845882,
+    "congestion": 0.8,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_040",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_003",
+    "to": "NODE_SCE_017",
+    "distance": 10845882,
+    "congestion": 0.8,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_041",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_018",
+    "to": "NODE_SCE_004",
+    "distance": 10845601,
+    "congestion": 0.99,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_042",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_004",
+    "to": "NODE_SCE_018",
+    "distance": 10845601,
+    "congestion": 0.99,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_043",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_019",
+    "to": "NODE_SCE_005",
+    "distance": 10845775,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_044",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_005",
+    "to": "NODE_SCE_019",
+    "distance": 10845775,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_045",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_020",
+    "to": "NODE_SCE_006",
+    "distance": 10845976,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_046",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_006",
+    "to": "NODE_SCE_020",
+    "distance": 10845976,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_047",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_021",
+    "to": "NODE_SCE_007",
+    "distance": 10845687,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_048",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_007",
+    "to": "NODE_SCE_021",
+    "distance": 10845687,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_049",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_022",
+    "to": "NODE_SCE_008",
+    "distance": 10845875,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_050",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_008",
+    "to": "NODE_SCE_022",
+    "distance": 10845875,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_051",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_023",
+    "to": "NODE_SCE_009",
+    "distance": 10846053,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_052",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_009",
+    "to": "NODE_SCE_023",
+    "distance": 10846053,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_053",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_024",
+    "to": "NODE_SCE_001",
+    "distance": 10845512,
+    "congestion": 0.99,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_054",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_001",
+    "to": "NODE_SCE_024",
+    "distance": 10845512,
+    "congestion": 0.99,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_055",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_025",
+    "to": "NODE_SCE_005",
+    "distance": 10845775,
+    "congestion": 0.82,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_056",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_005",
+    "to": "NODE_SCE_025",
+    "distance": 10845775,
+    "congestion": 0.82,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_057",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_026",
+    "to": "NODE_SCE_001",
+    "distance": 10845512,
+    "congestion": 0.9,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_058",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_001",
+    "to": "NODE_SCE_026",
+    "distance": 10845512,
+    "congestion": 0.9,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_059",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_027",
+    "to": "NODE_SCE_007",
+    "distance": 10845687,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_060",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_007",
+    "to": "NODE_SCE_027",
+    "distance": 10845687,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_061",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_028",
+    "to": "NODE_SCE_003",
+    "distance": 10845882,
+    "congestion": 0.95,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_062",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_003",
+    "to": "NODE_SCE_028",
+    "distance": 10845882,
+    "congestion": 0.95,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_063",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_029",
+    "to": "NODE_SCE_008",
+    "distance": 10845875,
+    "congestion": 0.95,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_064",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_008",
+    "to": "NODE_SCE_029",
+    "distance": 10845875,
+    "congestion": 0.95,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_065",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_030",
+    "to": "NODE_SCE_004",
+    "distance": 10845600,
+    "congestion": 0.83,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_066",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_004",
+    "to": "NODE_SCE_030",
+    "distance": 10845600,
+    "congestion": 0.83,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_067",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_031",
+    "to": "NODE_SCE_009",
+    "distance": 10846053,
+    "congestion": 0.9,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_068",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_009",
+    "to": "NODE_SCE_031",
+    "distance": 10846053,
+    "congestion": 0.9,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_SCE_069",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_032",
+    "to": "NODE_SCE_002",
+    "distance": 10845709,
+    "congestion": 0.93,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_070",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_002",
+    "to": "NODE_SCE_032",
+    "distance": 10845709,
+    "congestion": 0.93,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_071",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_033",
+    "to": "NODE_SCE_008",
+    "distance": 10845875,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_072",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_008",
+    "to": "NODE_SCE_033",
+    "distance": 10845875,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_073",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_034",
+    "to": "NODE_SCE_006",
+    "distance": 10845976,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_074",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_006",
+    "to": "NODE_SCE_034",
+    "distance": 10845976,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_075",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_035",
+    "to": "NODE_SCE_007",
+    "distance": 10845687,
+    "congestion": 0.91,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_076",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_007",
+    "to": "NODE_SCE_035",
+    "distance": 10845687,
+    "congestion": 0.91,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_077",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_036",
+    "to": "NODE_SCE_003",
+    "distance": 10845882,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_078",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_003",
+    "to": "NODE_SCE_036",
+    "distance": 10845882,
+    "congestion": 0.88,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_079",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_001",
+    "to": "NODE_SCE_005",
+    "distance": 276,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_080",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_005",
+    "to": "NODE_SCE_001",
+    "distance": 276,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_081",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_004",
+    "to": "NODE_SCE_008",
+    "distance": 287,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_082",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_008",
+    "to": "NODE_SCE_004",
+    "distance": 287,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_083",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_005",
+    "to": "NODE_SCE_009",
+    "distance": 295,
+    "congestion": 0.69,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_084",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_009",
+    "to": "NODE_SCE_005",
+    "distance": 295,
+    "congestion": 0.69,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_SCE_085",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_001",
+    "to": "NODE_SCE_003",
+    "distance": 410,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_SCE_086",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_003",
+    "to": "NODE_SCE_001",
+    "distance": 410,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_SCE_087",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_003",
+    "to": "NODE_SCE_009",
+    "distance": 401,
+    "congestion": 0.83,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_SCE_088",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_009",
+    "to": "NODE_SCE_003",
+    "distance": 401,
+    "congestion": 0.83,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_SCE_089",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_009",
+    "to": "NODE_SCE_007",
+    "distance": 405,
+    "congestion": 0.83,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_SCE_090",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_007",
+    "to": "NODE_SCE_009",
+    "distance": 405,
+    "congestion": 0.83,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_SCE_091",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_007",
+    "to": "NODE_SCE_001",
+    "distance": 400,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_SCE_092",
+    "map_id": "MAP_SCENIC_001",
+    "from": "NODE_SCE_001",
+    "to": "NODE_SCE_007",
+    "distance": 400,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_MIX_001",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_001",
+    "to": "NODE_MIX_002",
+    "distance": 237,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_002",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_002",
+    "to": "NODE_MIX_001",
+    "distance": 237,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_003",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_002",
+    "to": "NODE_MIX_003",
+    "distance": 229,
+    "congestion": 0.77,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_004",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_003",
+    "to": "NODE_MIX_002",
+    "distance": 229,
+    "congestion": 0.77,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_005",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_004",
+    "to": "NODE_MIX_005",
+    "distance": 237,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_006",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_005",
+    "to": "NODE_MIX_004",
+    "distance": 237,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_007",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_005",
+    "to": "NODE_MIX_006",
+    "distance": 238,
+    "congestion": 0.96,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_008",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_006",
+    "to": "NODE_MIX_005",
+    "distance": 238,
+    "congestion": 0.96,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_009",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_007",
+    "to": "NODE_MIX_008",
+    "distance": 235,
+    "congestion": 0.72,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_010",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_008",
+    "to": "NODE_MIX_007",
+    "distance": 235,
+    "congestion": 0.72,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_011",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_008",
+    "to": "NODE_MIX_009",
+    "distance": 250,
+    "congestion": 0.77,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_012",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_009",
+    "to": "NODE_MIX_008",
+    "distance": 250,
+    "congestion": 0.77,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_013",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_001",
+    "to": "NODE_MIX_004",
+    "distance": 231,
+    "congestion": 0.9,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_014",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_004",
+    "to": "NODE_MIX_001",
+    "distance": 231,
+    "congestion": 0.9,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_015",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_004",
+    "to": "NODE_MIX_007",
+    "distance": 253,
+    "congestion": 0.76,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_016",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_007",
+    "to": "NODE_MIX_004",
+    "distance": 253,
+    "congestion": 0.76,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_017",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_002",
+    "to": "NODE_MIX_005",
+    "distance": 227,
+    "congestion": 0.74,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_018",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_005",
+    "to": "NODE_MIX_002",
+    "distance": 227,
+    "congestion": 0.74,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_019",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_005",
+    "to": "NODE_MIX_008",
+    "distance": 251,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_020",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_008",
+    "to": "NODE_MIX_005",
+    "distance": 251,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_021",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_003",
+    "to": "NODE_MIX_006",
+    "distance": 231,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_022",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_006",
+    "to": "NODE_MIX_003",
+    "distance": 231,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_023",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_006",
+    "to": "NODE_MIX_009",
+    "distance": 248,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_024",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_009",
+    "to": "NODE_MIX_006",
+    "distance": 248,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_025",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_010",
+    "to": "NODE_MIX_008",
+    "distance": 198,
+    "congestion": 0.95,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_026",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_008",
+    "to": "NODE_MIX_010",
+    "distance": 198,
+    "congestion": 0.95,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_027",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_011",
+    "to": "NODE_MIX_002",
+    "distance": 203,
+    "congestion": 0.95,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_028",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_002",
+    "to": "NODE_MIX_011",
+    "distance": 203,
+    "congestion": 0.95,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_029",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_012",
+    "to": "NODE_MIX_004",
+    "distance": 186,
+    "congestion": 0.8,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_030",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_004",
+    "to": "NODE_MIX_012",
+    "distance": 186,
+    "congestion": 0.8,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_031",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_013",
+    "to": "NODE_MIX_006",
+    "distance": 194,
+    "congestion": 0.77,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_032",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_006",
+    "to": "NODE_MIX_013",
+    "distance": 194,
+    "congestion": 0.77,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_033",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_014",
+    "to": "NODE_MIX_002",
+    "distance": 252,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_034",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_002",
+    "to": "NODE_MIX_014",
+    "distance": 252,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_035",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_015",
+    "to": "NODE_MIX_008",
+    "distance": 247,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_036",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_008",
+    "to": "NODE_MIX_015",
+    "distance": 247,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "main_road"
+  },
+  {
+    "id": "EDGE_MIX_037",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_016",
+    "to": "NODE_MIX_002",
+    "distance": 10839993,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_038",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_002",
+    "to": "NODE_MIX_016",
+    "distance": 10839993,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_039",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_017",
+    "to": "NODE_MIX_004",
+    "distance": 10839866,
+    "congestion": 0.93,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_040",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_004",
+    "to": "NODE_MIX_017",
+    "distance": 10839866,
+    "congestion": 0.93,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_041",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_018",
+    "to": "NODE_MIX_005",
+    "distance": 10840081,
+    "congestion": 0.82,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_042",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_005",
+    "to": "NODE_MIX_018",
+    "distance": 10840081,
+    "congestion": 0.82,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_043",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_019",
+    "to": "NODE_MIX_003",
+    "distance": 10840200,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_044",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_003",
+    "to": "NODE_MIX_019",
+    "distance": 10840200,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_045",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_020",
+    "to": "NODE_MIX_006",
+    "distance": 10840299,
+    "congestion": 0.85,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_046",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_006",
+    "to": "NODE_MIX_020",
+    "distance": 10840299,
+    "congestion": 0.85,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_047",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_021",
+    "to": "NODE_MIX_007",
+    "distance": 10839972,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_048",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_007",
+    "to": "NODE_MIX_021",
+    "distance": 10839972,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_049",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_022",
+    "to": "NODE_MIX_008",
+    "distance": 10840184,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_050",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_008",
+    "to": "NODE_MIX_022",
+    "distance": 10840184,
+    "congestion": 0.86,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_051",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_023",
+    "to": "NODE_MIX_009",
+    "distance": 10840411,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_052",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_009",
+    "to": "NODE_MIX_023",
+    "distance": 10840411,
+    "congestion": 0.98,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_053",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_024",
+    "to": "NODE_MIX_001",
+    "distance": 10839776,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_054",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_001",
+    "to": "NODE_MIX_024",
+    "distance": 10839776,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_055",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_025",
+    "to": "NODE_MIX_005",
+    "distance": 10840081,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_056",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_005",
+    "to": "NODE_MIX_025",
+    "distance": 10840081,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_057",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_026",
+    "to": "NODE_MIX_004",
+    "distance": 10839866,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_058",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_004",
+    "to": "NODE_MIX_026",
+    "distance": 10839866,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_059",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_027",
+    "to": "NODE_MIX_001",
+    "distance": 10839776,
+    "congestion": 0.99,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_060",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_001",
+    "to": "NODE_MIX_027",
+    "distance": 10839776,
+    "congestion": 0.99,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_061",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_028",
+    "to": "NODE_MIX_007",
+    "distance": 10839972,
+    "congestion": 0.83,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_062",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_007",
+    "to": "NODE_MIX_028",
+    "distance": 10839972,
+    "congestion": 0.83,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_063",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_029",
+    "to": "NODE_MIX_003",
+    "distance": 10840200,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_064",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_003",
+    "to": "NODE_MIX_029",
+    "distance": 10840200,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_065",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_030",
+    "to": "NODE_MIX_008",
+    "distance": 10840184,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_066",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_008",
+    "to": "NODE_MIX_030",
+    "distance": 10840184,
+    "congestion": 0.81,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_067",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_031",
+    "to": "NODE_MIX_009",
+    "distance": 10840411,
+    "congestion": 1.0,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_068",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_009",
+    "to": "NODE_MIX_031",
+    "distance": 10840411,
+    "congestion": 1.0,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 3.5,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk",
+      "bike"
+    ],
+    "road_type": "secondary_road"
+  },
+  {
+    "id": "EDGE_MIX_069",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_032",
+    "to": "NODE_MIX_002",
+    "distance": 10839993,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_070",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_002",
+    "to": "NODE_MIX_032",
+    "distance": 10839993,
+    "congestion": 0.97,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_071",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_033",
+    "to": "NODE_MIX_006",
+    "distance": 10840299,
+    "congestion": 0.92,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_072",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_006",
+    "to": "NODE_MIX_033",
+    "distance": 10840299,
+    "congestion": 0.92,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_073",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_034",
+    "to": "NODE_MIX_007",
+    "distance": 10839972,
+    "congestion": 0.91,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_074",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_007",
+    "to": "NODE_MIX_034",
+    "distance": 10839972,
+    "congestion": 0.91,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_075",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_035",
+    "to": "NODE_MIX_003",
+    "distance": 10840200,
+    "congestion": 0.99,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_076",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_003",
+    "to": "NODE_MIX_035",
+    "distance": 10840200,
+    "congestion": 0.99,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_077",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_036",
+    "to": "NODE_MIX_004",
+    "distance": 10839866,
+    "congestion": 1.0,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_078",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_004",
+    "to": "NODE_MIX_036",
+    "distance": 10839866,
+    "congestion": 1.0,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_079",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_037",
+    "to": "NODE_MIX_009",
+    "distance": 10840411,
+    "congestion": 0.93,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_080",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_009",
+    "to": "NODE_MIX_037",
+    "distance": 10840411,
+    "congestion": 0.93,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_081",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_038",
+    "to": "NODE_MIX_001",
+    "distance": 10839776,
+    "congestion": 0.96,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_082",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_001",
+    "to": "NODE_MIX_038",
+    "distance": 10839776,
+    "congestion": 0.96,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_083",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_039",
+    "to": "NODE_MIX_008",
+    "distance": 10840184,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_084",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_008",
+    "to": "NODE_MIX_039",
+    "distance": 10840184,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_085",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_002",
+    "to": "NODE_MIX_004",
+    "distance": 335,
+    "congestion": 0.82,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_086",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_004",
+    "to": "NODE_MIX_002",
+    "distance": 335,
+    "congestion": 0.82,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_087",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_002",
+    "to": "NODE_MIX_006",
+    "distance": 325,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_088",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_006",
+    "to": "NODE_MIX_002",
+    "distance": 325,
+    "congestion": 0.87,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_089",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_005",
+    "to": "NODE_MIX_007",
+    "distance": 348,
+    "congestion": 0.8,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_090",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_007",
+    "to": "NODE_MIX_005",
+    "distance": 348,
+    "congestion": 0.8,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_091",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_005",
+    "to": "NODE_MIX_009",
+    "distance": 352,
+    "congestion": 0.7,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_092",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_009",
+    "to": "NODE_MIX_005",
+    "distance": 352,
+    "congestion": 0.7,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_093",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_003",
+    "to": "NODE_MIX_005",
+    "distance": 329,
+    "congestion": 0.67,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_094",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_005",
+    "to": "NODE_MIX_003",
+    "distance": 329,
+    "congestion": 0.67,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 0,
+    "ideal_speed_sightseeing_car": 0,
+    "allowed_transport": [
+      "walk"
+    ],
+    "road_type": "path"
+  },
+  {
+    "id": "EDGE_MIX_095",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_001",
+    "to": "NODE_MIX_003",
+    "distance": 466,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_MIX_096",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_003",
+    "to": "NODE_MIX_001",
+    "distance": 466,
+    "congestion": 0.89,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_MIX_097",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_003",
+    "to": "NODE_MIX_009",
+    "distance": 480,
+    "congestion": 0.9,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_MIX_098",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_009",
+    "to": "NODE_MIX_003",
+    "distance": 480,
+    "congestion": 0.9,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_MIX_099",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_009",
+    "to": "NODE_MIX_007",
+    "distance": 485,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_MIX_100",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_007",
+    "to": "NODE_MIX_009",
+    "distance": 485,
+    "congestion": 0.84,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_MIX_101",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_007",
+    "to": "NODE_MIX_001",
+    "distance": 485,
+    "congestion": 0.82,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  },
+  {
+    "id": "EDGE_MIX_102",
+    "map_id": "MAP_MIXED_001",
+    "from": "NODE_MIX_001",
+    "to": "NODE_MIX_007",
+    "distance": 485,
+    "congestion": 0.82,
+    "ideal_speed_walk": 1.2,
+    "ideal_speed_bike": 4.0,
+    "ideal_speed_sightseeing_car": 5.0,
+    "allowed_transport": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ],
+    "road_type": "sightseeing_route"
+  }
+]

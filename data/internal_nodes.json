@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "NODE_CAM_001",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "路口-(0,0)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.960228,
+    "longitude": 116.347505
+  },
+  {
+    "id": "NODE_CAM_002",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "路口-(0,1)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.960155,
+    "longitude": 116.349945
+  },
+  {
+    "id": "NODE_CAM_003",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "路口-(0,2)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.960247,
+    "longitude": 116.352435
+  },
+  {
+    "id": "NODE_CAM_004",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "路口-(1,0)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.962078,
+    "longitude": 116.347517
+  },
+  {
+    "id": "NODE_CAM_005",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "路口-(1,1)",
+    "type": "intersection",
+    "subtype": "crossroad",
+    "latitude": 39.961984,
+    "longitude": 116.349906
+  },
+  {
+    "id": "NODE_CAM_006",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "路口-(1,2)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.961944,
+    "longitude": 116.352401
+  },
+  {
+    "id": "NODE_CAM_007",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "路口-(2,0)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.963705,
+    "longitude": 116.34754
+  },
+  {
+    "id": "NODE_CAM_008",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "路口-(2,1)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.96383,
+    "longitude": 116.350009
+  },
+  {
+    "id": "NODE_CAM_009",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "路口-(2,2)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.963744,
+    "longitude": 116.352418
+  },
+  {
+    "id": "NODE_CAM_010",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "北门",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 39.96524,
+    "longitude": 116.35
+  },
+  {
+    "id": "NODE_CAM_011",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "南门",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 39.95876,
+    "longitude": 116.35
+  },
+  {
+    "id": "NODE_CAM_012",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "西门",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 39.962,
+    "longitude": 116.34568
+  },
+  {
+    "id": "NODE_CAM_013",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "东门",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 39.962,
+    "longitude": 116.35432
+  },
+  {
+    "id": "NODE_CAM_014",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "第一教学楼",
+    "type": "teaching_building",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_CAM_015",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "第二教学楼",
+    "type": "teaching_building",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_CAM_016",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "第三教学楼",
+    "type": "teaching_building",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_CAM_017",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "主教学楼",
+    "type": "teaching_building",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_CAM_018",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "行政办公楼",
+    "type": "office_building",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_CAM_019",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "科研楼",
+    "type": "office_building",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_CAM_020",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "图书馆",
+    "type": "library",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_CAM_021",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "学生宿舍1号楼",
+    "type": "dormitory",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_CAM_022",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "学生宿舍2号楼",
+    "type": "dormitory",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_CAM_023",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "学生宿舍3号楼",
+    "type": "dormitory",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_CAM_024",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "第一食堂",
+    "type": "canteen",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_CAM_025",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "第二食堂",
+    "type": "canteen",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_CAM_026",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "综合实验楼",
+    "type": "classroom_building",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_CAM_027",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "体育馆",
+    "type": "building",
+    "subtype": "sports",
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_CAM_028",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "学生活动中心",
+    "type": "building",
+    "subtype": "activity",
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_CAM_029",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "校医院",
+    "type": "building",
+    "subtype": "clinic",
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_CAM_030",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "国际交流中心",
+    "type": "building",
+    "subtype": "conference",
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_CAM_031",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "网络中心",
+    "type": "office_building",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_CAM_032",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "校园超市挂接点",
+    "type": "facility_point",
+    "subtype": "supermarket",
+    "latitude": 0.0,
+    "longitude": -0.0
+  },
+  {
+    "id": "NODE_CAM_033",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "图书馆咖啡挂接点",
+    "type": "facility_point",
+    "subtype": "cafe",
+    "latitude": 1e-06,
+    "longitude": 0.0
+  },
+  {
+    "id": "NODE_CAM_034",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "校医院挂接点",
+    "type": "facility_point",
+    "subtype": "clinic",
+    "latitude": -0.0,
+    "longitude": 0.0
+  },
+  {
+    "id": "NODE_CAM_035",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "快递站挂接点",
+    "type": "facility_point",
+    "subtype": "service",
+    "latitude": 0.0,
+    "longitude": 0.0
+  },
+  {
+    "id": "NODE_CAM_036",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "运动场挂接点",
+    "type": "facility_point",
+    "subtype": "sports",
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_CAM_037",
+    "map_id": "MAP_CAMPUS_001",
+    "name": "停车场挂接点",
+    "type": "facility_point",
+    "subtype": "parking",
+    "latitude": 0.0,
+    "longitude": -0.0
+  },
+  {
+    "id": "NODE_SCE_001",
+    "map_id": "MAP_SCENIC_001",
+    "name": "路口-(0,0)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.914562,
+    "longitude": 116.394701
+  },
+  {
+    "id": "NODE_SCE_002",
+    "map_id": "MAP_SCENIC_001",
+    "name": "路口-(0,1)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.914561,
+    "longitude": 116.39724
+  },
+  {
+    "id": "NODE_SCE_003",
+    "map_id": "MAP_SCENIC_001",
+    "name": "路口-(0,2)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.914468,
+    "longitude": 116.399531
+  },
+  {
+    "id": "NODE_SCE_004",
+    "map_id": "MAP_SCENIC_001",
+    "name": "路口-(1,0)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.916391,
+    "longitude": 116.394767
+  },
+  {
+    "id": "NODE_SCE_005",
+    "map_id": "MAP_SCENIC_001",
+    "name": "路口-(1,1)",
+    "type": "intersection",
+    "subtype": "crossroad",
+    "latitude": 39.916219,
+    "longitude": 116.397119
+  },
+  {
+    "id": "NODE_SCE_006",
+    "map_id": "MAP_SCENIC_001",
+    "name": "路口-(1,2)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.916369,
+    "longitude": 116.399621
+  },
+  {
+    "id": "NODE_SCE_007",
+    "map_id": "MAP_SCENIC_001",
+    "name": "路口-(2,0)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.918161,
+    "longitude": 116.394846
+  },
+  {
+    "id": "NODE_SCE_008",
+    "map_id": "MAP_SCENIC_001",
+    "name": "路口-(2,1)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.918107,
+    "longitude": 116.397295
+  },
+  {
+    "id": "NODE_SCE_009",
+    "map_id": "MAP_SCENIC_001",
+    "name": "路口-(2,2)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.918076,
+    "longitude": 116.39961
+  },
+  {
+    "id": "NODE_SCE_010",
+    "map_id": "MAP_SCENIC_001",
+    "name": "北门",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 39.91954,
+    "longitude": 116.3972
+  },
+  {
+    "id": "NODE_SCE_011",
+    "map_id": "MAP_SCENIC_001",
+    "name": "南门",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 39.91306,
+    "longitude": 116.3972
+  },
+  {
+    "id": "NODE_SCE_012",
+    "map_id": "MAP_SCENIC_001",
+    "name": "西门",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 39.9163,
+    "longitude": 116.39288
+  },
+  {
+    "id": "NODE_SCE_013",
+    "map_id": "MAP_SCENIC_001",
+    "name": "东门",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 39.9163,
+    "longitude": 116.40152
+  },
+  {
+    "id": "NODE_SCE_014",
+    "map_id": "MAP_SCENIC_001",
+    "name": "游客中心入口",
+    "type": "gate",
+    "subtype": "visitor_center",
+    "latitude": 39.91342,
+    "longitude": 116.39792
+  },
+  {
+    "id": "NODE_SCE_015",
+    "map_id": "MAP_SCENIC_001",
+    "name": "太和殿广场",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_SCE_016",
+    "map_id": "MAP_SCENIC_001",
+    "name": "御花园",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_SCE_017",
+    "map_id": "MAP_SCENIC_001",
+    "name": "九龙壁",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_SCE_018",
+    "map_id": "MAP_SCENIC_001",
+    "name": "珍宝馆",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_SCE_019",
+    "map_id": "MAP_SCENIC_001",
+    "name": "钟表馆",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_SCE_020",
+    "map_id": "MAP_SCENIC_001",
+    "name": "书画馆",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_SCE_021",
+    "map_id": "MAP_SCENIC_001",
+    "name": "陶瓷馆",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_SCE_022",
+    "map_id": "MAP_SCENIC_001",
+    "name": "青铜器馆",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_SCE_023",
+    "map_id": "MAP_SCENIC_001",
+    "name": "游客服务中心",
+    "type": "building",
+    "subtype": "service",
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_SCE_024",
+    "map_id": "MAP_SCENIC_001",
+    "name": "讲解服务处",
+    "type": "building",
+    "subtype": "service",
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_SCE_025",
+    "map_id": "MAP_SCENIC_001",
+    "name": "景区管理处",
+    "type": "office_building",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_SCE_026",
+    "map_id": "MAP_SCENIC_001",
+    "name": "午门观景台",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_SCE_027",
+    "map_id": "MAP_SCENIC_001",
+    "name": "角楼",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_SCE_028",
+    "map_id": "MAP_SCENIC_001",
+    "name": "文华殿",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_SCE_029",
+    "map_id": "MAP_SCENIC_001",
+    "name": "武英殿",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_SCE_030",
+    "map_id": "MAP_SCENIC_001",
+    "name": "御茶房",
+    "type": "building",
+    "subtype": "service",
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_SCE_031",
+    "map_id": "MAP_SCENIC_001",
+    "name": "文创中心",
+    "type": "building",
+    "subtype": "shop",
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_SCE_032",
+    "map_id": "MAP_SCENIC_001",
+    "name": "景区洗手间A挂接点",
+    "type": "facility_point",
+    "subtype": "toilet",
+    "latitude": -0.0,
+    "longitude": 0.0
+  },
+  {
+    "id": "NODE_SCE_033",
+    "map_id": "MAP_SCENIC_001",
+    "name": "景区洗手间B挂接点",
+    "type": "facility_point",
+    "subtype": "toilet",
+    "latitude": 0.0,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_SCE_034",
+    "map_id": "MAP_SCENIC_001",
+    "name": "纪念品商店挂接点",
+    "type": "facility_point",
+    "subtype": "shop",
+    "latitude": 1e-06,
+    "longitude": -0.0
+  },
+  {
+    "id": "NODE_SCE_035",
+    "map_id": "MAP_SCENIC_001",
+    "name": "餐饮区挂接点",
+    "type": "facility_point",
+    "subtype": "restaurant",
+    "latitude": -1e-06,
+    "longitude": 0.0
+  },
+  {
+    "id": "NODE_SCE_036",
+    "map_id": "MAP_SCENIC_001",
+    "name": "咖啡馆挂接点",
+    "type": "facility_point",
+    "subtype": "cafe",
+    "latitude": 0.0,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_MIX_001",
+    "map_id": "MAP_MIXED_001",
+    "name": "路口-(0,0)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.996866,
+    "longitude": 116.272224
+  },
+  {
+    "id": "NODE_MIX_002",
+    "map_id": "MAP_MIXED_001",
+    "name": "路口-(0,1)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.996872,
+    "longitude": 116.275015
+  },
+  {
+    "id": "NODE_MIX_003",
+    "map_id": "MAP_MIXED_001",
+    "name": "路口-(0,2)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.996841,
+    "longitude": 116.277709
+  },
+  {
+    "id": "NODE_MIX_004",
+    "map_id": "MAP_MIXED_001",
+    "name": "路口-(1,0)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.998946,
+    "longitude": 116.272158
+  },
+  {
+    "id": "NODE_MIX_005",
+    "map_id": "MAP_MIXED_001",
+    "name": "路口-(1,1)",
+    "type": "intersection",
+    "subtype": "crossroad",
+    "latitude": 39.998916,
+    "longitude": 116.274947
+  },
+  {
+    "id": "NODE_MIX_006",
+    "map_id": "MAP_MIXED_001",
+    "name": "路口-(1,2)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 39.99892,
+    "longitude": 116.277756
+  },
+  {
+    "id": "NODE_MIX_007",
+    "map_id": "MAP_MIXED_001",
+    "name": "路口-(2,0)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 40.001227,
+    "longitude": 116.272173
+  },
+  {
+    "id": "NODE_MIX_008",
+    "map_id": "MAP_MIXED_001",
+    "name": "路口-(2,1)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 40.001174,
+    "longitude": 116.274942
+  },
+  {
+    "id": "NODE_MIX_009",
+    "map_id": "MAP_MIXED_001",
+    "name": "路口-(2,2)",
+    "type": "intersection",
+    "subtype": "junction",
+    "latitude": 40.001153,
+    "longitude": 116.277887
+  },
+  {
+    "id": "NODE_MIX_010",
+    "map_id": "MAP_MIXED_001",
+    "name": "北门",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 40.00296,
+    "longitude": 116.275
+  },
+  {
+    "id": "NODE_MIX_011",
+    "map_id": "MAP_MIXED_001",
+    "name": "南门",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 39.99504,
+    "longitude": 116.275
+  },
+  {
+    "id": "NODE_MIX_012",
+    "map_id": "MAP_MIXED_001",
+    "name": "西门",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 39.999,
+    "longitude": 116.26996
+  },
+  {
+    "id": "NODE_MIX_013",
+    "map_id": "MAP_MIXED_001",
+    "name": "东门",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 39.999,
+    "longitude": 116.28004
+  },
+  {
+    "id": "NODE_MIX_014",
+    "map_id": "MAP_MIXED_001",
+    "name": "南游客中心",
+    "type": "gate",
+    "subtype": "visitor_center",
+    "latitude": 39.9946,
+    "longitude": 116.275
+  },
+  {
+    "id": "NODE_MIX_015",
+    "map_id": "MAP_MIXED_001",
+    "name": "北入口",
+    "type": "gate",
+    "subtype": null,
+    "latitude": 40.0034,
+    "longitude": 116.275
+  },
+  {
+    "id": "NODE_MIX_016",
+    "map_id": "MAP_MIXED_001",
+    "name": "昆明湖观景台",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -2e-06
+  },
+  {
+    "id": "NODE_MIX_017",
+    "map_id": "MAP_MIXED_001",
+    "name": "佛香阁",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_MIX_018",
+    "map_id": "MAP_MIXED_001",
+    "name": "长廊",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_MIX_019",
+    "map_id": "MAP_MIXED_001",
+    "name": "石舫",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_MIX_020",
+    "map_id": "MAP_MIXED_001",
+    "name": "十七孔桥",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_MIX_021",
+    "map_id": "MAP_MIXED_001",
+    "name": "苏州街",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_MIX_022",
+    "map_id": "MAP_MIXED_001",
+    "name": "德和园大戏楼",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_MIX_023",
+    "map_id": "MAP_MIXED_001",
+    "name": "仁寿殿",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_MIX_024",
+    "map_id": "MAP_MIXED_001",
+    "name": "综合服务楼",
+    "type": "building",
+    "subtype": "service",
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_MIX_025",
+    "map_id": "MAP_MIXED_001",
+    "name": "园区管理处",
+    "type": "office_building",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_MIX_026",
+    "map_id": "MAP_MIXED_001",
+    "name": "排云殿",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_MIX_027",
+    "map_id": "MAP_MIXED_001",
+    "name": "乐寿堂",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_MIX_028",
+    "map_id": "MAP_MIXED_001",
+    "name": "玉澜堂",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_MIX_029",
+    "map_id": "MAP_MIXED_001",
+    "name": "宜芸馆",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_MIX_030",
+    "map_id": "MAP_MIXED_001",
+    "name": "听鹂馆",
+    "type": "building",
+    "subtype": "restaurant",
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_MIX_031",
+    "map_id": "MAP_MIXED_001",
+    "name": "景福阁",
+    "type": "scenic_spot",
+    "subtype": null,
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_MIX_032",
+    "map_id": "MAP_MIXED_001",
+    "name": "洗手间A挂接点",
+    "type": "facility_point",
+    "subtype": "toilet",
+    "latitude": -0.0,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_MIX_033",
+    "map_id": "MAP_MIXED_001",
+    "name": "洗手间B挂接点",
+    "type": "facility_point",
+    "subtype": "toilet",
+    "latitude": 1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_MIX_034",
+    "map_id": "MAP_MIXED_001",
+    "name": "洗手间C挂接点",
+    "type": "facility_point",
+    "subtype": "toilet",
+    "latitude": -0.0,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_MIX_035",
+    "map_id": "MAP_MIXED_001",
+    "name": "纪念品商店挂接点",
+    "type": "facility_point",
+    "subtype": "shop",
+    "latitude": -1e-06,
+    "longitude": 1e-06
+  },
+  {
+    "id": "NODE_MIX_036",
+    "map_id": "MAP_MIXED_001",
+    "name": "餐厅A挂接点",
+    "type": "facility_point",
+    "subtype": "restaurant",
+    "latitude": 1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_MIX_037",
+    "map_id": "MAP_MIXED_001",
+    "name": "餐厅B挂接点",
+    "type": "facility_point",
+    "subtype": "restaurant",
+    "latitude": -1e-06,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_MIX_038",
+    "map_id": "MAP_MIXED_001",
+    "name": "咖啡馆挂接点",
+    "type": "facility_point",
+    "subtype": "cafe",
+    "latitude": 0.0,
+    "longitude": -1e-06
+  },
+  {
+    "id": "NODE_MIX_039",
+    "map_id": "MAP_MIXED_001",
+    "name": "超市挂接点",
+    "type": "facility_point",
+    "subtype": "supermarket",
+    "latitude": 0.0,
+    "longitude": 1e-06
+  }
+]

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathPal — 内部路线规划</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <span class="brand">PathPal <small>路伴</small></span>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="recommendation.html">旅游推荐</a>
+        <a href="route_planning.html" class="active">路线规划</a>
+        <a href="nearby.html">场所查询</a>
+        <a href="indoor_navigation.html">室内导航 Demo</a>
+    </nav>
+</header>
+
+<div class="page-container">
+
+    <section class="page-hero">
+        <h1>景区/校园内部路线规划</h1>
+        <p>基于自实现 Dijkstra 算法，在景区/校园内部道路图中规划最优路径</p>
+        <p style="margin-top:8px;"><span class="tag tag-warning">这不是城市级外部导航</span> 路线只在 destination_id 对应的 internal_map_id 内部进行</p>
+    </section>
+
+    <!-- 功能说明 -->
+    <section class="card">
+        <h2>功能说明</h2>
+        <ul style="margin-left:18px; line-height:1.8;">
+            <li>用户已进入某个景区或校园后，在<strong>内部地图</strong>中规划路线</li>
+            <li>支持最短距离、最短时间、指定交通工具、混合交通、多目标路线</li>
+            <li>校园支持 <span class="tag tag-campus">walk</span> <span class="tag tag-campus">bike</span>；景区支持 <span class="tag tag-attraction">walk</span> <span class="tag tag-attraction">sightseeing_car</span></li>
+            <li>自行车只能走自行车道路，电瓶车只能走固定电瓶车路线</li>
+            <li>217 个目的地通过 3 套内部地图模板复用</li>
+        </ul>
+    </section>
+
+    <!-- 输入区 -->
+    <section class="card">
+        <h2>路线规划</h2>
+
+        <div class="form-row">
+            <div class="form-group" style="min-width:250px;">
+                <label for="select-dest">目的地</label>
+                <select id="select-dest">
+                    <option value="">— 请先选择目的地 —</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group" style="min-width:200px;">
+                <label for="select-start">起点节点</label>
+                <select id="select-start">
+                    <option value="">— 请选择起点 —</option>
+                </select>
+            </div>
+            <div class="form-group" style="min-width:200px;">
+                <label for="select-end">终点节点</label>
+                <select id="select-end">
+                    <option value="">— 请选择终点 —</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="select-strategy">策略</label>
+                <select id="select-strategy">
+                    <option value="shortest-distance">最短距离</option>
+                    <option value="shortest-time">最短时间 (指定交通)</option>
+                    <option value="transport-time">交通工具时间</option>
+                    <option value="mixed-time">混合交通 (自动选择)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="select-transport">交通工具</label>
+                <select id="select-transport">
+                    <option value="walk">步行 walk</option>
+                    <option value="bike">自行车 bike</option>
+                    <option value="sightseeing_car">电瓶车 sightseeing_car</option>
+                </select>
+            </div>
+            <button id="btn-plan">规划路线</button>
+        </div>
+
+        <p id="transport-hint" class="hint"></p>
+
+        <hr style="margin:16px 0; border:0; border-top:1px solid #eee;">
+
+        <h3>多目标路线（贪心 TSP）</h3>
+        <div class="form-row">
+            <div class="form-group" style="min-width:300px;">
+                <label for="input-targets">途经节点（逗号分隔）</label>
+                <input type="text" id="input-targets" placeholder="例如: NODE_CAM_005, NODE_CAM_008" style="width:100%;">
+            </div>
+            <div class="form-group">
+                <label for="select-multi-strategy">策略</label>
+                <select id="select-multi-strategy">
+                    <option value="shortest_distance">最短距离</option>
+                    <option value="shortest_time">最短时间</option>
+                    <option value="mixed_time">混合交通</option>
+                </select>
+            </div>
+            <button id="btn-multi-plan" class="warning">多目标规划</button>
+        </div>
+    </section>
+
+    <!-- 地图区 -->
+    <section class="card">
+        <h2>地图展示</h2>
+        <div id="route-map" class="map-container"></div>
+    </section>
+
+    <!-- 路线结果区 -->
+    <section class="card">
+        <h2>路线结果</h2>
+        <div id="route-result"><p class="hint">请选择目的地、起点、终点后点击"规划路线"</p></div>
+    </section>
+
+    <!-- 路段详情 -->
+    <section class="card" id="segments-card" style="display:none;">
+        <h2>路段详情</h2>
+        <div id="segments-container"></div>
+    </section>
+
+    <!-- 算法说明区 -->
+    <section class="card">
+        <h2>算法与数据结构说明</h2>
+        <div class="algo-detail">
+            <p><strong>数据结构：</strong>邻接表图 (Adjacency List Graph) — 节点数 ≤ 40，按 map_id 筛选构建</p>
+            <p><strong>核心算法：</strong>Dijkstra — 线性扫描未访问节点，O(V²)，适合 V ≤ 40 的场景</p>
+            <p><strong>最短距离：</strong><code>weight = distance</code> — 边权为实际道路距离（Haversine 公式计算）</p>
+            <p><strong>最短时间：</strong><code>time = distance / (congestion × ideal_speed)</code></p>
+            <p><strong>真实速度：</strong><code>real_speed = congestion × ideal_speed</code> — 拥挤度 0~1，越小越慢</p>
+            <p><strong>校园交通：</strong>walk (理想速度 1.4 m/s) / bike (理想速度 4.0 m/s)，禁止 sightseeing_car</p>
+            <p><strong>景区交通：</strong>walk (理想速度 1.4 m/s) / sightseeing_car (理想速度 8.0 m/s)，禁止 bike</p>
+            <p><strong>mixed 策略：</strong>每条边自动选择允许交通工具中耗时最短者（campus: walk+ bike，attraction: walk + sightseeing_car）</p>
+            <p><strong>多目标路线：</strong>贪心近似 TSP — 从起点出发，每次选择距离最近的未访问目标，最后返回起点</p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>PathPal 路伴 &copy; 2025 数据结构课程设计</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/api.js"></script>
+<script src="js/map.js"></script>
+<script src="js/route_planning.js"></script>
+</body>
+</html>

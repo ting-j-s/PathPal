@@ -1,0 +1,243 @@
+[
+  {
+    "id": "USER_001",
+    "username": "旅行者小王",
+    "interests": [
+      "历史",
+      "古建筑",
+      "博物馆",
+      "文化"
+    ],
+    "favorite_categories": [
+      "museum",
+      "palace",
+      "temple",
+      "historical_site"
+    ],
+    "preferred_tags": [
+      "世界遗产",
+      "5A景区",
+      "全国重点文保"
+    ]
+  },
+  {
+    "id": "USER_002",
+    "username": "高校探访者",
+    "interests": [
+      "高校",
+      "校园",
+      "学术",
+      "科技"
+    ],
+    "favorite_categories": [
+      "university"
+    ],
+    "preferred_tags": [
+      "985",
+      "双一流",
+      "211"
+    ]
+  },
+  {
+    "id": "USER_003",
+    "username": "自然爱好者",
+    "interests": [
+      "自然",
+      "山水",
+      "徒步",
+      "摄影"
+    ],
+    "favorite_categories": [
+      "park",
+      "natural_area",
+      "lake"
+    ],
+    "preferred_tags": [
+      "4A景区",
+      "5A景区",
+      "森林公园"
+    ]
+  },
+  {
+    "id": "USER_004",
+    "username": "亲子游达人",
+    "interests": [
+      "亲子",
+      "动物",
+      "游乐",
+      "科普"
+    ],
+    "favorite_categories": [
+      "zoo",
+      "amusement_park",
+      "museum",
+      "aquarium"
+    ],
+    "preferred_tags": [
+      "亲子",
+      "科普",
+      "4A景区"
+    ]
+  },
+  {
+    "id": "USER_005",
+    "username": "建筑摄影师",
+    "interests": [
+      "建筑",
+      "摄影",
+      "现代",
+      "古建筑"
+    ],
+    "favorite_categories": [
+      "museum",
+      "palace",
+      "temple",
+      "stadium"
+    ],
+    "preferred_tags": [
+      "地标",
+      "世界遗产",
+      "网红"
+    ]
+  },
+  {
+    "id": "USER_006",
+    "username": "文化漫游者",
+    "interests": [
+      "文化",
+      "艺术",
+      "文学",
+      "历史"
+    ],
+    "favorite_categories": [
+      "museum",
+      "art_district",
+      "historical_street"
+    ],
+    "preferred_tags": [
+      "免费",
+      "历史文化名街",
+      "文艺"
+    ]
+  },
+  {
+    "id": "USER_007",
+    "username": "休闲周末派",
+    "interests": [
+      "休闲",
+      "公园",
+      "购物",
+      "美食"
+    ],
+    "favorite_categories": [
+      "park",
+      "square",
+      "historical_street"
+    ],
+    "preferred_tags": [
+      "免费",
+      "公园",
+      "休闲"
+    ]
+  },
+  {
+    "id": "USER_008",
+    "username": "运动户外控",
+    "interests": [
+      "运动",
+      "户外",
+      "登山",
+      "滑雪"
+    ],
+    "favorite_categories": [
+      "park",
+      "natural_area",
+      "ski_resort"
+    ],
+    "preferred_tags": [
+      "户外",
+      "登山",
+      "滑雪"
+    ]
+  },
+  {
+    "id": "USER_009",
+    "username": "古迹追寻者",
+    "interests": [
+      "历史",
+      "古迹",
+      "长城",
+      "寺庙"
+    ],
+    "favorite_categories": [
+      "temple",
+      "historical_site",
+      "palace"
+    ],
+    "preferred_tags": [
+      "世界遗产",
+      "全国重点文保",
+      "5A景区"
+    ]
+  },
+  {
+    "id": "USER_010",
+    "username": "科技探索家",
+    "interests": [
+      "科技",
+      "航天",
+      "军事",
+      "创新"
+    ],
+    "favorite_categories": [
+      "museum",
+      "university",
+      "stadium"
+    ],
+    "preferred_tags": [
+      "科普",
+      "奥运场馆",
+      "国家一级博物馆"
+    ]
+  },
+  {
+    "id": "USER_011",
+    "username": "文艺小清新",
+    "interests": [
+      "艺术",
+      "摄影",
+      "咖啡",
+      "设计"
+    ],
+    "favorite_categories": [
+      "art_district",
+      "museum",
+      "historical_street"
+    ],
+    "preferred_tags": [
+      "网红",
+      "免费",
+      "文艺"
+    ]
+  },
+  {
+    "id": "USER_012",
+    "username": "度假养生派",
+    "interests": [
+      "度假",
+      "温泉",
+      "养生",
+      "休闲"
+    ],
+    "favorite_categories": [
+      "resort",
+      "park",
+      "lake"
+    ],
+    "preferred_tags": [
+      "度假区",
+      "温泉",
+      "4A景区"
+    ]
+  }
+]

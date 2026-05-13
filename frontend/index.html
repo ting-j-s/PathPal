@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathPal 路伴 — 首页</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 顶部导航栏 -->
+<header class="navbar">
+    <span class="brand">PathPal <small>路伴</small></span>
+    <nav>
+        <a href="index.html" class="active">首页</a>
+        <a href="recommendation.html">旅游推荐</a>
+        <a href="route_planning.html">路线规划</a>
+        <a href="nearby.html">场所查询</a>
+        <a href="indoor_navigation.html">室内导航 Demo</a>
+    </nav>
+</header>
+
+<div class="page-container">
+
+    <!-- 页面标题 -->
+    <section class="page-hero">
+        <h1>PathPal 路伴</h1>
+        <p>基于数据结构的个性化旅游推荐与景区/校园内部路径规划系统 — 数据结构课程设计项目</p>
+    </section>
+
+    <!-- 项目简介 -->
+    <section class="card">
+        <h2>项目简介</h2>
+        <p style="margin-bottom:12px;">
+            PathPal 是一个基于 Python Flask 的个性化旅游辅助系统，面向数据结构课程设计。
+            当前阶段聚焦于三个核心功能模块：<strong>旅游推荐</strong>、<strong>景区/校园内部路线规划</strong>和<strong>场所查询</strong>。
+        </p>
+        <p style="margin-bottom:12px;">
+            所有核心算法自行实现（排序、查找、Dijkstra、Top-K），数据以 JSON 文件存储，不使用数据库。
+            路线规划仅发生在景区/校园内部道路图中，<span class="tag tag-warning">不做城市级外部导航</span>。
+        </p>
+        <div class="algo-detail">
+            <strong>明确不做：</strong>旅游日记、美食推荐、完整登录注册、城市级外部导航、跨景区/跨校园路线规划
+        </div>
+    </section>
+
+    <!-- 数据规模 -->
+    <section class="card">
+        <h2>当前数据规模</h2>
+        <div id="stats-container">
+            <div class="loading-box">加载中...</div>
+        </div>
+    </section>
+
+    <!-- 三个核心模块入口 -->
+    <section class="card">
+        <h2>核心功能模块</h2>
+        <div class="module-grid">
+            <a href="recommendation.html" class="module-card">
+                <h3>旅游推荐</h3>
+                <p>从 217 个目的地中按热度、评分、兴趣推荐 Top-K，支持关键词搜索与类别过滤。使用自实现 Top-K 堆、排序、查找算法。</p>
+            </a>
+            <a href="route_planning.html" class="module-card">
+                <h3>内部路线规划</h3>
+                <p>景区/校园内部道路图的最短路径规划，支持最短距离、最短时间、混合交通策略。基于自实现 Dijkstra 算法。</p>
+            </a>
+            <a href="nearby.html" class="module-card">
+                <h3>场所查询</h3>
+                <p>查询景区/校园内部附近服务设施（洗手间、商店、食堂等），按道路网络距离排序，不使用经纬度直线距离。</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- 算法亮点 -->
+    <section class="card">
+        <h2>核心算法</h2>
+        <div class="algo-detail">
+            <ul>
+                <li><strong>Top-K 堆</strong> — 小顶堆维护大小为 K，取 Top-K 最大元素，时间复杂度 O(N log K)</li>
+                <li><strong>自定义排序</strong> — 快速排序、归并排序、堆排序、多键稳定排序</li>
+                <li><strong>关键字查找</strong> — 线性查找 + 哈希索引，支持中文字串匹配</li>
+                <li><strong>邻接表图</strong> — 自定义 Graph 类，按 map_id 筛选构建</li>
+                <li><strong>Dijkstra 最短路</strong> — 4 种权函数（距离/时间/交通工具/混合）</li>
+                <li><strong>道路距离附近查询</strong> — 对每个设施计算 Dijkstra 道路最短路径距离</li>
+                <li><strong>多交通工具混合路径</strong> — 每条边自动选择最快交通工具（walk / bike / sightseeing_car）</li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>PathPal 路伴 &copy; 2025 数据结构课程设计 | 后端 Flask + 前端原生 HTML/CSS/JS + Leaflet</p>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

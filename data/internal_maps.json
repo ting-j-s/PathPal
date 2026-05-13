@@ -1,0 +1,42 @@
+[
+  {
+    "id": "MAP_CAMPUS_001",
+    "name": "校园标准模板",
+    "type": "campus",
+    "description": "适用于大学校园的内部地图模板，包含教学楼、宿舍、食堂、图书馆等",
+    "default_center_lat": 39.962,
+    "default_center_lng": 116.35,
+    "default_zoom": 16,
+    "supported_transports": [
+      "walk",
+      "bike"
+    ]
+  },
+  {
+    "id": "MAP_SCENIC_001",
+    "name": "景区标准模板",
+    "type": "attraction",
+    "description": "适用于景区/公园的内部地图模板，包含景点、游客中心、电瓶车路线等",
+    "default_center_lat": 39.9163,
+    "default_center_lng": 116.3972,
+    "default_zoom": 16,
+    "supported_transports": [
+      "walk",
+      "sightseeing_car"
+    ]
+  },
+  {
+    "id": "MAP_MIXED_001",
+    "name": "综合园区模板",
+    "type": "mixed",
+    "description": "适用于大型综合园区（如颐和园、圆明园），同时支持步行、自行车和电瓶车",
+    "default_center_lat": 39.999,
+    "default_center_lng": 116.275,
+    "default_zoom": 15,
+    "supported_transports": [
+      "walk",
+      "bike",
+      "sightseeing_car"
+    ]
+  }
+]

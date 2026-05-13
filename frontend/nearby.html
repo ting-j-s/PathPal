@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathPal — 场所查询</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <span class="brand">PathPal <small>路伴</small></span>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="recommendation.html">旅游推荐</a>
+        <a href="route_planning.html">路线规划</a>
+        <a href="nearby.html" class="active">场所查询</a>
+        <a href="indoor_navigation.html">室内导航 Demo</a>
+    </nav>
+</header>
+
+<div class="page-container">
+
+    <section class="page-hero">
+        <h1>景区/校园内部场所查询</h1>
+        <p>基于道路网络距离的附近服务设施查询 — 洗手间、商店、食堂、ATM 等</p>
+        <p style="margin-top:8px;"><span class="tag tag-warning">排序依据为道路网络最短路径距离，不是经纬度直线距离</span></p>
+    </section>
+
+    <!-- 功能说明 -->
+    <section class="card">
+        <h2>功能说明</h2>
+        <ul style="margin-left:18px; line-height:1.8;">
+            <li>用户进入景区/校园内部后，选择<strong>当前所在节点</strong>，查询附近服务设施</li>
+            <li>支持类别过滤、关键词搜索、半径过滤</li>
+            <li>距离排序基于<strong>内部道路图 Dijkstra 最短路径</strong></li>
+            <li><span class="tag tag-warning">不使用经纬度直线距离</span>作为最终排序依据</li>
+            <li>覆盖 12 个设施类别、52 个设施点</li>
+        </ul>
+    </section>
+
+    <!-- 输入区 -->
+    <section class="card">
+        <h2>查询条件</h2>
+
+        <div class="form-row">
+            <div class="form-group" style="min-width:250px;">
+                <label for="select-dest">目的地</label>
+                <select id="select-dest">
+                    <option value="">— 请先选择目的地 —</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group" style="min-width:200px;">
+                <label for="select-node">当前所在节点</label>
+                <select id="select-node">
+                    <option value="">— 请选择节点 —</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="input-radius">半径 (米，可选)</label>
+                <input type="number" id="input-radius" placeholder="例如: 1000" style="width:120px;" min="0">
+            </div>
+            <button id="btn-nearby">查询全部附近设施</button>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group" style="min-width:180px;">
+                <label for="select-category">按类别</label>
+                <select id="select-category">
+                    <option value="">— 加载中 —</option>
+                </select>
+            </div>
+            <button id="btn-category" class="secondary">按类别查询</button>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group" style="min-width:200px;">
+                <label for="input-keyword">关键词搜索</label>
+                <input type="text" id="input-keyword" placeholder="例如: 超市, 食堂" style="width:200px;">
+            </div>
+            <button id="btn-search" class="secondary">关键词搜索</button>
+        </div>
+    </section>
+
+    <!-- 地图区 -->
+    <section class="card">
+        <h2>地图展示</h2>
+        <div id="nearby-map" class="map-container"></div>
+    </section>
+
+    <!-- 结果区 -->
+    <section class="card">
+        <h2>查询结果</h2>
+        <div id="nearby-result"><p class="hint">请选择目的地和当前节点后点击查询</p></div>
+    </section>
+
+    <!-- 算法说明区 -->
+    <section class="card">
+        <h2>算法与数据结构说明</h2>
+        <div class="algo-detail">
+            <p><strong>数据结构：</strong>内部道路图邻接表 (Internal Graph Adjacency List)</p>
+            <p><strong>核心算法：</strong>Dijkstra — 对每个候选设施的 linked_node_id 计算道路最短路径距离</p>
+            <p><strong>排序：</strong>归并排序 (Merge Sort) — 按 road_distance 升序排列，稳定排序</p>
+            <p><strong>过滤：</strong>支持类别精确过滤 + 关键词匹配过滤 + 半径距离截断</p>
+            <p style="margin-top:8px;">
+                <span class="tag tag-warning">不使用经纬度直线距离</span>
+                作为最终排序依据。先通过 Dijkstra 计算从当前节点到每个设施对应节点的道路最短路径距离 (road_distance)，
+                再按此道路距离排序。
+            </p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>PathPal 路伴 &copy; 2025 数据结构课程设计</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/api.js"></script>
+<script src="js/map.js"></script>
+<script src="js/nearby.js"></script>
+</body>
+</html>
