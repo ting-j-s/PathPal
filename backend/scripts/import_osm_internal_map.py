@@ -35,8 +35,8 @@ IMPORT_CONFIGS = {
         "destination_id": "DEST_001",
         "destination_name": "北京邮电大学",
         "bbox": {
-            "lat_min": 39.9540, "lat_max": 39.9680,
-            "lng_min": 116.3490, "lng_max": 116.3640,
+            "lat_min": 39.9500, "lat_max": 39.9720,
+            "lng_min": 116.3440, "lng_max": 116.3690,
         },
         "default_zoom": 17,
         "supported_transports": ["walk", "bike"],
@@ -120,8 +120,8 @@ IMPORT_CONFIGS = {
         "destination_id": "DEST_032",
         "destination_name": "天坛公园",
         "bbox": {
-            "lat_min": 39.8660, "lat_max": 39.9010,
-            "lng_min": 116.3870, "lng_max": 116.4310,
+            "lat_min": 39.8600, "lat_max": 39.9070,
+            "lng_min": 116.3800, "lng_max": 116.4380,
         },
         "default_zoom": 16,
         "supported_transports": ["walk", "sightseeing_car"],
@@ -215,28 +215,8 @@ def node_in_bbox(n, bbox):
             bbox["lng_min"] - margin <= lon <= bbox["lng_max"] + margin)
 
 
-def query_overpass(bbox, highway_types):
-    """从 Overpass API 获取道路数据及命名节点（含独立 POI）。"""
-    # 构造 bbox 字符串: (south, west, north, east)
-    bbox_str = f"{bbox['lat_min']},{bbox['lng_min']},{bbox['lat_max']},{bbox['lng_max']}"
-
-    way_queries = "\n  ".join(
-        f'way["highway"="{ht}"]({bbox_str});' for ht in highway_types
-    )
-
-    # 同时获取道路 ways 和所有有名称的独立节点（POI）
-    # out body; >; out body; 保证节点的 tags 也被返回
-    query = (
-        f'[out:json][timeout:30];\n'
-        f'(\n'
-        f'  {way_queries}\n'
-        f'  node["name"]({bbox_str});\n'
-        f');\n'
-        f'out body;\n'
-        f'>;\n'
-        f'out body;'
-    )
-
+def _overpass_request(query, timeout=95):
+    """发送 Overpass API 请求并返回解析后的 JSON。"""
     req = urllib.request.Request(
         'https://overpass-api.de/api/interpreter',
         data=query.encode('utf-8'),
@@ -246,15 +226,84 @@ def query_overpass(bbox, highway_types):
             'Accept': 'application/json',
         }
     )
-
     ctx = ssl.create_default_context()
-    resp = urllib.request.urlopen(req, timeout=35, context=ctx)
-    result = json.loads(resp.read())
+    resp = urllib.request.urlopen(req, timeout=timeout, context=ctx)
+    return json.loads(resp.read())
 
-    ways = [e for e in result['elements'] if e['type'] == 'way']
-    nodes_dict = {e['id']: e for e in result['elements'] if e['type'] == 'node'}
 
-    return ways, nodes_dict
+def query_overpass(bbox, highway_types):
+    """从 Overpass API 获取道路、建筑及各类 POI 数据。
+    分多次查询以避免城市密集区域超时。
+    """
+    bbox_str = f"{bbox['lat_min']},{bbox['lng_min']},{bbox['lat_max']},{bbox['lng_max']}"
+
+    way_queries = "\n  ".join(
+        f'way["highway"="{ht}"]({bbox_str});' for ht in highway_types
+    )
+
+    # 查询 1: 道路 ways
+    query_roads = (
+        f'[out:json][timeout:90];\n'
+        f'(\n'
+        f'  {way_queries}\n'
+        f');\n'
+        f'out body;\n'
+        f'>;\n'
+        f'out body;'
+    )
+
+    # 查询 2: 建筑 ways
+    query_buildings = (
+        f'[out:json][timeout:90];\n'
+        f'(\n'
+        f'  way["building"]({bbox_str});\n'
+        f');\n'
+        f'out body;\n'
+        f'>;\n'
+        f'out body;'
+    )
+
+    # 查询 3: POI 节点（命名 + 各类设施）
+    query_pois = (
+        f'[out:json][timeout:90];\n'
+        f'(\n'
+        f'  node["name"]({bbox_str});\n'
+        f'  node["amenity"]({bbox_str});\n'
+        f'  node["shop"]({bbox_str});\n'
+        f'  node["tourism"]({bbox_str});\n'
+        f'  node["leisure"]({bbox_str});\n'
+        f'  node["office"]({bbox_str});\n'
+        f');\n'
+        f'out body;'
+    )
+
+    # 发送查询
+    print(f"    查询 1/3: 道路...")
+    result_roads = _overpass_request(query_roads, timeout=95)
+    print(f"    查询 2/3: 建筑...")
+    result_buildings = _overpass_request(query_buildings, timeout=95)
+    print(f"    查询 3/3: POI 节点...")
+    result_pois = _overpass_request(query_pois, timeout=95)
+
+    # 合并结果
+    all_elements = result_roads['elements'] + result_buildings['elements'] + result_pois['elements']
+
+    road_ways = [e for e in all_elements if e['type'] == 'way' and 'highway' in e.get('tags', {})]
+    building_ways = [e for e in all_elements if e['type'] == 'way' and 'building' in e.get('tags', {})]
+    nodes_dict = {}
+    for e in all_elements:
+        if e['type'] == 'node':
+            eid = e['id']
+            if eid in nodes_dict:
+                existing = nodes_dict[eid]
+                if 'tags' in e and 'tags' not in existing:
+                    existing['tags'] = e['tags']
+                elif 'tags' in e and 'tags' in existing:
+                    existing['tags'].update(e['tags'])
+            else:
+                nodes_dict[eid] = e
+
+    return road_ways, building_ways, nodes_dict
 
 
 def find_nearest_node(poi_lat, poi_lng, node_list):
@@ -344,13 +393,17 @@ def process_osm_data(ways, nodes_dict, map_id, config):
 
     # 收集独立命名节点（未在任何 way 中使用）
     standalone_named = {}
+    standalone_tagged = {}  # amenity/shop/tourism/leisure/office 节点（可无名）
     for nid, nd in nodes_dict.items():
         if nid not in used_nodes and nid in bbox_nodes:
             tags = nd.get("tags", {})
             name = tags.get("name", "") or tags.get("name:zh", "")
             if name:
                 standalone_named[nid] = nd
+            elif any(k in tags for k in ("amenity", "shop", "tourism", "leisure", "office")):
+                standalone_tagged[nid] = nd
     print(f"    Standalone named POI nodes: {len(standalone_named)}")
+    print(f"    Standalone tagged (unnamed) nodes: {len(standalone_tagged)}")
 
     # OSM 节点类型推断
     def _osm_node_type(tags):
@@ -468,16 +521,17 @@ def process_osm_data(ways, nodes_dict, map_id, config):
 
     print(f"    PathPal edges: {len(new_edges)}")
 
-    return new_nodes, new_edges, node_counter, edge_counter, standalone_named
+    return new_nodes, new_edges, node_counter, edge_counter, standalone_named, standalone_tagged
 
 
-def create_named_node_pois(standalone_named, road_nodes, nodes_dict, map_id, config):
+def create_named_node_pois(standalone_named, road_nodes, nodes_dict, map_id, config,
+                           standalone_tagged=None):
     """
-    为未在任何 way 上的 OSM 命名节点创建 POI 节点和连接边。
-    standalone_named: {osm_nid: osm_node_element}
-    road_nodes: 已有的 PathPal 道路节点列表
+    为未在任何 way 上的 OSM 节点创建 POI 节点和连接边。
+    standalone_named: {osm_nid: osm_node_element} 有名称的节点
+    standalone_tagged: {osm_nid: osm_node_element} 有 amenity/shop 等标签但无名称
     """
-    if not standalone_named:
+    if not standalone_named and not standalone_tagged:
         return [], []
 
     node_prefix = config["node_prefix"]
@@ -487,9 +541,69 @@ def create_named_node_pois(standalone_named, road_nodes, nodes_dict, map_id, con
 
     poi_nodes = []
     poi_edges = []
-    node_idx = 200000  # high offset to avoid ID collision
+    node_idx = 200000
+    all_existing_names = {n["name"] for n in road_nodes}
 
-    for osm_nid, nd in standalone_named.items():
+    def _tag_to_name(tags):
+        """为无名但有标签的节点生成名称。"""
+        amenity = tags.get("amenity", "")
+        shop = tags.get("shop", "")
+        tourism = tags.get("tourism", "")
+        leisure = tags.get("leisure", "")
+        office = tags.get("office", "")
+        if amenity:
+            return f"{amenity}_{node_idx}"
+        if shop:
+            return f"{shop}_{node_idx}"
+        if tourism:
+            return f"{tourism}_{node_idx}"
+        if leisure:
+            return f"{leisure}_{node_idx}"
+        if office:
+            return f"{office}_{node_idx}"
+        return None
+
+    def _node_type_and_subtype(tags):
+        if tags.get("barrier") == "gate":
+            return "gate", "gate"
+        if tags.get("tourism") in ("artwork", "attraction", "museum", "gallery"):
+            return "scenic_spot", "attraction"
+        if tags.get("historic"):
+            return "scenic_spot", "landmark"
+        if tags.get("amenity") in ("restaurant", "cafe", "fast_food", "bar", "pub", "food_court"):
+            return "building", "restaurant"
+        if tags.get("amenity") in ("bank", "post_office", "hospital", "pharmacy", "clinic", "atm"):
+            return "building", "service"
+        if tags.get("amenity") in ("library", "university", "college", "school"):
+            return "building", "education"
+        if tags.get("amenity") in ("parking", "bicycle_parking"):
+            return "building", "parking"
+        if tags.get("amenity") == "place_of_worship":
+            return "building", "religious"
+        if tags.get("amenity") in ("toilets", "toilet"):
+            return "building", "toilet"
+        if tags.get("shop"):
+            return "building", "shop"
+        if tags.get("office"):
+            return "building", "office"
+        if tags.get("leisure"):
+            return "building", "leisure"
+        if tags.get("tourism"):
+            return "scenic_spot", "attraction"
+        if tags.get("amenity"):
+            return "building", "amenity"
+        return "building", "poi"
+
+    # 合并所有待处理节点
+    all_standalone = {}
+    for nid, nd in standalone_named.items():
+        all_standalone[nid] = nd
+    if standalone_tagged:
+        for nid, nd in standalone_tagged.items():
+            if nid not in all_standalone:
+                all_standalone[nid] = nd
+
+    for osm_nid, nd in all_standalone.items():
         tags = nd.get("tags", {})
         name = tags.get("name", "") or tags.get("name:zh", "")
 
@@ -500,28 +614,27 @@ def create_named_node_pois(standalone_named, road_nodes, nodes_dict, map_id, con
             continue
         if tags.get("railway") in ("stop", "subway_entrance"):
             continue
-        if tags.get("barrier") in ("gate",) and not name:
+        if tags.get("barrier") in ("gate", "bollard") and not name:
             continue
 
         lat = nd.get("lat", 0)
         lon = nd.get("lon", 0)
 
-        # 类型推断
-        if tags.get("barrier") == "gate":
-            ntype, subtype = "gate", "gate"
-        elif tags.get("tourism") == "artwork":
-            ntype, subtype = "scenic_spot", "artwork"
-        elif tags.get("historic") == "memorial":
-            ntype, subtype = "scenic_spot", "landmark"
-        elif tags.get("tourism") == "attraction":
-            ntype, subtype = "scenic_spot", "attraction"
-        elif tags.get("amenity") or tags.get("shop") or tags.get("office"):
-            ntype, subtype = "building", "poi"
-        elif tags.get("leisure") or tags.get("man_made") or tags.get("tourism"):
-            ntype, subtype = "building", "poi"
-        else:
-            # 其他无名节点不做 POI
+        ntype, subtype = _node_type_and_subtype(tags)
+
+        # 过滤：跳过纯 bench / waste_basket / lamp 等微小设施（除非 bbox 内且靠近道路）
+        if not name and tags.get("amenity") in ("bench", "waste_basket", "waste_disposal",
+                                                  "recycling", "lamp_post", "street_lamp",
+                                                  "fountain", "drinking_water"):
             continue
+        if not name and tags.get("man_made") in ("manhole", "drain", "utility_pole"):
+            continue
+
+        # 无名称节点生成名称
+        if not name:
+            name = _tag_to_name(tags)
+            if not name:
+                continue
 
         # 找到最近的道路节点
         nearest, min_dist = None, float('inf')
@@ -531,10 +644,15 @@ def create_named_node_pois(standalone_named, road_nodes, nodes_dict, map_id, con
                 min_dist = d
                 nearest = rn
 
-        if nearest is None or min_dist > 500:
+        max_dist = 300 if name and not name.startswith(("bench", "waste")) else 200
+        if nearest is None or min_dist > max_dist:
             continue
 
         # 创建 POI 节点
+        if name in all_existing_names:
+            name = f"{name}_{node_idx}"
+        all_existing_names.add(name)
+
         poi_id = f"{node_prefix}_POI_{node_idx:06d}"
         node_idx += 1
         poi_node = {
@@ -576,7 +694,168 @@ def create_named_node_pois(standalone_named, road_nodes, nodes_dict, map_id, con
         poi_edges.append(edge_b)
         node_idx += 1
 
-    print(f"    Named OSM POI nodes: {len(poi_nodes)}, connection edges: {len(poi_edges)}")
+    print(f"    OSM POI nodes: {len(poi_nodes)}, connection edges: {len(poi_edges)}")
+    return poi_nodes, poi_edges
+
+
+def process_building_ways(building_ways, nodes_dict, road_nodes, map_id, config):
+    """
+    将 OSM 建筑轮廓转换为 POI 节点（取中心点）。
+    只保留有名称或有意义标签的建筑。
+    """
+    if not building_ways:
+        return [], []
+
+    bbox = config["bbox"]
+    node_prefix = config["node_prefix"]
+    edge_prefix = config["edge_prefix"]
+    transport_default = config["transport_default"]
+    ideal_speed_walk = config["ideal_speed_walk"]
+
+    poi_nodes = []
+    poi_edges = []
+    node_idx = 300000
+
+    def _building_name_and_type(tags):
+        """从 building 标签提取名称和类型。"""
+        name = tags.get("name", "") or tags.get("name:zh", "") or tags.get("official_name", "")
+        if not name:
+            name = tags.get("operator", "")
+
+        # 确定类型
+        if tags.get("tourism") in ("museum", "attraction", "artwork", "gallery"):
+            ntype, subtype = "scenic_spot", "attraction"
+        elif tags.get("historic"):
+            ntype, subtype = "scenic_spot", "landmark"
+        elif tags.get("amenity") in ("university", "college", "school"):
+            ntype, subtype = "building", "education"
+        elif tags.get("amenity") == "library":
+            ntype, subtype = "building", "library"
+        elif tags.get("amenity") in ("restaurant", "cafe", "fast_food", "bar", "pub"):
+            ntype, subtype = "building", "restaurant"
+        elif tags.get("amenity") in ("bank", "post_office", "hospital", "pharmacy", "clinic"):
+            ntype, subtype = "building", "service"
+        elif tags.get("shop"):
+            ntype, subtype = "building", "shop"
+        elif tags.get("office"):
+            ntype, subtype = "building", "office"
+        elif tags.get("leisure") in ("sports_centre", "fitness_centre", "stadium"):
+            ntype, subtype = "building", "sports"
+        elif tags.get("building") in ("dormitory", "dorm"):
+            ntype, subtype = "building", "dormitory"
+        elif tags.get("building") in ("civic", "government", "public"):
+            ntype, subtype = "building", "civic"
+        elif tags.get("amenity") == "place_of_worship":
+            ntype, subtype = "building", "religious"
+        elif tags.get("amenity") == "parking":
+            ntype, subtype = "building", "parking"
+        elif name:
+            ntype, subtype = "building", "building"
+        else:
+            ntype, subtype = None, None  # 无名称且无意义标签 → 跳过
+
+        return name, ntype, subtype
+
+    for bw in building_ways:
+        tags = bw.get("tags", {})
+        name, ntype, subtype = _building_name_and_type(tags)
+        if not name and not ntype:
+            continue  # 跳过无名且无意义的建筑
+
+        w_nodes = bw.get("nodes", [])
+        if len(w_nodes) < 2:
+            continue
+
+        # 计算建筑中心点
+        lats, lngs = [], []
+        for nid in w_nodes:
+            nd = nodes_dict.get(nid)
+            if nd:
+                lats.append(nd["lat"])
+                lngs.append(nd["lon"])
+
+        if len(lats) < 2:
+            continue
+
+        center_lat = round(sum(lats) / len(lats), 7)
+        center_lng = round(sum(lngs) / len(lngs), 7)
+
+        # 检查是否在 bbox 内
+        margin = 0.001
+        if not (bbox["lat_min"] - margin <= center_lat <= bbox["lat_max"] + margin and
+                bbox["lng_min"] - margin <= center_lng <= bbox["lng_max"] + margin):
+            continue
+
+        # 找到最近的道路节点
+        nearest, min_dist = None, float('inf')
+        for rn in road_nodes:
+            d = haversine_distance(center_lat, center_lng, rn["latitude"], rn["longitude"])
+            if d < min_dist:
+                min_dist = d
+                nearest = rn
+
+        if nearest is None or min_dist > 800:
+            continue
+
+        # 生成名称
+        if not name:
+            building_type = tags.get("building", "building")
+            amenity = tags.get("amenity", "")
+            shop = tags.get("shop", "")
+            if amenity:
+                name = f"{amenity}_{node_idx}"
+            elif shop:
+                name = f"{shop}_{node_idx}"
+            else:
+                name = f"{building_type}_{node_idx}"
+
+        # 避免重复名称
+        existing_names = {n["name"] for n in road_nodes} | {n["name"] for n in poi_nodes}
+        if name in existing_names:
+            name = f"{name}_{node_idx}"
+
+        poi_id = f"{node_prefix}_BLDG_{node_idx:06d}"
+        node_idx += 1
+        poi_node = {
+            "id": poi_id,
+            "map_id": map_id,
+            "name": name,
+            "type": ntype,
+            "subtype": subtype,
+            "latitude": center_lat,
+            "longitude": center_lng,
+        }
+        poi_nodes.append(poi_node)
+
+        # 创建双向连接边
+        dist = max(min_dist, 0.1)
+        edge_a = {
+            "id": f"{edge_prefix}_BLDG_{node_idx:06d}",
+            "map_id": map_id,
+            "from": poi_id,
+            "to": nearest["id"],
+            "name": "",
+            "distance": round(dist, 1),
+            "congestion": 0.9,
+            "ideal_speed_walk": ideal_speed_walk / 60.0,
+            "ideal_speed_bike": 0,
+            "ideal_speed_sightseeing_car": 0,
+            "allowed_transport": list(transport_default),
+            "road_type": "path",
+            "geometry": [[center_lat, center_lng], [nearest["latitude"], nearest["longitude"]]],
+        }
+        poi_edges.append(edge_a)
+        node_idx += 1
+
+        edge_b = dict(edge_a)
+        edge_b["id"] = f"{edge_prefix}_BLDG_{node_idx:06d}"
+        edge_b["from"] = nearest["id"]
+        edge_b["to"] = poi_id
+        edge_b["geometry"] = [[nearest["latitude"], nearest["longitude"]], [center_lat, center_lng]]
+        poi_edges.append(edge_b)
+        node_idx += 1
+
+    print(f"    Building POI nodes: {len(poi_nodes)}, connection edges: {len(poi_edges)}")
     return poi_nodes, poi_edges
 
 
@@ -730,15 +1009,17 @@ def import_map(map_id, config, existing_nodes, existing_edges, existing_facs, ex
     print(f"    bbox: {bbox}")
     print(f"    highway types: {highway_types}")
     try:
-        ways, nodes_dict = query_overpass(bbox, highway_types)
-        print(f"    Got {len(ways)} ways, {len(nodes_dict)} nodes from OSM")
+        road_ways, building_ways, nodes_dict = query_overpass(bbox, highway_types)
+        print(f"    Got {len(road_ways)} road ways, {len(building_ways)} building ways, {len(nodes_dict)} nodes from OSM")
     except Exception as e:
         print(f"  FAILED: Overpass query error: {e}")
         return False, str(e)
 
-    # 2. 转换为 PathPal 数据
-    print(f"  转换数据...")
-    new_nodes, new_edges, nc, ec, standalone_named = process_osm_data(ways, nodes_dict, map_id, config)
+    # 2. 转换道路数据为 PathPal 图
+    print(f"  转换道路数据...")
+    new_nodes, new_edges, nc, ec, standalone_named, standalone_tagged = process_osm_data(
+        road_ways, nodes_dict, map_id, config
+    )
 
     if len(new_nodes) < 20:
         msg = f"OSM nodes too few: {len(new_nodes)} < 20 required"
@@ -752,21 +1033,29 @@ def import_map(map_id, config, existing_nodes, existing_edges, existing_facs, ex
 
     # 3. 添加语义 POI 节点
     print(f"  创建语义 POI 节点...")
-    all_nodes = list(new_nodes)  # copy for POI creation
+    all_nodes = list(new_nodes)
     poi_nodes_sem, poi_edges_sem = create_semantic_connections(
         config["semantic_pois"], all_nodes, map_id, config
     )
     all_nodes.extend(poi_nodes_sem)
 
-    # 3.5 为 OSM 独立命名节点创建 POI
-    print(f"  创建 OSM 命名节点 POI...")
+    # 4. 为 OSM 建筑轮廓创建 POI
+    print(f"  处理 OSM 建筑数据...")
+    poi_nodes_bldg, poi_edges_bldg = process_building_ways(
+        building_ways, nodes_dict, all_nodes, map_id, config
+    )
+    all_nodes.extend(poi_nodes_bldg)
+
+    # 5. 为 OSM 独立节点（命名+有标签）创建 POI
+    print(f"  创建 OSM 节点 POI...")
     poi_nodes_osm, poi_edges_osm = create_named_node_pois(
-        standalone_named, all_nodes, nodes_dict, map_id, config
+        standalone_named, all_nodes, nodes_dict, map_id, config,
+        standalone_tagged=standalone_tagged
     )
     all_nodes.extend(poi_nodes_osm)
 
-    poi_nodes = poi_nodes_sem + poi_nodes_osm
-    poi_edges = poi_edges_sem + poi_edges_osm
+    poi_nodes = poi_nodes_sem + poi_nodes_bldg + poi_nodes_osm
+    poi_edges = poi_edges_sem + poi_edges_bldg + poi_edges_osm
     all_edges = new_edges + poi_edges
 
     # 4. 创建设施

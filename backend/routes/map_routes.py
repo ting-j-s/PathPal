@@ -12,6 +12,7 @@ from backend.services.data_loader import (
     get_destination_by_id,
     get_internal_map_for_destination,
     get_map_id_by_destination_id,
+    _invalidate_cache,
 )
 
 
@@ -66,6 +67,7 @@ def get_internal_map(map_id):
 @map_bp.route("/destinations/<destination_id>/map-layers", methods=["GET"])
 def get_destination_map_layers(destination_id):
     """返回 destination 对应的内部地图的完整图层数据（节点+边+设施）。"""
+    _invalidate_cache()
     try:
         dest = get_destination_by_id(destination_id)
         map_id = dest["internal_map_id"]

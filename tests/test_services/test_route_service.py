@@ -81,25 +81,24 @@ class TestRouteService:
             assert "time" in seg
 
     def test_transport_bike_on_campus(self, service, params):
-        from backend.algorithms.dijkstra import dijkstra_transport_time
+        from backend.algorithms.dijkstra import dijkstra_shortest_time
         from backend.services.data_loader import load_graph_for_destination
         g = load_graph_for_destination(params["campus_id"])
         valid = params["valid_nodes"]
         start, end = valid[0], valid[1]
-        # 扩大搜索范围以应对大图（4× bbox）
         found = False
         for a in valid[:30]:
             if found:
                 break
             for b in valid[1:30]:
                 if a != b:
-                    r = dijkstra_transport_time(g, a, b, "bike")
+                    r = dijkstra_shortest_time(g, a, b, "bike")
                     if r["reachable"]:
                         start, end, found = a, b, True
                         break
         if not found:
             pytest.skip("No bike-reachable pair found in first 30 valid nodes")
-        result = service.plan_transport_time(
+        result = service.plan_shortest_time(
             params["campus_id"], start, end, transport="bike"
         )
         assert result["reachable"] is True
@@ -108,20 +107,20 @@ class TestRouteService:
 
     def test_transport_sightseeing_car_banned_on_campus(self, service, params):
         with pytest.raises(ValueError, match="校园不支持"):
-            service.plan_transport_time(
+            service.plan_shortest_time(
                 params["campus_id"], params["campus_start"], params["campus_end"],
                 transport="sightseeing_car"
             )
 
     def test_transport_bike_banned_on_attraction(self, service, params):
         with pytest.raises(ValueError, match="景区不支持"):
-            service.plan_transport_time(
+            service.plan_shortest_time(
                 params["attraction_id"], params["attraction_start"], params["attraction_end"],
                 transport="bike"
             )
 
     def test_transport_sightseeing_car_on_attraction(self, service, params):
-        result = service.plan_transport_time(
+        result = service.plan_shortest_time(
             params["attraction_id"], params["attraction_start"], params["attraction_end"],
             transport="walk"
         )
@@ -195,8 +194,8 @@ class TestRouteService:
             params["campus_id"], params["campus_start"], params["campus_end"]
         )
         for pt in result["route_geometry"]:
-            assert 39.952 <= pt[0] <= 39.970, f"lat {pt[0]} out of bounds"
-            assert 116.347 <= pt[1] <= 116.366, f"lng {pt[1]} out of bounds"
+            assert 39.949 <= pt[0] <= 39.973, f"lat {pt[0]} out of bounds"
+            assert 116.343 <= pt[1] <= 116.370, f"lng {pt[1]} out of bounds"
 
     def test_segments_have_geometry(self, service, params):
         """segments 中每段应包含 geometry。"""

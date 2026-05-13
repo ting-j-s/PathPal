@@ -75,8 +75,8 @@ class TestMapMetadata:
         for n in nodes:
             lat = n.get("latitude", 0)
             lng = n.get("longitude", 0)
-            assert 39.952 <= lat <= 39.970, f"{n['id']}: lat {lat} outside BUPT range"
-            assert 116.347 <= lng <= 116.366, f"{n['id']}: lng {lng} outside BUPT range"
+            assert 39.949 <= lat <= 39.973, f"{n['id']}: lat {lat} outside BUPT range"
+            assert 116.343 <= lng <= 116.370, f"{n['id']}: lng {lng} outside BUPT range"
 
     def test_scenic_coordinate_bounds(self):
         """MAP_SCENIC_REAL 所有节点坐标应在天坛范围内。"""
@@ -85,8 +85,8 @@ class TestMapMetadata:
         for n in nodes:
             lat = n.get("latitude", 0)
             lng = n.get("longitude", 0)
-            assert 39.864 <= lat <= 39.903, f"{n['id']}: lat {lat} outside SCENIC range"
-            assert 116.385 <= lng <= 116.433, f"{n['id']}: lng {lng} outside SCENIC range"
+            assert 39.859 <= lat <= 39.908, f"{n['id']}: lat {lat} outside SCENIC range"
+            assert 116.379 <= lng <= 116.439, f"{n['id']}: lng {lng} outside SCENIC range"
 
     def test_no_facilities_at_zero_zero(self):
         """任何设施不应有 (0,0) 坐标。"""

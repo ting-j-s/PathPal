@@ -141,15 +141,7 @@ GET /api/route/shortest-time?destination_id=DEST_001&start=NODE_CAM_001&end=NODE
 | bike | 支持 | 禁止（400） |
 | sightseeing_car | 禁止（400） | 支持 |
 
-### 2.4 交通工具时间
-
-```
-GET /api/route/transport-time?destination_id=DEST_001&start=NODE_CAM_001&end=NODE_CAM_004&transport=bike
-```
-
-同 shortest-time，语义化接口。
-
-### 2.5 混合交通时间
+### 2.4 混合交通时间
 
 ```
 GET /api/route/mixed-time?destination_id=DEST_001&start=NODE_CAM_001&end=NODE_CAM_004

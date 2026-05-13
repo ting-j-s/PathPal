@@ -348,8 +348,8 @@ def validate_coordinate_bounds(nodes, facilities, maps, v: Validator):
     """校验真实地图坐标范围，抽象模板不要求真实经纬度。"""
     print("\n--- Coordinate Bounds ---")
 
-    REF_BUPT = {"lat": (39.9520, 39.9700), "lng": (116.3470, 116.3660)}
-    REF_SCENIC = {"lat": (39.8640, 39.9030), "lng": (116.3850, 116.4330)}
+    REF_BUPT = {"lat": (39.9490, 39.9730), "lng": (116.3430, 116.3700)}
+    REF_SCENIC = {"lat": (39.8590, 39.9080), "lng": (116.3790, 116.4390)}
 
     nodes_by_map = defaultdict(list)
     for n in nodes:

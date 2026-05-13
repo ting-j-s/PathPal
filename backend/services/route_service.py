@@ -6,7 +6,6 @@ from backend.services import data_loader
 from backend.algorithms.dijkstra import (
     dijkstra_shortest_distance,
     dijkstra_shortest_time,
-    dijkstra_transport_time,
     dijkstra_mixed_time,
     multi_point_route,
     extract_route_geometry,
@@ -72,10 +71,6 @@ class RouteService:
             f"time = distance / (congestion × ideal_speed_{transport})",
             result,
         )
-
-    def plan_transport_time(self, destination_id, start, end, transport):
-        """交通工具最短时间（语义化接口）。"""
-        return self.plan_shortest_time(destination_id, start, end, transport)
 
     def plan_mixed_time(self, destination_id, start, end):
         """混合交通最短时间。"""

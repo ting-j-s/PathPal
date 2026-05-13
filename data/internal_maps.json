@@ -72,15 +72,15 @@
     "is_real_map": true,
     "show_tile": true,
     "center": [
-      39.961057,
-      116.356482
+      39.960991,
+      116.356503
     ],
     "default_zoom": 17,
     "supported_transports": [
       "walk",
       "bike"
     ],
-    "tile_note": "该地图基于 OpenStreetMap 矢量道路数据构建，Dijkstra 在导入的 OSM 内部道路图上运行。1746 节点，3943 边。",
+    "tile_note": "该地图基于 OpenStreetMap 矢量道路数据构建，Dijkstra 在导入的 OSM 内部道路图上运行。3190 节点，6895 边。",
     "semi_real_map": false
   },
   {
@@ -92,15 +92,15 @@
     "is_real_map": true,
     "show_tile": true,
     "center": [
-      39.883496,
-      116.409021
+      39.883515,
+      116.408992
     ],
     "default_zoom": 16,
     "supported_transports": [
       "walk",
       "sightseeing_car"
     ],
-    "tile_note": "该地图基于 OpenStreetMap 矢量道路数据构建，Dijkstra 在导入的 OSM 内部道路图上运行。5316 节点，11540 边。",
+    "tile_note": "该地图基于 OpenStreetMap 矢量道路数据构建，Dijkstra 在导入的 OSM 内部道路图上运行。8706 节点，18719 边。",
     "semi_real_map": false
   }
 ]

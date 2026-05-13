@@ -187,7 +187,6 @@ route_planning.js → GET /api/destinations
                     GET /api/route/nodes
                     GET /api/route/shortest-distance
                     GET /api/route/shortest-time
-                    GET /api/route/transport-time
                     GET /api/route/mixed-time
                     POST /api/route/multi-point
 

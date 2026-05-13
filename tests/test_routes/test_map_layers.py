@@ -66,8 +66,8 @@ class TestMapLayers:
         for n in data["nodes"]:
             lat = n.get("latitude", 0)
             lng = n.get("longitude", 0)
-            assert 39.952 <= lat <= 39.970, f"{n['id']}: lat {lat} out of BUPT range"
-            assert 116.347 <= lng <= 116.366, f"{n['id']}: lng {lng} out of BUPT range"
+            assert 39.949 <= lat <= 39.973, f"{n['id']}: lat {lat} out of BUPT range"
+            assert 116.343 <= lng <= 116.370, f"{n['id']}: lng {lng} out of BUPT range"
 
     def test_map_layers_scenic_nodes_in_bounds(self, client):
         """MAP_SCENIC_REAL 节点坐标应在天坛范围内。"""
@@ -76,8 +76,8 @@ class TestMapLayers:
         for n in data["nodes"]:
             lat = n.get("latitude", 0)
             lng = n.get("longitude", 0)
-            assert 39.864 <= lat <= 39.903, f"{n['id']}: lat {lat} out of SCENIC range"
-            assert 116.385 <= lng <= 116.433, f"{n['id']}: lng {lng} out of SCENIC range"
+            assert 39.859 <= lat <= 39.908, f"{n['id']}: lat {lat} out of SCENIC range"
+            assert 116.379 <= lng <= 116.439, f"{n['id']}: lng {lng} out of SCENIC range"
 
     def test_map_layers_edge_nodes_exist(self, client):
         """map-layers 中所有边的 from/to 节点都应存在。"""

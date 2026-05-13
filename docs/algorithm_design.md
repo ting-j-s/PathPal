@@ -212,7 +212,6 @@ weight_func(edge) → {
 |------|------|------|
 | `dijkstra_shortest_distance(graph, start, end)` | `distance` | 最短距离，time 用 walk 估算 |
 | `dijkstra_shortest_time(graph, start, end, transport)` | `time` | 指定交通工具最短时间 |
-| `dijkstra_transport_time(graph, start, end, transport)` | `time` | 同上，语义化接口 |
 | `dijkstra_mixed_time(graph, start, end, destination_type)` | 每边自动选最快 | 混合交通时间最短 |
 
 ### 5.5 multi_point_route(graph, start, targets, strategy, destination_type)

@@ -47,20 +47,6 @@ def shortest_time():
         return jsonify({"error": str(e), "type": "ValueError"}), 400
 
 
-@route_bp.route("/route/transport-time", methods=["GET"])
-def transport_time():
-    destination_id = request.args.get("destination_id")
-    start = request.args.get("start")
-    end = request.args.get("end")
-    transport = request.args.get("transport", "walk")
-    if not all([destination_id, start, end]):
-        return jsonify({"error": "destination_id, start, end are required", "type": "ValueError"}), 400
-    try:
-        return jsonify(_service.plan_transport_time(destination_id, start, end, transport))
-    except ValueError as e:
-        return jsonify({"error": str(e), "type": "ValueError"}), 400
-
-
 @route_bp.route("/route/mixed-time", methods=["GET"])
 def mixed_time():
     destination_id = request.args.get("destination_id")

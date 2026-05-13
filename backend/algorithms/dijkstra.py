@@ -4,7 +4,6 @@ PathPal Dijkstra 最短路径算法（自行实现，不依赖 networkx）
 支持多种权函数：
 - shortest_distance: 边权 = distance
 - shortest_time: 边权 = time (指定交通工具)
-- transport_time: 指定交通工具时间
 - mixed_time: 每条边自动选最快交通工具
 """
 import math
@@ -268,11 +267,6 @@ def _make_weight_time(transport):
 def dijkstra_shortest_time(graph, start, end, transport="walk"):
     """边权 = 指定交通工具的 time。不可通行的边跳过。"""
     return dijkstra(graph, start, end, _make_weight_time(transport))
-
-
-def dijkstra_transport_time(graph, start, end, transport):
-    """语义化接口：walk / bike / sightseeing_car。"""
-    return dijkstra_shortest_time(graph, start, end, transport)
 
 
 # ============================================================

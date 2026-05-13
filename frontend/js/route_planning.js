@@ -12,6 +12,7 @@
     var mapState = null;
     var nodesMap = {}; // nodeId -> {id, name, latitude, longitude, ...}
     var currentMapMeta = null;
+    var currentDestType = null;
     var currentEdges = [];
     var currentFacilities = [];
 
@@ -312,7 +313,7 @@
 
     function updateTransportHint(destId) {
         var hintEl = document.getElementById("transport-hint");
-        if (!hintEl) return;
+        var transportSelect = document.getElementById("select-transport");
 
         API.loadDestinations({ limit: 217 })
             .then(function (data) {
@@ -326,6 +327,25 @@
                 }
                 if (!found) return;
 
+                currentDestType = found.type;
+
+                // 根据目的地类型过滤交通工具选项
+                var allOptions = [
+                    { value: "walk", label: "步行 walk", types: ["campus", "attraction"] },
+                    { value: "bike", label: "自行车 bike", types: ["campus"] },
+                    { value: "sightseeing_car", label: "电瓶车 sightseeing_car", types: ["attraction"] }
+                ];
+                var allowed = allOptions.filter(function (opt) {
+                    return opt.types.indexOf(found.type) !== -1;
+                });
+
+                transportSelect.innerHTML = "";
+                allowed.forEach(function (opt) {
+                    transportSelect.innerHTML +=
+                        '<option value="' + API.escapeHtml(opt.value) + '">' +
+                        API.escapeHtml(opt.label) + "</option>";
+                });
+
                 if (found.type === "campus") {
                     hintEl.innerHTML =
                         '<span class="tag tag-campus">校园</span> 支持: walk / bike | <span class="tag tag-warning">不支持 sightseeing_car</span>';
@@ -336,10 +356,20 @@
                     hintEl.innerHTML =
                         '<span class="tag tag-info">混合</span> 支持: walk / bike / sightseeing_car';
                 }
+
+                updateTransportVisibility();
             })
             .catch(function () {
                 hintEl.innerHTML = "";
             });
+    }
+
+    function updateTransportVisibility() {
+        var strategy = getSelectVal("select-strategy");
+        var group = document.getElementById("transport-group");
+        if (!group) return;
+        // 只有 shortest-time 需要指定交通工具
+        group.style.display = (strategy === "shortest-time") ? "" : "none";
     }
 
     function planRoute() {
@@ -361,9 +391,6 @@
             endpoint = "/route/shortest-distance";
         } else if (strategy === "shortest-time") {
             endpoint = "/route/shortest-time";
-            params.transport = transport;
-        } else if (strategy === "transport-time") {
-            endpoint = "/route/transport-time";
             params.transport = transport;
         } else if (strategy === "mixed-time") {
             endpoint = "/route/mixed-time";
@@ -429,8 +456,10 @@
         loadDestinations();
 
         document.getElementById("select-dest").addEventListener("change", onDestinationChange);
+        document.getElementById("select-strategy").addEventListener("change", updateTransportVisibility);
         document.getElementById("btn-plan").addEventListener("click", planRoute);
         document.getElementById("btn-multi-plan").addEventListener("click", planMultiPoint);
+        updateTransportVisibility();
     }
 
     if (document.readyState === "loading") {

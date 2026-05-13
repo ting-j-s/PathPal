@@ -120,7 +120,7 @@ pytest tests/ -q
 - 类别过滤：category 精确匹配
 
 ### 路线服务 (RouteService)
-- 4 种策略：shortest_distance / shortest_time / transport_time / mixed_time
+- 3 种策略：shortest_distance / shortest_time / mixed_time
 - 交通工具校验：campus 拒绝 sightseeing_car，attraction 拒绝 bike
 - 多点路线：依次贪心，路径连接
 - 路段详情：含 congestion / ideal_speed / real_speed / time

@@ -6,7 +6,6 @@ from backend.algorithms.graph import load_graph_from_data
 from backend.algorithms.dijkstra import (
     dijkstra_shortest_distance,
     dijkstra_shortest_time,
-    dijkstra_transport_time,
     dijkstra_mixed_time,
     multi_point_route,
     calculate_edge_time,
@@ -139,10 +138,10 @@ class TestDijkstraRealData:
             assert "time" in seg
             assert seg["time"] > 0
 
-    # --- transport_time ---
+    # --- shortest_time bike / sightseeing_car ---
     def test_bike_in_campus(self):
         s, e = self._get_two_nodes(self.campus)
-        result = dijkstra_transport_time(self.campus, s, e, transport="bike")
+        result = dijkstra_shortest_time(self.campus, s, e, transport="bike")
         assert result["reachable"] is True
         # bike should be faster than walk on edges that allow both
         # at least some segments should use bike
@@ -151,7 +150,7 @@ class TestDijkstraRealData:
 
     def test_sightseeing_car_in_scenic(self):
         s, e = self._get_two_nodes(self.scenic)
-        result = dijkstra_transport_time(self.scenic, s, e, transport="sightseeing_car")
+        result = dijkstra_shortest_time(self.scenic, s, e, transport="sightseeing_car")
         # sightseeing may or may not reach all nodes; just check it runs
         assert "reachable" in result
 

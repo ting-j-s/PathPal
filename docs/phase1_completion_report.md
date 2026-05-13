@@ -87,7 +87,6 @@
 | /api/route/nodes | GET | 获取内部节点 |
 | /api/route/shortest-distance | GET | 最短距离路线 |
 | /api/route/shortest-time | GET | 最短时间路线（指定交通） |
-| /api/route/transport-time | GET | 交通工具路线 |
 | /api/route/mixed-time | GET | 混合交通路线 |
 | /api/route/multi-point | POST | 多点贪心路线 |
 
