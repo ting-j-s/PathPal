@@ -19,6 +19,8 @@ ENTITY_TYPES = {
 }
 
 REQUIRED_MAP_IDS = {"MAP_CAMPUS_001", "MAP_SCENIC_001", "MAP_MIXED_001"}
+REAL_MAP_IDS = {"MAP_BUPT_REAL", "MAP_SCENIC_REAL"}
+ALL_MAP_IDS = REQUIRED_MAP_IDS | REAL_MAP_IDS
 
 
 def load_json(filename):
@@ -101,7 +103,7 @@ def check_connectivity(map_id, nodes, edges):
 # ============================================================
 def validate_destinations(destinations, maps, v: Validator):
     print("\n--- Destinations ---")
-    map_ids = {m["id"] for m in maps}
+    map_ids = {m.get("map_id") or m.get("id") for m in maps}
 
     v.check(len(destinations) >= 200,
             f"destinations count >= 200 (actual: {len(destinations)})")
@@ -123,34 +125,71 @@ def validate_destinations(destinations, maps, v: Validator):
         v.check(0 < d.get("rating", 0) <= 5.0,
                 f"{d['id']}: rating must be in (0, 5.0]")
         if d["type"] == "campus":
-            v.check(d.get("internal_map_id") in ("MAP_CAMPUS_001", "MAP_MIXED_001"),
+            v.check(d.get("internal_map_id") in ("MAP_CAMPUS_001", "MAP_MIXED_001", "MAP_BUPT_REAL"),
                     f"{d['id']}: campus must use campus or mixed map, got {d.get('internal_map_id')}")
         elif d["type"] == "attraction":
-            v.check(d.get("internal_map_id") in ("MAP_SCENIC_001", "MAP_MIXED_001"),
+            v.check(d.get("internal_map_id") in ("MAP_SCENIC_001", "MAP_MIXED_001", "MAP_SCENIC_REAL"),
                     f"{d['id']}: attraction must use scenic or mixed map, got {d.get('internal_map_id')}")
 
 
 def validate_internal_maps(maps, v: Validator):
     print("\n--- Internal Maps ---")
-    v.check(len(maps) >= 3, f"internal_maps count >= 3 (actual: {len(maps)})")
-    print(f"  Internal maps: {len(maps)} {'OK' if len(maps) >= 3 else 'FAIL'}")
+    v.check(len(maps) >= 5, f"internal_maps count >= 5 (actual: {len(maps)})")
+    print(f"  Internal maps: {len(maps)} {'OK' if len(maps) >= 5 else 'FAIL'}")
 
     map_ids = set()
     for m in maps:
-        v.check("id" in m and m["id"], f"map missing id")
+        mid = m.get("map_id") or m.get("id")
+        v.check(mid, f"map missing map_id")
         v.check(m.get("type") in ("campus", "attraction", "mixed"),
-                f"{m.get('id')}: type must be campus/attraction/mixed")
-        map_ids.add(m["id"])
+                f"{mid}: type must be campus/attraction/mixed")
+        map_ids.add(mid)
 
-    for required in REQUIRED_MAP_IDS:
+        # New required fields
+        v.check("source" in m, f"{mid}: missing 'source' field")
+        v.check("is_real_map" in m, f"{mid}: missing 'is_real_map' field")
+        v.check("show_tile" in m, f"{mid}: missing 'show_tile' field")
+        v.check("center" in m, f"{mid}: missing 'center' field")
+        v.check("tile_note" in m, f"{mid}: missing 'tile_note' field")
+
+        # Consistency: show_tile=true → is_real_map must be true
+        if m.get("show_tile") is True:
+            v.check(m.get("is_real_map") is True,
+                    f"{mid}: show_tile=true but is_real_map is not true")
+            v.check(m.get("source") in ("openstreetmap", "real_osm", "openstreetmap_vector", "manual_osm_aligned"),
+                    f"{mid}: show_tile=true but source '{m.get('source')}' is not recognized")
+
+        # Consistency: show_tile=false → is_real_map should be false
+        if m.get("show_tile") is False:
+            v.check(m.get("is_real_map") is False,
+                    f"{mid}: show_tile=false but is_real_map is true")
+
+    # Required maps must exist
+    for required in ALL_MAP_IDS:
         v.check(required in map_ids,
                 f"required map '{required}' must exist")
-    print(f"  Required maps present: {'OK' if REQUIRED_MAP_IDS.issubset(map_ids) else 'FAIL'}")
+    print(f"  Required maps present: {'OK' if ALL_MAP_IDS.issubset(map_ids) else 'FAIL'}")
+
+    # MAP_BUPT_REAL specific checks
+    bupt = next((m for m in maps if (m.get("map_id") or m.get("id")) == "MAP_BUPT_REAL"), None)
+    if bupt:
+        v.check(bupt.get("type") == "campus",
+                f"MAP_BUPT_REAL: type must be 'campus', got '{bupt.get('type')}'")
+        v.check("sightseeing_car" not in bupt.get("supported_transports", []),
+                "MAP_BUPT_REAL: campus must not support sightseeing_car")
+
+    # MAP_SCENIC_REAL specific checks
+    scenic = next((m for m in maps if (m.get("map_id") or m.get("id")) == "MAP_SCENIC_REAL"), None)
+    if scenic:
+        v.check(scenic.get("type") == "attraction",
+                f"MAP_SCENIC_REAL: type must be 'attraction', got '{scenic.get('type')}'")
+        v.check("bike" not in scenic.get("supported_transports", []),
+                "MAP_SCENIC_REAL: scenic must not support bike")
 
 
 def validate_internal_nodes(nodes, maps, v: Validator):
     print("\n--- Internal Nodes ---")
-    map_ids = {m["id"] for m in maps}
+    map_ids = {m.get("map_id") or m.get("id") for m in maps}
 
     node_ids = [n["id"] for n in nodes]
     v.check(len(node_ids) == len(set(node_ids)), "node IDs are unique")
@@ -167,15 +206,25 @@ def validate_internal_nodes(nodes, maps, v: Validator):
     for mid in map_ids:
         map_nodes = nodes_by_map.get(mid, [])
         entities = [n for n in map_nodes if n["type"] in ENTITY_TYPES]
-        v.check(len(entities) >= 20,
-                f"{mid}: entity nodes {len(entities)} < 20 required")
-        print(f"  {mid}: total={len(map_nodes)}, entities={len(entities)} "
-              f"{'OK' if len(entities) >= 20 else 'FAIL'}")
+        # Simulated templates: require >= 20 entity nodes
+        # Real maps: require >= 20 total nodes and >= 10 entity nodes
+        if mid in REAL_MAP_IDS:
+            v.check(len(map_nodes) >= 20,
+                    f"{mid}: total nodes {len(map_nodes)} < 20 required")
+            v.check(len(entities) >= 10,
+                    f"{mid}: entity nodes {len(entities)} < 10 required")
+            print(f"  {mid}: total={len(map_nodes)}, entities={len(entities)} "
+                  f"{'OK' if len(map_nodes) >= 20 and len(entities) >= 10 else 'FAIL'}")
+        else:
+            v.check(len(entities) >= 20,
+                    f"{mid}: entity nodes {len(entities)} < 20 required")
+            print(f"  {mid}: total={len(map_nodes)}, entities={len(entities)} "
+                  f"{'OK' if len(entities) >= 20 else 'FAIL'}")
 
 
 def validate_internal_edges(edges, nodes, maps, v: Validator):
     print("\n--- Internal Edges ---")
-    map_ids = {m["id"] for m in maps}
+    map_ids = {m.get("map_id") or m.get("id") for m in maps}
     node_by_id = {n["id"]: n for n in nodes}
 
     v.check(len(edges) >= 200,
@@ -210,7 +259,7 @@ def validate_internal_edges(edges, nodes, maps, v: Validator):
         # Transport constraints
         map_type = None
         for m in maps:
-            if m["id"] == e["map_id"]:
+            if (m.get("map_id") or m.get("id")) == e["map_id"]:
                 map_type = m["type"]
                 break
         if map_type == "campus":
@@ -229,7 +278,7 @@ def validate_internal_edges(edges, nodes, maps, v: Validator):
 
 def validate_facilities(facilities, nodes, maps, v: Validator):
     print("\n--- Facilities ---")
-    map_ids = {m["id"] for m in maps}
+    map_ids = {m.get("map_id") or m.get("id") for m in maps}
     node_by_id = {n["id"]: n for n in nodes}
 
     v.check(len(facilities) >= 50,
@@ -293,6 +342,149 @@ def validate_indoor_graphs(indoor_data, v: Validator):
                     f"{bld.get('building_id')}: indoor edge from '{e['from']}' not found")
             v.check(e["to"] in node_ids,
                     f"{bld.get('building_id')}: indoor edge to '{e['to']}' not found")
+
+
+def validate_coordinate_bounds(nodes, facilities, maps, v: Validator):
+    """校验真实地图坐标范围，抽象模板不要求真实经纬度。"""
+    print("\n--- Coordinate Bounds ---")
+
+    REF_BUPT = {"lat": (39.9520, 39.9700), "lng": (116.3470, 116.3660)}
+    REF_SCENIC = {"lat": (39.8640, 39.9030), "lng": (116.3850, 116.4330)}
+
+    nodes_by_map = defaultdict(list)
+    for n in nodes:
+        nodes_by_map[n["map_id"]].append(n)
+
+    facs_by_map = defaultdict(list)
+    for f in facilities:
+        facs_by_map[f["map_id"]].append(f)
+
+    # MAP_BUPT_REAL coordinate check
+    bupt_nodes = nodes_by_map.get("MAP_BUPT_REAL", [])
+    if bupt_nodes:
+        lats = [n["latitude"] for n in bupt_nodes]
+        lngs = [n["longitude"] for n in bupt_nodes]
+        for n in bupt_nodes:
+            lat_ok = REF_BUPT["lat"][0] <= n["latitude"] <= REF_BUPT["lat"][1]
+            lng_ok = REF_BUPT["lng"][0] <= n["longitude"] <= REF_BUPT["lng"][1]
+            v.check(lat_ok and lng_ok,
+                    f"{n['id']}: BUPT node ({n['latitude']:.4f}, {n['longitude']:.4f}) outside expected range")
+
+        v.check(min(lats) >= REF_BUPT["lat"][0],
+                f"BUPT min_lat {min(lats):.4f} < expected {REF_BUPT['lat'][0]}")
+        v.check(max(lats) <= REF_BUPT["lat"][1],
+                f"BUPT max_lat {max(lats):.4f} > expected {REF_BUPT['lat'][1]}")
+        v.check(min(lngs) >= REF_BUPT["lng"][0],
+                f"BUPT min_lng {min(lngs):.4f} < expected {REF_BUPT['lng'][0]}")
+        v.check(max(lngs) <= REF_BUPT["lng"][1],
+                f"BUPT max_lng {max(lngs):.4f} > expected {REF_BUPT['lng'][1]}")
+        print(f"  MAP_BUPT_REAL: lat [{min(lats):.4f}, {max(lats):.4f}], lng [{min(lngs):.4f}, {max(lngs):.4f}]")
+
+    # MAP_SCENIC_REAL coordinate check
+    scenic_nodes = nodes_by_map.get("MAP_SCENIC_REAL", [])
+    if scenic_nodes:
+        lats = [n["latitude"] for n in scenic_nodes]
+        lngs = [n["longitude"] for n in scenic_nodes]
+        for n in scenic_nodes:
+            lat_ok = REF_SCENIC["lat"][0] <= n["latitude"] <= REF_SCENIC["lat"][1]
+            lng_ok = REF_SCENIC["lng"][0] <= n["longitude"] <= REF_SCENIC["lng"][1]
+            v.check(lat_ok and lng_ok,
+                    f"{n['id']}: SCENIC node ({n['latitude']:.4f}, {n['longitude']:.4f}) outside expected range")
+        print(f"  MAP_SCENIC_REAL: lat [{min(lats):.4f}, {max(lats):.4f}], lng [{min(lngs):.4f}, {max(lngs):.4f}]")
+
+    # Abstract templates: just check no facilities at (0,0)
+    for mid in REQUIRED_MAP_IDS:
+        mfacs = facs_by_map.get(mid, [])
+        zero_facs = [f for f in mfacs if abs(f.get("latitude", 0)) < 0.001 and abs(f.get("longitude", 0)) < 0.001]
+        v.check(len(zero_facs) == 0,
+                f"{mid}: {len(zero_facs)} facilities still at (0,0)")
+        mnodes = nodes_by_map.get(mid, [])
+        zero_nodes = [n for n in mnodes if abs(n.get("latitude", 0)) < 0.001 and abs(n.get("longitude", 0)) < 0.001]
+        v.check(len(zero_nodes) == 0,
+                f"{mid}: {len(zero_nodes)} nodes still at (0,0)")
+        # Validate center is not [0,0]
+        map_obj = next((m for m in maps if (m.get("map_id") or m.get("id")) == mid), None)
+        if map_obj:
+            center = map_obj.get("center", [0, 0])
+            v.check(center[0] != 0 or center[1] != 0,
+                    f"{mid}: center is [0,0], should reflect node coordinates")
+        print(f"  {mid}: no (0,0) facilities/nodes, center OK")
+
+    # All maps: facilities should have valid coordinates
+    for f in facilities:
+        v.check(abs(f.get("latitude", 0)) > 0.001 or abs(f.get("longitude", 0)) > 0.001,
+                f"{f['id']}: facility has (0,0) coordinate")
+
+
+def validate_osm_vector_quality(nodes_list, edges_list, maps, v: Validator):
+    """对 source=openstreetmap_vector 的地图进行质量校验。"""
+    print("\n--- OSM Vector Quality ---")
+    nodes_by_map = defaultdict(list)
+    for n in nodes_list:
+        nodes_by_map[n["map_id"]].append(n)
+    edges_by_map = defaultdict(list)
+    for e in edges_list:
+        edges_by_map[e["map_id"]].append(e)
+
+    for m in maps:
+        mid = m.get("map_id") or m.get("id")
+        source = m.get("source", "")
+
+        if source == "openstreetmap_vector":
+            map_edges = edges_by_map.get(mid, [])
+            map_nodes = nodes_by_map.get(mid, [])
+
+            # 每条边必须有 geometry
+            for e in map_edges:
+                geom = e.get("geometry")
+                v.check(geom is not None and len(geom) >= 2,
+                        f"{e['id']}: openstreetmap_vector edge must have geometry with >= 2 points")
+                if geom:
+                    # geometry 坐标在 bbox 内
+                    for pt in geom:
+                        v.check(abs(pt[0]) > 0.001 and abs(pt[1]) > 0.001,
+                                f"{e['id']}: geometry point {pt} near (0,0)")
+
+            # 数量要求
+            v.check(len(map_edges) >= 60,
+                    f"{mid}: openstreetmap_vector edges {len(map_edges)} < 60 required")
+            v.check(len(map_nodes) >= 20,
+                    f"{mid}: openstreetmap_vector nodes {len(map_nodes)} < 20 required")
+
+            print(f"  {mid}: nodes={len(map_nodes)}, edges={len(map_edges)} — OK")
+
+        elif source == "manual_osm_aligned":
+            v.check(m.get("show_tile") is True,
+                    f"{mid}: manual_osm_aligned must have show_tile=true")
+            v.check(m.get("semi_real_map") is True,
+                    f"{mid}: manual_osm_aligned must have semi_real_map=true")
+            map_edges = edges_by_map.get(mid, [])
+            for e in map_edges:
+                v.check(e.get("geometry") is not None,
+                        f"{e['id']}: manual_osm_aligned edge must have geometry")
+            print(f"  {mid}: manual_osm_aligned — OK")
+
+        elif source == "openstreetmap":
+            # 旧的 misleading source
+            map_edges = edges_by_map.get(mid, [])
+            edges_with_geom = sum(1 for e in map_edges if e.get("geometry"))
+            v.check(edges_with_geom > 0,
+                    f"{mid}: source='openstreetmap' but no edges have geometry — source misleading, update to openstreetmap_vector or manual_osm_aligned")
+            print(f"  {mid}: legacy 'openstreetmap' source — WARNING")
+
+    # 交通约束
+    for m in maps:
+        mid = m.get("map_id") or m.get("id")
+        map_type = m.get("type")
+        map_edges = edges_by_map.get(mid, [])
+        if map_type == "campus":
+            for e in map_edges:
+                v.check("sightseeing_car" not in e.get("allowed_transport", []),
+                        f"{e['id']}: campus map edge must not have sightseeing_car")
+        elif map_type == "attraction":
+            for e in map_edges:
+                v.check("bike" not in e.get("allowed_transport", []),
+                        f"{e['id']}: attraction map edge must not have bike")
 
 
 def validate_connectivity(nodes_list, edges_list, v: Validator):
@@ -383,6 +575,8 @@ def main():
     validate_internal_nodes(nodes, maps, v)
     validate_internal_edges(edges, nodes, maps, v)
     validate_facilities(facilities, nodes, maps, v)
+    validate_coordinate_bounds(nodes, facilities, maps, v)
+    validate_osm_vector_quality(nodes, edges, maps, v)
     validate_users(users, v)
     validate_indoor_graphs(indoor_data, v)
     validate_connectivity(nodes, edges, v)

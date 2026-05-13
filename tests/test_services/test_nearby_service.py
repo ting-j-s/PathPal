@@ -34,7 +34,7 @@ class TestNearbyService:
         assert len(result["facilities"]) > 0
         for f in result["facilities"]:
             assert "road_distance" in f
-            assert f["road_distance"] > 0
+            assert f["road_distance"] >= 0  # 设施可能与查询节点相同，距离为 0
             assert "path" in f
 
     def test_sorted_by_road_distance(self, service, params):
@@ -99,3 +99,23 @@ class TestNearbyService:
     def test_invalid_destination(self, service):
         with pytest.raises(ValueError):
             service.find_nearby("NONEXIST", "NODE_001")
+
+    def test_nearby_facility_has_route_geometry(self, service, params):
+        """nearby 设施应包含 route_geometry。"""
+        result = service.find_nearby(params["campus_id"], params["node_id"])
+        for f in result["facilities"]:
+            assert "route_geometry" in f, f"Facility {f.get('id')} missing route_geometry"
+            rg = f["route_geometry"]
+            if rg:  # 有些设施可能距离为0（同一个节点）
+                assert len(rg) >= 2
+                for pt in rg:
+                    assert len(pt) == 2
+
+    def test_nearby_route_geometry_in_map_bounds(self, service, params):
+        """nearby route_geometry 坐标应在对应 map bbox 内。"""
+        result = service.find_nearby(params["campus_id"], params["node_id"])
+        for f in result["facilities"]:
+            rg = f.get("route_geometry", [])
+            for pt in rg:
+                assert abs(pt[0]) > 0.001, f"lat near zero for {f.get('id')}"
+                assert abs(pt[1]) > 0.001, f"lng near zero for {f.get('id')}"

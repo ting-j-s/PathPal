@@ -9,6 +9,7 @@ from backend.algorithms.dijkstra import (
     dijkstra_transport_time,
     dijkstra_mixed_time,
     multi_point_route,
+    extract_route_geometry,
 )
 from backend.algorithms.nearby import extract_path_coordinates
 
@@ -30,6 +31,8 @@ class RouteService:
         """构建统一返回格式。"""
         dest = data_loader.get_destination_by_id(dest_id)
         graph = data_loader.load_graph_for_destination(dest_id)
+        segments = route_result.get("segments", [])
+        route_geometry = extract_route_geometry(segments)
         return {
             "destination_id": dest_id,
             "destination_name": dest["name"],
@@ -41,9 +44,10 @@ class RouteService:
             "reachable": route_result["reachable"],
             "path": route_result.get("path", []),
             "coordinates": extract_path_coordinates(graph, route_result.get("path", [])),
+            "route_geometry": route_geometry,
             "total_distance": route_result.get("total_distance"),
             "total_time": route_result.get("total_time"),
-            "segments": route_result.get("segments", []),
+            "segments": segments,
             "note": NOTE_TEXT,
         }
 
@@ -97,8 +101,9 @@ class RouteService:
         return out
 
     def list_nodes(self, destination_id):
-        """返回该目的地内部地图所有节点。"""
+        """返回该目的地内部地图所有节点，附带 internal_map 元数据。"""
         dest = data_loader.get_destination_by_id(destination_id)
+        internal_map = data_loader.get_internal_map_for_destination(destination_id)
         nodes = data_loader.get_nodes_for_destination(destination_id)
         formatted = []
         for n in nodes:
@@ -113,6 +118,12 @@ class RouteService:
             "destination_id": destination_id,
             "destination_name": dest["name"],
             "internal_map_id": dest["internal_map_id"],
+            "internal_map": {
+                "is_real_map": internal_map.get("is_real_map", False),
+                "show_tile": internal_map.get("show_tile", False),
+                "center": internal_map.get("center"),
+                "tile_note": internal_map.get("tile_note"),
+            },
             "count": len(formatted),
             "nodes": formatted,
         }

@@ -86,16 +86,19 @@ class TestRouteService:
         g = load_graph_for_destination(params["campus_id"])
         valid = params["valid_nodes"]
         start, end = valid[0], valid[1]
-        for a in valid[:5]:
-            for b in valid[1:6]:
+        # 扩大搜索范围以应对大图（4× bbox）
+        found = False
+        for a in valid[:30]:
+            if found:
+                break
+            for b in valid[1:30]:
                 if a != b:
                     r = dijkstra_transport_time(g, a, b, "bike")
                     if r["reachable"]:
-                        start, end = a, b
+                        start, end, found = a, b, True
                         break
-            else:
-                continue
-            break
+        if not found:
+            pytest.skip("No bike-reachable pair found in first 30 valid nodes")
         result = service.plan_transport_time(
             params["campus_id"], start, end, transport="bike"
         )
@@ -174,3 +177,33 @@ class TestRouteService:
         summary = service.get_route_summary(result)
         assert isinstance(summary, str)
         assert len(summary) > 0
+
+    def test_route_geometry_present(self, service, params):
+        """路线结果应包含 route_geometry。"""
+        result = service.plan_shortest_distance(
+            params["campus_id"], params["campus_start"], params["campus_end"]
+        )
+        assert "route_geometry" in result
+        assert len(result["route_geometry"]) >= 2
+        # route_geometry 每个点应为 [lat, lng]
+        for pt in result["route_geometry"]:
+            assert len(pt) == 2
+
+    def test_route_geometry_coords_in_bounds(self, service, params):
+        """route_geometry 坐标应在北邮 bbox 内。"""
+        result = service.plan_shortest_distance(
+            params["campus_id"], params["campus_start"], params["campus_end"]
+        )
+        for pt in result["route_geometry"]:
+            assert 39.952 <= pt[0] <= 39.970, f"lat {pt[0]} out of bounds"
+            assert 116.347 <= pt[1] <= 116.366, f"lng {pt[1]} out of bounds"
+
+    def test_segments_have_geometry(self, service, params):
+        """segments 中每段应包含 geometry。"""
+        result = service.plan_shortest_distance(
+            params["campus_id"], params["campus_start"], params["campus_end"]
+        )
+        for seg in result["segments"]:
+            assert "geometry" in seg, f"Segment missing geometry"
+            assert seg["geometry"] is not None
+            assert len(seg["geometry"]) >= 2

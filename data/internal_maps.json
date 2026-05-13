@@ -1,6 +1,5 @@
 [
   {
-    "id": "MAP_CAMPUS_001",
     "name": "校园标准模板",
     "type": "campus",
     "description": "适用于大学校园的内部地图模板，包含教学楼、宿舍、食堂、图书馆等",
@@ -10,10 +9,18 @@
     "supported_transports": [
       "walk",
       "bike"
-    ]
+    ],
+    "map_id": "MAP_CAMPUS_001",
+    "source": "generated_template",
+    "is_real_map": false,
+    "show_tile": false,
+    "center": [
+      39.962088,
+      116.349973
+    ],
+    "tile_note": "该目的地复用抽象内部地图模板，因此不叠加真实地图瓦片"
   },
   {
-    "id": "MAP_SCENIC_001",
     "name": "景区标准模板",
     "type": "attraction",
     "description": "适用于景区/公园的内部地图模板，包含景点、游客中心、电瓶车路线等",
@@ -23,10 +30,18 @@
     "supported_transports": [
       "walk",
       "sightseeing_car"
-    ]
+    ],
+    "map_id": "MAP_SCENIC_001",
+    "source": "generated_template",
+    "is_real_map": false,
+    "show_tile": false,
+    "center": [
+      39.916144,
+      116.397197
+    ],
+    "tile_note": "该目的地复用抽象内部地图模板，因此不叠加真实地图瓦片"
   },
   {
-    "id": "MAP_MIXED_001",
     "name": "综合园区模板",
     "type": "mixed",
     "description": "适用于大型综合园区（如颐和园、圆明园），同时支持步行、自行车和电瓶车",
@@ -37,6 +52,55 @@
       "walk",
       "bike",
       "sightseeing_car"
-    ]
+    ],
+    "map_id": "MAP_MIXED_001",
+    "source": "generated_template",
+    "is_real_map": false,
+    "show_tile": false,
+    "center": [
+      39.999062,
+      116.274963
+    ],
+    "tile_note": "该目的地复用抽象内部地图模板，因此不叠加真实地图瓦片"
+  },
+  {
+    "map_id": "MAP_BUPT_REAL",
+    "name": "北京邮电大学真实校园内部图",
+    "type": "campus",
+    "description": "基于 OpenStreetMap 真实校园道路数据生成的北邮海淀校区内部道路图",
+    "source": "openstreetmap_vector",
+    "is_real_map": true,
+    "show_tile": true,
+    "center": [
+      39.961057,
+      116.356482
+    ],
+    "default_zoom": 17,
+    "supported_transports": [
+      "walk",
+      "bike"
+    ],
+    "tile_note": "该地图基于 OpenStreetMap 矢量道路数据构建，Dijkstra 在导入的 OSM 内部道路图上运行。1746 节点，3943 边。",
+    "semi_real_map": false
+  },
+  {
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "天坛公园真实内部图",
+    "type": "attraction",
+    "description": "基于 OpenStreetMap 真实公园道路数据生成的天坛公园内部道路图",
+    "source": "openstreetmap_vector",
+    "is_real_map": true,
+    "show_tile": true,
+    "center": [
+      39.883496,
+      116.409021
+    ],
+    "default_zoom": 16,
+    "supported_transports": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "tile_note": "该地图基于 OpenStreetMap 矢量道路数据构建，Dijkstra 在导入的 OSM 内部道路图上运行。5316 节点，11540 边。",
+    "semi_real_map": false
   }
 ]

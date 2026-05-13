@@ -90,6 +90,18 @@
         return apiGet("/route/nodes", { destination_id: destinationId });
     }
 
+    function getInternalMaps() {
+        return apiGet("/internal-maps");
+    }
+
+    function getInternalMap(mapId) {
+        return apiGet("/internal-maps/" + mapId);
+    }
+
+    function getMapLayers(destinationId) {
+        return apiGet("/destinations/" + encodeURIComponent(destinationId) + "/map-layers");
+    }
+
     // ---- 挂载到 window ----
     window.PathPalAPI = {
         API_BASE_URL: API_BASE_URL,
@@ -103,5 +115,8 @@
         loadStats: loadStats,
         loadDestinations: loadDestinations,
         loadRouteNodes: loadRouteNodes,
+        getInternalMaps: getInternalMaps,
+        getInternalMap: getInternalMap,
+        getMapLayers: getMapLayers,
     };
 })();

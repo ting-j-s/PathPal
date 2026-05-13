@@ -188,6 +188,24 @@ class TestDijkstraRealData:
         with pytest.raises(ValueError, match="End node not found"):
             dijkstra_shortest_distance(self.campus, s, "NONEXIST")
 
+    # --- geometry ---
+    def test_segments_contain_geometry(self):
+        s, e = self._get_two_nodes(self.campus)
+        result = dijkstra_shortest_distance(self.campus, s, e)
+        for seg in result["segments"]:
+            assert "geometry" in seg, "Segment missing geometry field"
+            assert seg["geometry"] is not None
+            assert len(seg["geometry"]) >= 2, f"Geometry has {len(seg['geometry'])} points"
+
+    def test_extract_route_geometry(self):
+        from backend.algorithms.dijkstra import extract_route_geometry
+        s, e = self._get_two_nodes(self.campus)
+        result = dijkstra_shortest_distance(self.campus, s, e)
+        rg = extract_route_geometry(result["segments"])
+        assert len(rg) >= 2
+        for pt in rg:
+            assert len(pt) == 2
+
     # --- same node ---
     def test_same_node(self):
         s, _ = self._get_two_nodes(self.campus)

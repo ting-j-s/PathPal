@@ -13,10 +13,17 @@ class NearbyService:
     def _make_result(self, destination_id, origin_node_id, facilities):
         """构建统一返回格式。"""
         dest = data_loader.get_destination_by_id(destination_id)
+        internal_map = data_loader.get_internal_map_for_destination(destination_id)
         return {
             "destination_id": destination_id,
             "destination_name": dest["name"],
             "internal_map_id": dest["internal_map_id"],
+            "internal_map": {
+                "is_real_map": internal_map.get("is_real_map", False),
+                "show_tile": internal_map.get("show_tile", False),
+                "center": internal_map.get("center"),
+                "tile_note": internal_map.get("tile_note"),
+            },
             "origin": origin_node_id,
             "algorithm": "Dijkstra + Road Distance Sorting (Merge Sort)",
             "data_structure": "Internal Graph Adjacency List",

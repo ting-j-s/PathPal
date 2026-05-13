@@ -17,6 +17,7 @@ from backend.routes.recommendation_routes import recommendation_bp
 from backend.routes.route_routes import route_bp
 from backend.routes.nearby_routes import nearby_bp
 from backend.routes.indoor_routes import indoor_bp
+from backend.routes.map_routes import map_bp
 from backend.services.data_loader import get_stats
 
 
@@ -36,6 +37,7 @@ def create_app():
     app.register_blueprint(route_bp)
     app.register_blueprint(nearby_bp)
     app.register_blueprint(indoor_bp)
+    app.register_blueprint(map_bp)
 
     # 健康检查
     @app.route("/api/health", methods=["GET"])

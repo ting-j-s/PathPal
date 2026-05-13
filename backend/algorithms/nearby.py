@@ -4,7 +4,7 @@ PathPal 附近设施查询（道路距离排序）
 核心原则：使用道路图最短路径距离进行排序，
 不得使用经纬度直线距离作为最终排序依据。
 """
-from .dijkstra import dijkstra_shortest_distance
+from .dijkstra import dijkstra_shortest_distance, extract_route_geometry
 from .sorting import merge_sort, get_value
 from .search import _match_value
 
@@ -85,6 +85,8 @@ def calculate_nearby_facilities_by_road_distance(
         result_entry["road_distance"] = road_distance
         result_entry["path"] = route_result["path"]
         result_entry["coordinates"] = coordinates
+        result_entry["route_geometry"] = extract_route_geometry(route_result["segments"])
+        result_entry["segments"] = route_result["segments"]
         results.append(result_entry)
 
     # 按 road_distance 升序排序（使用自己实现的排序）

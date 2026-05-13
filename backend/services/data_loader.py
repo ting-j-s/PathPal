@@ -169,3 +169,18 @@ def get_stats():
         "users": get_user_count(),
         "indoor_buildings": len(indoor_maps),
     }
+
+
+def get_internal_map_by_id(map_id):
+    """根据 map_id 获取内部地图元数据。"""
+    maps = load_internal_maps()
+    for m in maps:
+        if m.get("map_id") == map_id:
+            return m
+    raise ValueError(f"Internal map not found: {map_id}")
+
+
+def get_internal_map_for_destination(destination_id):
+    """根据 destination_id 获取对应的 internal_map 元数据。"""
+    map_id = get_map_id_by_destination_id(destination_id)
+    return get_internal_map_by_id(map_id)

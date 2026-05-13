@@ -7,6 +7,19 @@
 PathPal 是一个基于 Python Flask 的个性化旅游辅助系统。当前阶段聚焦于三个核心功能模块：
 景区/校园内部的路线规划、场所查询和目的地推荐。
 
+### 地图数据说明
+
+- **MAP_BUPT_REAL** 和 **MAP_SCENIC_REAL** 是基于 OpenStreetMap 的真实内部道路图模板，前端显示 OSM 瓦片叠加路线
+- **MAP_CAMPUS_001**、**MAP_SCENIC_001**、**MAP_MIXED_001** 为抽象内部地图模板，供其他目的地复用，前端不叠加真实瓦片，但绘制完整内部道路网络（节点/边/设施）
+- 详见 [地图数据策略](docs/map_data_strategy.md)
+
+### 地图展示策略
+
+| 地图类型 | OSM 瓦片 | 内部道路网络 | 示例目的地 |
+|---------|---------|------------|-----------|
+| 真实地图 (show_tile=true) | 显示 | 叠加半透明路网 | 北京邮电大学、天坛公园 |
+| 抽象模板 (show_tile=false) | 不显示（浅灰背景） | 完整绘制节点/边/设施 | 北京大学、故宫等 215 个 |
+
 ## 当前阶段范围
 
 ### 已实现功能
@@ -114,12 +127,12 @@ PathPal/
 | 数据项 | 要求 | 实际 |
 |--------|------|------|
 | 目的地 | >= 200 | **217** (30 校园 + 187 景区) |
-| 内部地图模板 | >= 3 | **3** |
-| 内部节点总数 | >= 90 | **112** |
-| 每地图实体节点 | >= 20 | **22** (三个地图均满足) |
-| 道路边 | >= 200 | **284** |
-| 服务设施 | >= 50 | **52** |
-| 设施类别 | >= 10 | **12** |
+| 内部地图模板 | >= 3 | **5** (2 真实 + 3 抽象) |
+| 内部节点总数 | >= 90 | **164** |
+| 每地图实体节点 | >= 20 | **22** (抽象模板) / **14, 13** (真实模板) |
+| 道路边 | >= 200 | **416** |
+| 服务设施 | >= 50 | **88** |
+| 设施类别 | >= 10 | **15** |
 | 用户 | >= 10 | **12** |
 | 室内建筑 | >= 1 | **1** |
 
@@ -178,19 +191,22 @@ http://127.0.0.1:8000
 ## 测试命令
 
 ```bash
-# 数据校验（4228 checks）
+# 地图坐标诊断
+python backend/scripts/diagnose_map_coordinates.py
+
+# 数据校验（5829 checks）
 python backend/scripts/validate_data.py
 
 # 算法测试（101 tests）
 pytest tests/test_algorithms -q
 
-# 服务层测试（37 tests）
+# 服务层测试（50 tests）
 pytest tests/test_services -q
 
-# API 路由测试（24 tests）
+# API 路由测试（39 tests）
 pytest tests/test_routes -q
 
-# 全部测试（162 tests）
+# 全部测试（190 tests）
 pytest tests/ -q
 
 # 前端文件检查
@@ -208,6 +224,7 @@ python backend/scripts/e2e_smoke_check.py
 | [数据结构设计](docs/data_structure_design.md) | JSON schema 定义 |
 | [算法设计](docs/algorithm_design.md) | 核心算法说明 |
 | [API 设计](docs/api_design.md) | API 端点文档 |
+| [地图数据策略](docs/map_data_strategy.md) | 真实地图 vs 抽象模板策略 |
 | [前端使用指南](docs/frontend_usage.md) | 页面操作步骤、常见问题 |
 | [答辩演示脚本](docs/demo_script.md) | 验收讲解流程、常见追问 |
 | [端到端验收报告](docs/e2e_acceptance_report.md) | 页面验收记录、约束确认 |
@@ -223,6 +240,8 @@ python backend/scripts/e2e_smoke_check.py
 - [x] 第 3 步：实现后端服务和路由 + 服务/路由测试（61 tests） — Total: 162 passed
 - [x] 第 4 步：实现前端页面（5 个 HTML + 7 个 JS + 1 个 CSS + Leaflet 地图）
 - [x] 第 5 步：端到端验收、smoke 检查、测试报告、阶段完成报告、答辩演示脚本
+- [x] 地图真实性修正：新增 MAP_BUPT_REAL + MAP_SCENIC_REAL，前端 show_tile 逻辑，新增 API，测试 176 passed
+- [x] 地图展示与坐标修复：修复 BUPT 坐标偏移、抽象模板 (0,0) 坐标、前端分层管理（baseLayer/routeLayer/markerLayer）、完整内部路网绘制、新增 map-layers API、新增坐标诊断脚本，测试 190 passed
 
 ## 课程信息
 

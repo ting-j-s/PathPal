@@ -55,16 +55,20 @@ pytest tests/ -q
 | 路线服务测试 | `pytest tests/test_services/test_route_service.py -q` | passed | 4 种策略 + 交通校验 |
 | 场所服务测试 | `pytest tests/test_services/test_nearby_service.py -q` | passed | 附近/类别/关键词/排序 |
 | API 集成测试 | `pytest tests/test_routes/test_api_basic.py -q` | passed | 24 个路由端点测试 |
-| 前端文件检查 | `python backend/scripts/check_frontend_files.py` | All passed | 文件存在/JS引用/Leaflet/算法文字/禁止内容 |
+| 地图图层 API 测试 | `pytest tests/test_routes/test_map_layers.py -q` | passed | map-layers API 测试 |
+| 地图元数据测试 | `pytest tests/test_services/test_map_metadata.py -q` | passed | 含坐标范围检查 |
+| 前端文件检查 | `python backend/scripts/check_frontend_files.py` | All passed | 文件存在/JS引用/Leaflet/算法文字/分层管理/禁止内容 |
+| 地图坐标诊断 | `python backend/scripts/diagnose_map_coordinates.py` | All clean | 所有地图坐标健康 |
 | E2E Smoke | `python backend/scripts/e2e_smoke_check.py` | 见运行结果 | 端到端 API 数据流验证 |
 
 **汇总**：
 - 算法测试：**101 passed**
-- 服务测试：**37 passed**
-- 路由测试：**24 passed**
-- 总计自动化：**162 passed**
-- 数据校验：**4228/4228 passed**
+- 服务测试：**50 passed** (含地图元数据 + 坐标范围)
+- 路由测试：**39 passed** (含 map-layers API)
+- 总计自动化：**190 passed**
+- 数据校验：**5829/5829 passed**
 - 前端文件检查：**All passed**
+- 地图坐标诊断：**All clean**
 
 ## 核心算法测试说明
 

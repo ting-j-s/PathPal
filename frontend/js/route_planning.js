@@ -1,5 +1,6 @@
 /**
  * PathPal 路线规划页面 JS
+ * 使用 map-layers API 绘制完整内部道路图 + 路线覆盖
  */
 (function () {
     "use strict";
@@ -10,6 +11,9 @@
 
     var mapState = null;
     var nodesMap = {}; // nodeId -> {id, name, latitude, longitude, ...}
+    var currentMapMeta = null;
+    var currentEdges = [];
+    var currentFacilities = [];
 
     // ---- 工具函数 ----
 
@@ -37,21 +41,55 @@
     // ---- 地图 ----
 
     function initMap() {
-        mapState = MapMod.createMap("route-map", [39.96, 116.35], 15);
+        mapState = MapMod.createMap("route-map", [39.96, 116.35], 15, { showTile: false });
+        updateTileNote(null);
+    }
+
+    function updateMapForMeta(meta) {
+        if (!mapState || !meta) return;
+        if (meta.center && meta.center[0] !== 0 && meta.center[1] !== 0) {
+            mapState.map.setView(meta.center, meta.default_zoom || 16);
+        }
+        if (mapState.setTileVisible) {
+            mapState.setTileVisible(meta.show_tile === true);
+        }
+        updateTileNote(meta);
+    }
+
+    function updateTileNote(meta) {
+        var el = document.getElementById("map-source-note");
+        if (!el) return;
+        if (!meta) {
+            el.innerHTML = '<span class="tag tag-info">请选择目的地</span>';
+            return;
+        }
+        if (meta.show_tile) {
+            el.innerHTML =
+                '<span class="tag tag-campus">真实 OSM 内部道路图</span> ' +
+                API.escapeHtml(meta.tile_note || "");
+        } else {
+            el.innerHTML =
+                '<span class="tag tag-warning">抽象内部地图模板</span> ' +
+                API.escapeHtml(meta.tile_note || "该目的地复用抽象内部地图模板，不叠加真实地图瓦片。");
+        }
     }
 
     function drawRouteOnMap(data) {
         if (!mapState) return;
-        MapMod.clearMapLayers(mapState);
+        // 只清除路线层和标记层，保留基础路网
+        MapMod.clearRouteLayers(mapState);
+        MapMod.clearMarkerLayers(mapState);
 
-        // 绘制节点坐标
-        if (data.coordinates && data.coordinates.length > 0) {
+        // 优先使用 route_geometry 绘制路线
+        if (data.route_geometry && data.route_geometry.length > 0) {
+            MapMod.drawRoute(mapState, data.route_geometry, { color: "#e74c3c", weight: 5, opacity: 0.85 });
+        } else if (data.coordinates && data.coordinates.length > 0) {
             MapMod.drawRoute(mapState, data.coordinates, { color: "#e74c3c", weight: 5, opacity: 0.85 });
         } else if (data.path && nodesMap) {
             var coords = [];
             data.path.forEach(function (nid) {
                 var n = nodesMap[nid];
-                if (n && n.latitude > 0.01 && n.longitude > 0.01) {
+                if (n && Math.abs(n.latitude) > 0.001 && Math.abs(n.longitude) > 0.001) {
                     coords.push([n.latitude, n.longitude]);
                 }
             });
@@ -73,7 +111,6 @@
             }
         }
 
-        // 多目标途经点
         if (data.visit_order) {
             data.visit_order.forEach(function (nid, i) {
                 var n = nodesMap[nid];
@@ -85,15 +122,17 @@
 
         MapMod.drawMarkers(mapState, markers);
 
-        // 分段路线
-        if (data.segments && nodesMap) {
+        // 分段路线（使用 routeLayer）
+        if (data.segments) {
             var graphCoords = {};
-            Object.keys(nodesMap).forEach(function (nid) {
-                var n = nodesMap[nid];
-                if (n.latitude > 0.01 && n.longitude > 0.01) {
-                    graphCoords[nid] = [n.latitude, n.longitude];
-                }
-            });
+            if (nodesMap) {
+                Object.keys(nodesMap).forEach(function (nid) {
+                    var n = nodesMap[nid];
+                    if (Math.abs(n.latitude) > 0.001 && Math.abs(n.longitude) > 0.001) {
+                        graphCoords[nid] = [n.latitude, n.longitude];
+                    }
+                });
+            }
             MapMod.drawRouteWithSegments(mapState, data.segments, graphCoords);
         }
     }
@@ -106,7 +145,6 @@
 
         var html = "";
 
-        // 基本信息
         html += '<table style="margin-bottom:12px;">';
         var rows = [
             ["目的地", API.escapeHtml(data.destination_name || "")],
@@ -125,7 +163,6 @@
             rows.push(["备注", '<span class="tag tag-warning">' + API.escapeHtml(data.note) + "</span>"]);
         }
 
-        // 多目标额外信息
         if (data.visit_order) {
             rows.push(["访问顺序", data.visit_order.map(API.escapeHtml).join(" → ")]);
             rows.push(["TSP 近似", '<span class="tag tag-info">' + API.escapeHtml(data.tsp_approximation || "") + "</span>"]);
@@ -137,7 +174,6 @@
         });
         html += "</table>";
 
-        // 路径
         if (data.path && data.path.length > 0) {
             html +=
                 '<p style="font-size:0.85em; color:#777; margin-top:8px;">路径: ' +
@@ -148,8 +184,6 @@
         }
 
         el.innerHTML = html;
-
-        // 路段详情表
         renderSegmentsTable(data.segments);
     }
 
@@ -216,31 +250,60 @@
         if (!destId) {
             setSelectOptions("select-start", [], "", "");
             setSelectOptions("select-end", [], "", "");
+            updateTileNote(null);
+            if (mapState) {
+                MapMod.clearBaseLayers(mapState);
+                MapMod.clearRouteLayers(mapState);
+                MapMod.clearMarkerLayers(mapState);
+            }
             return;
         }
 
-        // 更新交通提示
         updateTransportHint(destId);
-
-        // 清空旧结果
         clearResults();
-        if (mapState) MapMod.clearMapLayers(mapState);
+        if (mapState) {
+            MapMod.clearBaseLayers(mapState);
+            MapMod.clearRouteLayers(mapState);
+            MapMod.clearMarkerLayers(mapState);
+        }
 
-        // 加载节点
-        API.loadRouteNodes(destId)
+        // 使用新的 map-layers API
+        API.getMapLayers(destId)
             .then(function (data) {
-                var nodes = data.nodes || [];
-                // 过滤掉异常坐标的节点（设施挂接点）
-                var validNodes = nodes.filter(function (n) {
-                    return n.latitude > 0.01;
+                var allNodes = data.nodes || [];
+                currentEdges = data.edges || [];
+                currentFacilities = data.facilities || [];
+
+                // 所有节点（含 gate/building 等，即使坐标为 0 也过滤掉）
+                var validNodes = allNodes.filter(function (n) {
+                    return Math.abs(n.latitude) > 0.001 && Math.abs(n.longitude) > 0.001;
                 });
-                // 存储节点映射
+
                 nodesMap = {};
                 validNodes.forEach(function (n) {
                     nodesMap[n.id] = n;
                 });
-                setSelectOptions("select-start", validNodes, "id", "name");
-                setSelectOptions("select-end", validNodes, "id", "name");
+
+                // 设置下拉选项（优先语义节点，如果节点太多则限制）
+                var selectableNodes = validNodes.filter(function (n) {
+                    return n.type === "gate" || n.type === "scenic_spot" || n.type === "building" || n.type === "intersection";
+                });
+                // 对于大型真实地图（>100个可选择节点），只显示 POI 节点 + 部分路口
+                if (selectableNodes.length > 100) {
+                    selectableNodes = selectableNodes.filter(function (n) {
+                        return n.type === "gate" || n.type === "scenic_spot" || n.type === "building" ||
+                            (n.id && (n.id.indexOf("POI_") === 0 || n.id.indexOf("NODE_BUP_") === 0 || n.id.indexOf("NODE_TSR_") === 0));
+                    });
+                }
+                setSelectOptions("select-start", selectableNodes, "id", "name");
+                setSelectOptions("select-end", selectableNodes, "id", "name");
+
+                // 处理 internal_map metadata
+                currentMapMeta = data.internal_map || null;
+                updateMapForMeta(currentMapMeta);
+
+                // 绘制完整内部道路网络
+                MapMod.drawBaseNetwork(mapState, validNodes, currentEdges, currentFacilities);
             })
             .catch(function (err) {
                 API.showError("route-result", err);
@@ -251,7 +314,6 @@
         var hintEl = document.getElementById("transport-hint");
         if (!hintEl) return;
 
-        // 从 destId 前缀或完整 destinations 数据中获取类型
         API.loadDestinations({ limit: 217 })
             .then(function (data) {
                 var results = data.results || [];
@@ -294,7 +356,6 @@
 
         var params = { destination_id: destId, start: start, end: end };
 
-        // 根据策略选择端点
         var endpoint;
         if (strategy === "shortest-distance") {
             endpoint = "/route/shortest-distance";

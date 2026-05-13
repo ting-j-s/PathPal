@@ -5,8 +5,8 @@
     "name": "校园超市",
     "category": "supermarket",
     "linked_node_id": "NODE_CAM_032",
-    "latitude": 0.0,
-    "longitude": -0.0,
+    "latitude": 39.961993,
+    "longitude": 116.349975,
     "description": "位于学生生活区的综合性超市"
   },
   {
@@ -15,8 +15,8 @@
     "name": "第一食堂小卖部",
     "category": "shop",
     "linked_node_id": "NODE_CAM_033",
-    "latitude": 1e-06,
-    "longitude": 0.0,
+    "latitude": 39.962008,
+    "longitude": 116.349989,
     "description": "第一食堂一层的小卖部"
   },
   {
@@ -25,8 +25,8 @@
     "name": "图书馆咖啡厅",
     "category": "cafe",
     "linked_node_id": "NODE_CAM_034",
-    "latitude": -0.0,
-    "longitude": 0.0,
+    "latitude": 39.962021,
+    "longitude": 116.350003,
     "description": "图书馆一层的休闲咖啡厅"
   },
   {
@@ -35,8 +35,8 @@
     "name": "第二食堂",
     "category": "canteen",
     "linked_node_id": "NODE_CAM_035",
-    "latitude": 0.0,
-    "longitude": 0.0,
+    "latitude": 39.962034,
+    "longitude": 116.350015,
     "description": "提供中餐和晚餐"
   },
   {
@@ -45,8 +45,8 @@
     "name": "学生活动中心超市",
     "category": "supermarket",
     "linked_node_id": "NODE_CAM_036",
-    "latitude": -1e-06,
-    "longitude": 1e-06,
+    "latitude": 39.962045,
+    "longitude": 116.350027,
     "description": "学生活动中心地下一层"
   },
   {
@@ -55,8 +55,8 @@
     "name": "西门洗手间",
     "category": "toilet",
     "linked_node_id": "NODE_CAM_037",
-    "latitude": 0.0,
-    "longitude": -0.0,
+    "latitude": 39.962056,
+    "longitude": 116.350038,
     "description": "靠近西门的公共洗手间"
   },
   {
@@ -65,8 +65,8 @@
     "name": "东门洗手间",
     "category": "toilet",
     "linked_node_id": "NODE_CAM_032",
-    "latitude": 0.0,
-    "longitude": -0.0,
+    "latitude": 39.962243,
+    "longitude": 116.350225,
     "description": "靠近东门的公共洗手间"
   },
   {
@@ -75,8 +75,8 @@
     "name": "图书馆",
     "category": "library",
     "linked_node_id": "NODE_CAM_020",
-    "latitude": 1e-06,
-    "longitude": -1e-06,
+    "latitude": 39.962067,
+    "longitude": 116.350049,
     "description": "综合图书馆"
   },
   {
@@ -85,8 +85,8 @@
     "name": "行政楼办公室",
     "category": "office",
     "linked_node_id": "NODE_CAM_022",
-    "latitude": -1e-06,
-    "longitude": -1e-06,
+    "latitude": 39.962077,
+    "longitude": 116.350059,
     "description": "行政办公楼三层"
   },
   {
@@ -95,8 +95,8 @@
     "name": "1号宿舍楼",
     "category": "dormitory",
     "linked_node_id": "NODE_CAM_021",
-    "latitude": -1e-06,
-    "longitude": -1e-06,
+    "latitude": 39.962086,
+    "longitude": 116.350068,
     "description": "本科生宿舍"
   },
   {
@@ -105,8 +105,8 @@
     "name": "2号宿舍楼",
     "category": "dormitory",
     "linked_node_id": "NODE_CAM_021",
-    "latitude": -1e-06,
-    "longitude": -1e-06,
+    "latitude": 39.962336,
+    "longitude": 116.350318,
     "description": "本科生宿舍"
   },
   {
@@ -115,8 +115,8 @@
     "name": "第三教学楼教室",
     "category": "classroom",
     "linked_node_id": "NODE_CAM_025",
-    "latitude": 1e-06,
-    "longitude": 1e-06,
+    "latitude": 39.962096,
+    "longitude": 116.350077,
     "description": "标准多媒体教室"
   },
   {
@@ -125,8 +125,8 @@
     "name": "主教学楼大教室",
     "category": "classroom",
     "linked_node_id": "NODE_CAM_026",
-    "latitude": 1e-06,
-    "longitude": 1e-06,
+    "latitude": 39.962104,
+    "longitude": 116.350086,
     "description": "阶梯教室"
   },
   {
@@ -135,8 +135,8 @@
     "name": "校医院",
     "category": "clinic",
     "linked_node_id": "NODE_CAM_033",
-    "latitude": 1e-06,
-    "longitude": 0.0,
+    "latitude": 39.962258,
+    "longitude": 116.350239,
     "description": "校医院门诊部"
   },
   {
@@ -145,8 +145,8 @@
     "name": "操场洗手间",
     "category": "toilet",
     "linked_node_id": "NODE_CAM_034",
-    "latitude": -0.0,
-    "longitude": 0.0,
+    "latitude": 39.962271,
+    "longitude": 116.350253,
     "description": "操场旁的公共洗手间"
   },
   {
@@ -155,8 +155,8 @@
     "name": "体育馆小卖部",
     "category": "shop",
     "linked_node_id": "NODE_CAM_035",
-    "latitude": 0.0,
-    "longitude": 0.0,
+    "latitude": 39.962284,
+    "longitude": 116.350265,
     "description": "体育馆入口小卖部"
   },
   {
@@ -165,8 +165,8 @@
     "name": "快递驿站",
     "category": "service",
     "linked_node_id": "NODE_CAM_036",
-    "latitude": -1e-06,
-    "longitude": 1e-06,
+    "latitude": 39.962295,
+    "longitude": 116.350277,
     "description": "校园快递集中收发点"
   },
   {
@@ -175,8 +175,8 @@
     "name": "学生食堂三楼餐厅",
     "category": "restaurant",
     "linked_node_id": "NODE_CAM_037",
-    "latitude": 0.0,
-    "longitude": -0.0,
+    "latitude": 39.962306,
+    "longitude": 116.350288,
     "description": "提供小炒和聚餐"
   },
   {
@@ -185,8 +185,8 @@
     "name": "北门洗手间",
     "category": "toilet",
     "linked_node_id": "NODE_CAM_032",
-    "latitude": 0.0,
-    "longitude": -0.0,
+    "latitude": 39.962243,
+    "longitude": 116.350225,
     "description": "靠近北门的公共洗手间"
   },
   {
@@ -195,8 +195,8 @@
     "name": "南门洗手间",
     "category": "toilet",
     "linked_node_id": "NODE_CAM_033",
-    "latitude": 1e-06,
-    "longitude": 0.0,
+    "latitude": 39.962258,
+    "longitude": 116.350239,
     "description": "靠近南门的公共洗手间"
   },
   {
@@ -205,8 +205,8 @@
     "name": "3号宿舍楼",
     "category": "dormitory",
     "linked_node_id": "NODE_CAM_021",
-    "latitude": -1e-06,
-    "longitude": -1e-06,
+    "latitude": 39.962336,
+    "longitude": 116.350318,
     "description": "研究生宿舍"
   },
   {
@@ -215,8 +215,8 @@
     "name": "体育馆咖啡角",
     "category": "cafe",
     "linked_node_id": "NODE_CAM_035",
-    "latitude": 0.0,
-    "longitude": 0.0,
+    "latitude": 39.962284,
+    "longitude": 116.350265,
     "description": "体育馆一层的咖啡售卖点"
   },
   {
@@ -225,8 +225,8 @@
     "name": "景区洗手间A",
     "category": "toilet",
     "linked_node_id": "NODE_SCE_032",
-    "latitude": -0.0,
-    "longitude": 0.0,
+    "latitude": 39.91611,
+    "longitude": 116.397246,
     "description": "靠近游客中心的洗手间"
   },
   {
@@ -235,8 +235,8 @@
     "name": "景区洗手间B",
     "category": "toilet",
     "linked_node_id": "NODE_SCE_033",
-    "latitude": 0.0,
-    "longitude": -1e-06,
+    "latitude": 39.916123,
+    "longitude": 116.39726,
     "description": "御花园附近的洗手间"
   },
   {
@@ -245,8 +245,8 @@
     "name": "景区洗手间C",
     "category": "toilet",
     "linked_node_id": "NODE_SCE_034",
-    "latitude": 1e-06,
-    "longitude": -0.0,
+    "latitude": 39.916135,
+    "longitude": 116.397272,
     "description": "九龙壁附近的洗手间"
   },
   {
@@ -255,8 +255,8 @@
     "name": "景区洗手间D",
     "category": "toilet",
     "linked_node_id": "NODE_SCE_035",
-    "latitude": -1e-06,
-    "longitude": 0.0,
+    "latitude": 39.916147,
+    "longitude": 116.397284,
     "description": "午门附近的洗手间"
   },
   {
@@ -265,8 +265,8 @@
     "name": "纪念品商店",
     "category": "shop",
     "linked_node_id": "NODE_SCE_036",
-    "latitude": 0.0,
-    "longitude": 1e-06,
+    "latitude": 39.916158,
+    "longitude": 116.397295,
     "description": "太和殿广场旁的纪念品商店"
   },
   {
@@ -275,8 +275,8 @@
     "name": "景区餐厅",
     "category": "restaurant",
     "linked_node_id": "NODE_SCE_032",
-    "latitude": -0.0,
-    "longitude": 0.0,
+    "latitude": 39.91636,
+    "longitude": 116.397496,
     "description": "提供中式简餐"
   },
   {
@@ -285,8 +285,8 @@
     "name": "游客中心咖啡馆",
     "category": "cafe",
     "linked_node_id": "NODE_SCE_033",
-    "latitude": 0.0,
-    "longitude": -1e-06,
+    "latitude": 39.916373,
+    "longitude": 116.39751,
     "description": "游客服务中心一层咖啡馆"
   },
   {
@@ -295,8 +295,8 @@
     "name": "讲解服务台",
     "category": "office",
     "linked_node_id": "NODE_SCE_034",
-    "latitude": 1e-06,
-    "longitude": -0.0,
+    "latitude": 39.916385,
+    "longitude": 116.397522,
     "description": "景点讲解和咨询服务"
   },
   {
@@ -305,8 +305,8 @@
     "name": "钟表馆文创店",
     "category": "shop",
     "linked_node_id": "NODE_SCE_035",
-    "latitude": -1e-06,
-    "longitude": 0.0,
+    "latitude": 39.916397,
+    "longitude": 116.397534,
     "description": "钟表馆旁的文化创意产品店"
   },
   {
@@ -315,8 +315,8 @@
     "name": "珍宝馆茶室",
     "category": "cafe",
     "linked_node_id": "NODE_SCE_036",
-    "latitude": 0.0,
-    "longitude": 1e-06,
+    "latitude": 39.916408,
+    "longitude": 116.397545,
     "description": "珍宝馆旁的休闲茶室"
   },
   {
@@ -325,8 +325,8 @@
     "name": "书画馆休息区",
     "category": "restaurant",
     "linked_node_id": "NODE_SCE_032",
-    "latitude": -0.0,
-    "longitude": 0.0,
+    "latitude": 39.91636,
+    "longitude": 116.397496,
     "description": "书画馆旁的简餐休息区"
   },
   {
@@ -335,8 +335,8 @@
     "name": "景区管理处",
     "category": "office",
     "linked_node_id": "NODE_SCE_033",
-    "latitude": 0.0,
-    "longitude": -1e-06,
+    "latitude": 39.916373,
+    "longitude": 116.39751,
     "description": "景区管理办公区"
   },
   {
@@ -345,8 +345,8 @@
     "name": "文创中心商店",
     "category": "shop",
     "linked_node_id": "NODE_SCE_034",
-    "latitude": 1e-06,
-    "longitude": -0.0,
+    "latitude": 39.916385,
+    "longitude": 116.397522,
     "description": "文创中心的特色商品"
   },
   {
@@ -355,8 +355,8 @@
     "name": "园区洗手间A",
     "category": "toilet",
     "linked_node_id": "NODE_MIX_032",
-    "latitude": -0.0,
-    "longitude": 1e-06,
+    "latitude": 39.998994,
+    "longitude": 116.274987,
     "description": "园区南侧的公共洗手间"
   },
   {
@@ -365,8 +365,8 @@
     "name": "园区洗手间B",
     "category": "toilet",
     "linked_node_id": "NODE_MIX_033",
-    "latitude": 1e-06,
-    "longitude": 1e-06,
+    "latitude": 39.999007,
+    "longitude": 116.275,
     "description": "园区北侧的公共洗手间"
   },
   {
@@ -375,8 +375,8 @@
     "name": "园区洗手间C",
     "category": "toilet",
     "linked_node_id": "NODE_MIX_034",
-    "latitude": -0.0,
-    "longitude": -1e-06,
+    "latitude": 39.999019,
+    "longitude": 116.275012,
     "description": "昆明湖附近的洗手间"
   },
   {
@@ -385,8 +385,8 @@
     "name": "园区洗手间D",
     "category": "toilet",
     "linked_node_id": "NODE_MIX_035",
-    "latitude": -1e-06,
-    "longitude": 1e-06,
+    "latitude": 39.99903,
+    "longitude": 116.275023,
     "description": "佛香阁附近的洗手间"
   },
   {
@@ -395,8 +395,8 @@
     "name": "园区洗手间E",
     "category": "toilet",
     "linked_node_id": "NODE_MIX_036",
-    "latitude": 1e-06,
-    "longitude": -1e-06,
+    "latitude": 39.99904,
+    "longitude": 116.275033,
     "description": "苏州街附近的洗手间"
   },
   {
@@ -405,8 +405,8 @@
     "name": "苏州街商店",
     "category": "shop",
     "linked_node_id": "NODE_MIX_037",
-    "latitude": -1e-06,
-    "longitude": -1e-06,
+    "latitude": 39.99905,
+    "longitude": 116.275043,
     "description": "苏州街旁的纪念品商店"
   },
   {
@@ -415,8 +415,8 @@
     "name": "石舫茶室",
     "category": "cafe",
     "linked_node_id": "NODE_MIX_038",
-    "latitude": 0.0,
-    "longitude": -1e-06,
+    "latitude": 39.99906,
+    "longitude": 116.275053,
     "description": "石舫旁的湖畔茶室"
   },
   {
@@ -425,8 +425,8 @@
     "name": "长廊餐厅",
     "category": "restaurant",
     "linked_node_id": "NODE_MIX_039",
-    "latitude": 0.0,
-    "longitude": 1e-06,
+    "latitude": 39.999069,
+    "longitude": 116.275062,
     "description": "长廊附近的中式餐厅"
   },
   {
@@ -435,8 +435,8 @@
     "name": "昆明湖咖啡",
     "category": "cafe",
     "linked_node_id": "NODE_MIX_032",
-    "latitude": -0.0,
-    "longitude": 1e-06,
+    "latitude": 39.999244,
+    "longitude": 116.275237,
     "description": "昆明湖畔的咖啡厅"
   },
   {
@@ -445,8 +445,8 @@
     "name": "佛香阁小卖部",
     "category": "shop",
     "linked_node_id": "NODE_MIX_033",
-    "latitude": 1e-06,
-    "longitude": 1e-06,
+    "latitude": 39.999257,
+    "longitude": 116.27525,
     "description": "佛香阁入口的小卖部"
   },
   {
@@ -455,8 +455,8 @@
     "name": "园区超市",
     "category": "supermarket",
     "linked_node_id": "NODE_MIX_034",
-    "latitude": -0.0,
-    "longitude": -1e-06,
+    "latitude": 39.999269,
+    "longitude": 116.275262,
     "description": "综合服务楼的便利超市"
   },
   {
@@ -465,8 +465,8 @@
     "name": "德和园餐厅",
     "category": "restaurant",
     "linked_node_id": "NODE_MIX_035",
-    "latitude": -1e-06,
-    "longitude": 1e-06,
+    "latitude": 39.99928,
+    "longitude": 116.275273,
     "description": "德和园旁边的餐厅"
   },
   {
@@ -475,8 +475,8 @@
     "name": "园区管理处办公室",
     "category": "office",
     "linked_node_id": "NODE_MIX_036",
-    "latitude": 1e-06,
-    "longitude": -1e-06,
+    "latitude": 39.99929,
+    "longitude": 116.275283,
     "description": "园区管理中心"
   },
   {
@@ -485,8 +485,8 @@
     "name": "仁寿殿讲解处",
     "category": "office",
     "linked_node_id": "NODE_MIX_037",
-    "latitude": -1e-06,
-    "longitude": -1e-06,
+    "latitude": 39.9993,
+    "longitude": 116.275293,
     "description": "仁寿殿旁边的讲解服务处"
   },
   {
@@ -495,8 +495,8 @@
     "name": "十七孔桥茶座",
     "category": "cafe",
     "linked_node_id": "NODE_MIX_038",
-    "latitude": 0.0,
-    "longitude": -1e-06,
+    "latitude": 39.99931,
+    "longitude": 116.275303,
     "description": "十七孔桥旁的户外茶座"
   },
   {
@@ -505,8 +505,8 @@
     "name": "排云殿商店",
     "category": "shop",
     "linked_node_id": "NODE_MIX_039",
-    "latitude": 0.0,
-    "longitude": 1e-06,
+    "latitude": 39.999319,
+    "longitude": 116.275312,
     "description": "排云殿旁的小商品店"
   },
   {
@@ -515,8 +515,308 @@
     "name": "乐寿堂茶室",
     "category": "cafe",
     "linked_node_id": "NODE_MIX_032",
-    "latitude": -0.0,
-    "longitude": 1e-06,
+    "latitude": 39.999244,
+    "longitude": 116.275237,
     "description": "乐寿堂旁的古典茶室"
+  },
+  {
+    "id": "FAC_BUPT_OSM_001",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "图书馆咖啡厅",
+    "category": "cafe",
+    "linked_node_id": "POI_BUPT_005",
+    "latitude": 39.9622,
+    "longitude": 116.3563,
+    "description": "图书馆一楼咖啡厅"
+  },
+  {
+    "id": "FAC_BUPT_OSM_002",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "主楼洗手间(1F)",
+    "category": "toilet",
+    "linked_node_id": "POI_BUPT_006",
+    "latitude": 39.96295,
+    "longitude": 116.35705,
+    "description": "主楼一层公共洗手间"
+  },
+  {
+    "id": "FAC_BUPT_OSM_003",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "教三楼洗手间(1F)",
+    "category": "toilet",
+    "linked_node_id": "POI_BUPT_007",
+    "latitude": 39.96195,
+    "longitude": 116.35705,
+    "description": "教三楼一层洗手间"
+  },
+  {
+    "id": "FAC_BUPT_OSM_004",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "食堂",
+    "category": "canteen",
+    "linked_node_id": "POI_BUPT_013",
+    "latitude": 39.9604,
+    "longitude": 116.3568,
+    "description": "学生食堂"
+  },
+  {
+    "id": "FAC_BUPT_OSM_005",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "校园超市",
+    "category": "supermarket",
+    "linked_node_id": "POI_BUPT_012",
+    "latitude": 39.959,
+    "longitude": 116.3571,
+    "description": "学生公寓区便利店"
+  },
+  {
+    "id": "FAC_BUPT_OSM_006",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "图书馆",
+    "category": "library",
+    "linked_node_id": "POI_BUPT_005",
+    "latitude": 39.9622,
+    "longitude": 116.3563,
+    "description": "北京邮电大学图书馆"
+  },
+  {
+    "id": "FAC_BUPT_OSM_007",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "体育场洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_BUPT_010",
+    "latitude": 39.9595,
+    "longitude": 116.3555,
+    "description": "操场旁公共洗手间"
+  },
+  {
+    "id": "FAC_BUPT_OSM_008",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "北门门卫室",
+    "category": "service_desk",
+    "linked_node_id": "POI_BUPT_001",
+    "latitude": 39.9636,
+    "longitude": 116.3575,
+    "description": "北门访客登记处"
+  },
+  {
+    "id": "FAC_BUPT_OSM_009",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "南门服务点",
+    "category": "service_desk",
+    "linked_node_id": "POI_BUPT_002",
+    "latitude": 39.9589,
+    "longitude": 116.3573,
+    "description": "南门服务咨询"
+  },
+  {
+    "id": "FAC_BUPT_OSM_010",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "体育馆服务台",
+    "category": "service_desk",
+    "linked_node_id": "POI_BUPT_009",
+    "latitude": 39.9592,
+    "longitude": 116.356,
+    "description": "体育馆前台"
+  },
+  {
+    "id": "FAC_BUPT_OSM_011",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "教学楼咖啡点",
+    "category": "cafe",
+    "linked_node_id": "POI_BUPT_007",
+    "latitude": 39.96195,
+    "longitude": 116.35705,
+    "description": "教三楼自动咖啡机"
+  },
+  {
+    "id": "FAC_BUPT_OSM_012",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "食堂洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_BUPT_013",
+    "latitude": 39.9604,
+    "longitude": 116.3568,
+    "description": "食堂旁洗手间"
+  },
+  {
+    "id": "FAC_BUPT_OSM_013",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "科研楼超市",
+    "category": "shop",
+    "linked_node_id": "POI_BUPT_008",
+    "latitude": 39.9605,
+    "longitude": 116.3558,
+    "description": "科研楼小卖部"
+  },
+  {
+    "id": "FAC_BUPT_OSM_014",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "活动中心洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_BUPT_011",
+    "latitude": 39.961,
+    "longitude": 116.356,
+    "description": "学生活动中心洗手间"
+  },
+  {
+    "id": "FAC_BUPT_OSM_015",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "西门快递站",
+    "category": "service_desk",
+    "linked_node_id": "POI_BUPT_003",
+    "latitude": 39.9615,
+    "longitude": 116.3542,
+    "description": "西门快递收发点"
+  },
+  {
+    "id": "FAC_TSR_OSM_001",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "游客服务中心",
+    "category": "service_desk",
+    "linked_node_id": "POI_TSR_010",
+    "latitude": 39.8875,
+    "longitude": 116.4063,
+    "description": "旅游咨询、导览图、轮椅租赁"
+  },
+  {
+    "id": "FAC_TSR_OSM_002",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "北门洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_TSR_002",
+    "latitude": 39.889,
+    "longitude": 116.4066,
+    "description": "北门附近公共洗手间"
+  },
+  {
+    "id": "FAC_TSR_OSM_003",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "南门洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_TSR_001",
+    "latitude": 39.876,
+    "longitude": 116.4066,
+    "description": "南门附近公共洗手间"
+  },
+  {
+    "id": "FAC_TSR_OSM_004",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "东门洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_TSR_003",
+    "latitude": 39.8822,
+    "longitude": 116.411,
+    "description": "东门附近公共洗手间"
+  },
+  {
+    "id": "FAC_TSR_OSM_005",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "西门洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_TSR_004",
+    "latitude": 39.8822,
+    "longitude": 116.4022,
+    "description": "西门附近公共洗手间"
+  },
+  {
+    "id": "FAC_TSR_OSM_006",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "祈年殿文创商店",
+    "category": "shop",
+    "linked_node_id": "POI_TSR_005",
+    "latitude": 39.8855,
+    "longitude": 116.4066,
+    "description": "天坛主题文创纪念品"
+  },
+  {
+    "id": "FAC_TSR_OSM_007",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "回音壁咖啡点",
+    "category": "cafe",
+    "linked_node_id": "POI_TSR_006",
+    "latitude": 39.8832,
+    "longitude": 116.4072,
+    "description": "景区自动咖啡售卖"
+  },
+  {
+    "id": "FAC_TSR_OSM_008",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "圜丘售票处",
+    "category": "ticket",
+    "linked_node_id": "POI_TSR_007",
+    "latitude": 39.88,
+    "longitude": 116.4066,
+    "description": "圜丘景区入口售票"
+  },
+  {
+    "id": "FAC_TSR_OSM_009",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "丹陛桥休息点",
+    "category": "restaurant",
+    "linked_node_id": "POI_TSR_008",
+    "latitude": 39.8825,
+    "longitude": 116.4066,
+    "description": "中轴线休息区"
+  },
+  {
+    "id": "FAC_TSR_OSM_010",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "斋宫洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_TSR_009",
+    "latitude": 39.881,
+    "longitude": 116.404,
+    "description": "斋宫景区洗手间"
+  },
+  {
+    "id": "FAC_TSR_OSM_011",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "祈年殿洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_TSR_005",
+    "latitude": 39.8855,
+    "longitude": 116.4066,
+    "description": "祈年殿附近洗手间"
+  },
+  {
+    "id": "FAC_TSR_OSM_012",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "北门售票处",
+    "category": "ticket",
+    "linked_node_id": "POI_TSR_002",
+    "latitude": 39.889,
+    "longitude": 116.4066,
+    "description": "北门入口售票处"
+  },
+  {
+    "id": "FAC_TSR_OSM_013",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "南门售票处",
+    "category": "ticket",
+    "linked_node_id": "POI_TSR_001",
+    "latitude": 39.876,
+    "longitude": 116.4066,
+    "description": "南门入口售票处"
+  },
+  {
+    "id": "FAC_TSR_OSM_014",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "游客中心咖啡",
+    "category": "cafe",
+    "linked_node_id": "POI_TSR_010",
+    "latitude": 39.8875,
+    "longitude": 116.4063,
+    "description": "游客服务中心咖啡吧"
+  },
+  {
+    "id": "FAC_TSR_OSM_015",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "东门服务点",
+    "category": "service_desk",
+    "linked_node_id": "POI_TSR_003",
+    "latitude": 39.8822,
+    "longitude": 116.411,
+    "description": "东门游客服务点"
   }
 ]

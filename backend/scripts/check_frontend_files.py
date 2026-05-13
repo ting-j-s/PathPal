@@ -50,6 +50,31 @@ ALGO_KEYWORDS = [
     "time = distance",
 ]
 
+# 地图真实性修正相关文字
+MAP_AUTH_KEYWORDS = [
+    "show_tile",
+    "抽象内部地图模板",
+    "不叠加真实地图瓦片",
+    "真实 OSM 内部道路图",
+    "map-source-note",
+]
+
+# 地图分层管理关键字
+MAP_LAYER_KEYWORDS = [
+    "baseLayer",
+    "routeLayer",
+    "markerLayer",
+    "drawBaseNetwork",
+    "clearBaseLayers",
+    "clearRouteLayers",
+]
+
+# map-layers API 调用关键字
+MAP_LAYERS_API_KEYWORDS = [
+    "map-layers",
+    "getMapLayers",
+]
+
 # 不应该出现的业务页面引用
 FORBIDDEN_KEYWORDS = [
     "diary",
@@ -128,6 +153,70 @@ def check_leaflet():
             errors.append(f"MISSING LEAFLET: {html_file} 未包含 Leaflet 引用")
 
 
+def check_map_authenticity():
+    """检查前端页面是否包含地图真实性相关逻辑。"""
+    all_text = ""
+    for html_file in ["route_planning.html", "nearby.html"]:
+        fpath = FRONTEND_DIR / html_file
+        if fpath.is_file():
+            all_text += fpath.read_text(encoding="utf-8")
+    for js_file in ["js/route_planning.js", "js/nearby.js"]:
+        fpath = FRONTEND_DIR / js_file
+        if fpath.is_file():
+            all_text += fpath.read_text(encoding="utf-8")
+
+    # 至少有一个 match
+    found = False
+    for kw in MAP_AUTH_KEYWORDS:
+        if kw.lower() in all_text.lower():
+            found = True
+            break
+    if not found:
+        errors.append(f"MISSING MAP AUTH: 页面/JS 未包含 show_tile 或地图真实性提示逻辑")
+
+
+def check_map_layer_management():
+    """检查 map.js 是否包含分层管理函数。"""
+    fpath = FRONTEND_DIR / "js/map.js"
+    if not fpath.is_file():
+        errors.append("MISSING: frontend/js/map.js")
+        return
+    content = fpath.read_text(encoding="utf-8")
+    for kw in MAP_LAYER_KEYWORDS:
+        if kw not in content:
+            errors.append(f"MISSING MAP LAYER: map.js 未包含 '{kw}'")
+
+
+def check_map_layers_api():
+    """检查是否使用了 map-layers API。"""
+    all_text = ""
+    for js_file in ["js/api.js", "js/route_planning.js", "js/nearby.js"]:
+        fpath = FRONTEND_DIR / js_file
+        if fpath.is_file():
+            all_text += fpath.read_text(encoding="utf-8")
+    for kw in MAP_LAYERS_API_KEYWORDS:
+        if kw not in all_text:
+            errors.append(f"MISSING MAP LAYERS API: 前端 JS 未包含 '{kw}'")
+
+
+def check_route_geometry():
+    """检查前端是否正确使用 route_geometry。"""
+    all_text = ""
+    for js_file in ["js/map.js", "js/route_planning.js", "js/nearby.js"]:
+        fpath = FRONTEND_DIR / js_file
+        if fpath.is_file():
+            all_text += fpath.read_text(encoding="utf-8")
+    # map.js 中 drawRouteWithSegments 应使用 geometry
+    if "seg.geometry" not in all_text:
+        errors.append("ROUTE GEOMETRY: map.js drawRouteWithSegments 未优先使用 segment.geometry")
+    # route_planning.js 应使用 route_geometry
+    if "route_geometry" not in all_text:
+        errors.append("ROUTE GEOMETRY: route_planning.js 未使用 route_geometry")
+    # nearby.js 应使用 route_geometry
+    if "route_geometry" not in all_text:
+        errors.append("ROUTE GEOMETRY: nearby.js 未使用 route_geometry")
+
+
 def main():
     print("Frontend Files Check")
     print("=" * 40)
@@ -160,6 +249,26 @@ def main():
     check_leaflet()
     if not any("LEAFLET" in e for e in errors):
         print("  Leaflet references OK")
+
+    # 5.5 检查地图真实性逻辑
+    check_map_authenticity()
+    if not any("MAP AUTH" in e for e in errors):
+        print("  Map authenticity logic OK")
+
+    # 5.6 检查地图分层管理
+    check_map_layer_management()
+    if not any("MAP LAYER" in e for e in errors):
+        print("  Map layer management OK")
+
+    # 5.7 检查 map-layers API 使用
+    check_map_layers_api()
+    if not any("MAP LAYERS API" in e for e in errors):
+        print("  Map layers API usage OK")
+
+    # 5.8 检查 route_geometry 使用
+    check_route_geometry()
+    if not any("ROUTE GEOMETRY" in e for e in errors):
+        print("  Route geometry usage OK")
 
     # 6. 检查算法说明文字
     check_algo_text()

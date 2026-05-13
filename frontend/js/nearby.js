@@ -1,5 +1,6 @@
 /**
  * PathPal 场所查询页面 JS
+ * 使用 map-layers API 绘制完整内部道路图 + 附近设施查询结果
  */
 (function () {
     "use strict";
@@ -9,10 +10,11 @@
     if (!API || !MapMod) return;
 
     var mapState = null;
-    var nodesMap = {}; // nodeId -> node object
+    var nodesMap = {};
     var currentOriginNode = null;
-
-    // ---- 工具 ----
+    var currentMapMeta = null;
+    var currentEdges = [];
+    var currentFacilities = [];
 
     function getVal(id) {
         var el = document.getElementById(id);
@@ -43,12 +45,44 @@
     // ---- 地图 ----
 
     function initMap() {
-        mapState = MapMod.createMap("nearby-map", [39.96, 116.35], 15);
+        mapState = MapMod.createMap("nearby-map", [39.96, 116.35], 15, { showTile: false });
+        updateTileNote(null);
+    }
+
+    function updateMapForMeta(meta) {
+        if (!mapState || !meta) return;
+        if (meta.center && meta.center[0] !== 0 && meta.center[1] !== 0) {
+            mapState.map.setView(meta.center, meta.default_zoom || 16);
+        }
+        if (mapState.setTileVisible) {
+            mapState.setTileVisible(meta.show_tile === true);
+        }
+        updateTileNote(meta);
+    }
+
+    function updateTileNote(meta) {
+        var el = document.getElementById("map-source-note");
+        if (!el) return;
+        if (!meta) {
+            el.innerHTML = '<span class="tag tag-info">请选择目的地</span>';
+            return;
+        }
+        if (meta.show_tile) {
+            el.innerHTML =
+                '<span class="tag tag-campus">真实 OSM 内部道路图</span> ' +
+                API.escapeHtml(meta.tile_note || "");
+        } else {
+            el.innerHTML =
+                '<span class="tag tag-warning">抽象内部地图模板</span> ' +
+                API.escapeHtml(meta.tile_note || "该目的地复用抽象内部地图模板，不叠加真实地图瓦片。");
+        }
     }
 
     function drawNearbyOnMap(data) {
         if (!mapState) return;
-        MapMod.clearMapLayers(mapState);
+        // 只清除标记层和路线层，保留基础路网
+        MapMod.clearRouteLayers(mapState);
+        MapMod.clearMarkerLayers(mapState);
 
         // 原节点标记
         if (currentOriginNode) {
@@ -69,9 +103,9 @@
 
     function drawFacilityRoute(facility) {
         if (!mapState || !facility) return;
-        MapMod.clearMapLayers(mapState);
+        MapMod.clearRouteLayers(mapState);
+        MapMod.clearMarkerLayers(mapState);
 
-        // 确保单位是米（后端返回的是米，Leaflet 使用 lat/lng）
         if (currentOriginNode && facility.linked_node_id) {
             MapMod.drawMarkers(mapState, [
                 {
@@ -88,12 +122,14 @@
                 },
             ]);
 
-            // 绘制路径
-            if (facility.path && nodesMap) {
+            // 优先使用 route_geometry
+            if (facility.route_geometry && facility.route_geometry.length > 0) {
+                MapMod.drawRoute(mapState, facility.route_geometry, { color: "#e74c3c", weight: 4, opacity: 0.8 });
+            } else if (facility.path && nodesMap) {
                 var coords = [];
                 facility.path.forEach(function (nid) {
                     var n = nodesMap[nid];
-                    if (n && n.latitude > 0.01) {
+                    if (n && Math.abs(n.latitude) > 0.001) {
                         coords.push([n.latitude, n.longitude]);
                     }
                 });
@@ -114,7 +150,6 @@
 
         var html = "";
 
-        // 算法/数据结构标签
         html +=
             '<p style="margin-bottom:10px;">' +
             '<span class="tag tag-algorithm">算法: ' +
@@ -136,7 +171,7 @@
         }
 
         if (facilities.length === 0) {
-            html += '<p class="hint">未找到附近设施（可能超出半径范围或该区域无设施）</p>';
+            html += '<p class="hint">未找到附近设施</p>';
             el.innerHTML = html;
             return;
         }
@@ -145,7 +180,6 @@
         html += "<th>名称</th><th>类别</th><th>道路距离</th><th>关联节点</th><th>描述</th><th>操作</th>";
         html += "</tr></thead><tbody>";
 
-        var self = this;
         facilities.forEach(function (f, idx) {
             html += "<tr>";
             html += "<td><strong>" + API.escapeHtml(f.name || "") + "</strong></td>";
@@ -163,7 +197,6 @@
         html += "</tbody></table>";
         el.innerHTML = html;
 
-        // 绑定"查看路径"按钮
         el.querySelectorAll("button[data-facility-idx]").forEach(function (btn) {
             btn.addEventListener("click", function () {
                 var idx = parseInt(this.getAttribute("data-facility-idx"));
@@ -192,21 +225,54 @@
         if (!destId) {
             setOptions("select-node", [], "", "");
             setCategoryOptions("select-category", []);
+            updateTileNote(null);
+            if (mapState) {
+                MapMod.clearBaseLayers(mapState);
+                MapMod.clearRouteLayers(mapState);
+                MapMod.clearMarkerLayers(mapState);
+            }
             return;
         }
 
-        // 加载节点
-        API.loadRouteNodes(destId)
+        if (mapState) {
+            MapMod.clearBaseLayers(mapState);
+            MapMod.clearRouteLayers(mapState);
+            MapMod.clearMarkerLayers(mapState);
+        }
+
+        // 使用新的 map-layers API
+        API.getMapLayers(destId)
             .then(function (data) {
-                var nodes = data.nodes || [];
-                var validNodes = nodes.filter(function (n) {
-                    return n.latitude > 0.01;
+                var allNodes = data.nodes || [];
+                currentEdges = data.edges || [];
+                currentFacilities = data.facilities || [];
+
+                var validNodes = allNodes.filter(function (n) {
+                    return Math.abs(n.latitude) > 0.001 && Math.abs(n.longitude) > 0.001;
                 });
+
                 nodesMap = {};
                 validNodes.forEach(function (n) {
                     nodesMap[n.id] = n;
                 });
-                setOptions("select-node", validNodes, "id", "name");
+
+                var selectableNodes = validNodes.filter(function (n) {
+                    return n.type === "gate" || n.type === "scenic_spot" || n.type === "building" || n.type === "intersection";
+                });
+                // 对于大型真实地图（>100个可选择节点），只显示 POI 节点
+                if (selectableNodes.length > 100) {
+                    selectableNodes = selectableNodes.filter(function (n) {
+                        return n.type === "gate" || n.type === "scenic_spot" || n.type === "building" ||
+                            (n.id && (n.id.indexOf("POI_") === 0 || n.id.indexOf("NODE_BUP_") === 0 || n.id.indexOf("NODE_TSR_") === 0));
+                    });
+                }
+                setOptions("select-node", selectableNodes, "id", "name");
+
+                currentMapMeta = data.internal_map || null;
+                updateMapForMeta(currentMapMeta);
+
+                // 绘制完整内部道路网络
+                MapMod.drawBaseNetwork(mapState, validNodes, currentEdges, currentFacilities);
             })
             .catch(function (err) {
                 API.showError("nearby-result", err);
@@ -217,9 +283,7 @@
             .then(function (data) {
                 setCategoryOptions("select-category", data.categories || []);
             })
-            .catch(function () {
-                // 忽略
-            });
+            .catch(function () {});
     }
 
     function findNearby() {
@@ -232,7 +296,6 @@
             return;
         }
 
-        // 更新当前原点
         currentOriginNode = nodesMap[nodeId] || null;
 
         var params = { destination_id: destId, node_id: nodeId };

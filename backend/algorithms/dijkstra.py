@@ -199,6 +199,8 @@ def dijkstra(graph, start, end, weight_func):
         seg_time = weight_info.get("time", 0)
         total_time += seg_time
 
+        seg_geometry = _get_segment_geometry(edge, f, t)
+
         segments.append({
             "from": f,
             "to": t,
@@ -210,6 +212,7 @@ def dijkstra(graph, start, end, weight_func):
             "ideal_speed": weight_info.get("ideal_speed"),
             "real_speed": weight_info.get("real_speed"),
             "time": seg_time,
+            "geometry": seg_geometry,
         })
 
     return {
@@ -298,6 +301,55 @@ def dijkstra_mixed_time(graph, start, end, destination_type):
 # ============================================================
 # 多点路线（贪心 TSP 近似）
 # ============================================================
+def _get_segment_geometry(edge, from_node_id, to_node_id):
+    """
+    获取 segment 的 geometry。
+    如果 edge 有 geometry，根据方向返回正向或反向。
+    如果 edge 没有 geometry，用 from/to 坐标构建两点 geometry。
+    """
+    geom = edge.get("geometry")
+    if geom and len(geom) >= 2:
+        # 检查方向：geometry[0] 应对应 from_node
+        if edge["from"] == from_node_id:
+            return geom
+        else:
+            return list(reversed(geom))
+
+    # Fallback: 用 edge 的 from/to 两点构建
+    from_coord = edge.get("from_coord")
+    to_coord = edge.get("to_coord")
+    if from_coord and to_coord:
+        if edge["from"] == from_node_id:
+            return [from_coord, to_coord]
+        else:
+            return [to_coord, from_coord]
+
+    return None
+
+
+def extract_route_geometry(segments):
+    """
+    从 segments 的 geometry 拼接完整 route_geometry。
+    相邻 segment 间去除重复的连接点。
+    """
+    if not segments:
+        return []
+
+    all_points = []
+    for i, seg in enumerate(segments):
+        geom = seg.get("geometry")
+        if not geom or len(geom) < 2:
+            continue
+
+        if i == 0:
+            all_points.extend(geom)
+        else:
+            # 跳过第一个点（与前一段的最后一个点重复）
+            all_points.extend(geom[1:])
+
+    return all_points
+
+
 def multi_point_route(graph, start, targets, strategy="shortest_distance",
                        destination_type=None):
     """

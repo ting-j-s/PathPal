@@ -192,3 +192,79 @@ cd frontend && python -m http.server 8000
 - `e2e_smoke_check.py` → 需后端运行后执行
 
 **Phase 1 总结**：全部 5 步完成，三个核心模块（旅游推荐、路线规划、场所查询）+ 室内导航 Demo 均可验收演示。
+
+---
+
+## 第 6 步：地图真实性修正 ✅
+
+**状态**：已完成
+**交付物**：
+
+- [x] `data/internal_maps.json` — 5 个地图模板（新增 MAP_BUPT_REAL + MAP_SCENIC_REAL），每个增加 source / is_real_map / show_tile / center / tile_note 字段
+- [x] `data/internal_nodes.json` — 164 节点（新增 52）
+- [x] `data/internal_edges.json` — 416 边（新增 132）
+- [x] `data/facilities.json` — 88 设施（新增 36）
+- [x] `data/destinations.json` — DEST_001 → MAP_BUPT_REAL, DEST_032 → MAP_SCENIC_REAL
+- [x] `backend/routes/map_routes.py` — 新增 API: GET /api/internal-maps, GET /api/internal-maps/<map_id>
+- [x] `backend/app.py` — 注册 map_bp 蓝图
+- [x] `backend/services/data_loader.py` — 新增 get_internal_map_by_id / get_internal_map_for_destination
+- [x] `backend/services/route_service.py` — list_nodes 返回 internal_map 元数据
+- [x] `backend/services/nearby_service.py` — 返回 internal_map 元数据
+- [x] `frontend/js/map.js` — createMap 支持 showTile，新增 setTileVisible
+- [x] `frontend/js/api.js` — 新增 getInternalMaps / getInternalMap
+- [x] `frontend/js/route_planning.js` — show_tile 逻辑 + updateMapForMeta + updateTileNote
+- [x] `frontend/js/nearby.js` — show_tile 逻辑 + updateMapForMeta + updateTileNote
+- [x] `frontend/route_planning.html` — 新增 map-source-note 区域
+- [x] `frontend/nearby.html` — 新增 map-source-note 区域
+- [x] `backend/scripts/validate_data.py` — 新增 12 项校验规则
+- [x] `backend/scripts/check_frontend_files.py` — 新增 check_map_authenticity
+- [x] `tests/test_services/test_map_metadata.py` — 地图元数据测试（8 tests）
+- [x] `tests/test_routes/test_map_routes.py` — 地图 API 路由测试（6 tests）
+- [x] `docs/map_data_strategy.md` — 地图数据策略文档
+
+**新增地图**：
+
+| map_id | 类型 | 来源 | 节点 | 边 | 设施 | 绑定目的地 |
+|--------|------|------|------|-----|------|-----------|
+| MAP_BUPT_REAL | campus | openstreetmap | 26 | 64 | 18 | DEST_001 北京邮电大学 |
+| MAP_SCENIC_REAL | attraction | openstreetmap | 26 | 68 | 18 | DEST_032 天坛公园 |
+
+**测试结果**：`pytest tests/ -q` → **176 passed** (162 → 176, +14)
+**数据校验**：`python backend/scripts/validate_data.py` → **5676/5676 passed**
+
+---
+
+## 第 7 步：地图展示与坐标修复 ✅
+
+**状态**：已完成
+**交付物**：
+
+- [x] `backend/scripts/diagnose_map_coordinates.py` — 地图坐标诊断脚本
+- [x] `docs/map_coordinate_diagnosis.md` — 坐标诊断报告
+- [x] `data/internal_maps.json` — 抽象模板 center 修正（不再为 [0,0]）
+- [x] `data/internal_nodes.json` — 修复抽象模板 46 个 (0,0) 坐标节点 + BUPT 节点坐标偏移修正
+- [x] `data/internal_edges.json` — BUPT 边距离重新计算（44 条边）
+- [x] `data/facilities.json` — 修复全部 52 个抽象模板 + 18 个 BUPT 设施坐标（从 (0,0) 修正为有效坐标）
+- [x] `backend/routes/map_routes.py` — 新增 GET /api/destinations/<dest_id>/map-layers
+- [x] `frontend/js/map.js` — 分层管理：baseLayer + routeLayer + markerLayer + drawBaseNetwork + clearBaseLayers + clearRouteLayers + drawEdges + drawNodes + drawFacilities
+- [x] `frontend/js/api.js` — 新增 getMapLayers
+- [x] `frontend/js/route_planning.js` — 使用 map-layers API，绘制完整内部道路网络，路线覆盖不破坏基础路网
+- [x] `frontend/js/nearby.js` — 同上
+- [x] `backend/scripts/validate_data.py` — 新增 validate_coordinate_bounds（BUPT/SCENIC 坐标范围 + 抽象模板 (0,0) 检查 + center 检查）
+- [x] `backend/scripts/check_frontend_files.py` — 新增 check_map_layer_management + check_map_layers_api
+- [x] `tests/test_routes/test_map_layers.py` — map-layers API 测试（9 tests）
+- [x] `tests/test_services/test_map_metadata.py` — 新增坐标范围检查（6 tests）
+
+**修复的问题**：
+
+| 问题 | 修复 |
+|------|------|
+| BUPT 节点东界 116.3609 → 偏到杏坛路 | 修正为 116.3578（学院路以内）|
+| 抽象模板 52 个设施坐标 (0,0) → 无法渲染 | 根据 linked_node_id 设置为有效坐标 |
+| 抽象模板 46 个节点坐标 (0,0) | 根据所在地图有效节点分布设定坐标 |
+| 抽象模板 center = [0,0] | 修正为各模板节点平均坐标 |
+| 前端只画路线不画基础路网 | 新增 drawBaseNetwork 绘制全部节点/边/设施 |
+| 重新规划路线时清除基础路网 | 三层分层管理：base / route / marker |
+
+**测试结果**：`pytest tests/ -q` → **190 passed** (176 → 190, +14)
+**数据校验**：`python backend/scripts/validate_data.py` → **5829/5829 passed**
