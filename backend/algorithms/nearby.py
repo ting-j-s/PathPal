@@ -3,9 +3,17 @@ PathPal 附近设施查询（道路距离排序）
 
 核心原则：使用道路图最短路径距离进行排序，
 不得使用经纬度直线距离作为最终排序依据。
+
+优化：从 O(F × V²) 降为 O(V² + F log F)。
+对 origin_node_id 只运行一次单源 Dijkstra，所有设施共享同一棵最短路径树。
 """
-from .dijkstra import dijkstra_shortest_distance, extract_route_geometry
-from .sorting import merge_sort, get_value
+from .dijkstra import (
+    dijkstra_all_distances,
+    reconstruct_segments_from_prev,
+    extract_route_geometry,
+    INF,
+)
+from .sorting import merge_sort
 from .search import _match_value
 
 
@@ -18,7 +26,7 @@ def calculate_nearby_facilities_by_road_distance(
     keyword=None,
 ):
     """
-    基于道路距离计算附近设施。
+    基于道路距离计算附近设施（单源 Dijkstra 优化版）。
 
     参数:
         graph: Graph 对象
@@ -37,6 +45,9 @@ def calculate_nearby_facilities_by_road_distance(
         }, ...]
         按 road_distance 升序排列。
     """
+    # 单源 Dijkstra：O(V²)，只运行一次
+    all_dist = dijkstra_all_distances(graph, origin_node_id)
+
     results = []
 
     for facility in facilities:
@@ -63,16 +74,20 @@ def calculate_nearby_facilities_by_road_distance(
         if not graph.has_node(linked_node_id):
             continue
 
-        # 计算道路最短路径距离
-        route_result = dijkstra_shortest_distance(graph, origin_node_id, linked_node_id)
-        if not route_result["reachable"]:
+        # 直接从单源距离表中读取道路距离
+        road_distance = all_dist["dist"].get(linked_node_id, INF)
+        if road_distance == INF:
             continue
-
-        road_distance = route_result["total_distance"]
 
         # 半径过滤
         if radius is not None and road_distance > radius:
             continue
+
+        # 从 prev / prev_edge 重建路径和路段
+        route_result = reconstruct_segments_from_prev(
+            graph, all_dist["prev"], all_dist["prev_edge"],
+            origin_node_id, linked_node_id,
+        )
 
         # 获取设施坐标
         coordinates = None

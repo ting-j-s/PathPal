@@ -224,6 +224,180 @@ def dijkstra(graph, start, end, weight_func):
 
 
 # ============================================================
+# 单源全节点 Dijkstra
+# ============================================================
+def dijkstra_all_distances(graph, start, weight_func=None):
+    """
+    从 start 出发计算到图中所有节点的最短距离（单源 Dijkstra）。
+
+    参数:
+        graph: Graph 对象
+        start: 起点 node_id
+        weight_func(edge) -> {"weight": float, ...} | None
+            默认使用距离边权。
+
+    返回:
+        {
+            "dist": {node_id: distance},
+            "prev": {node_id: previous_node_id},
+            "prev_edge": {node_id: (edge, weight_info)}
+        }
+    """
+    if weight_func is None:
+        weight_func = _weight_distance
+
+    if not graph.has_node(start):
+        raise ValueError(f"Start node not found: {start}")
+
+    dist = {}
+    prev = {}
+    prev_edge = {}
+
+    for node_id in graph.nodes:
+        dist[node_id] = INF
+        prev[node_id] = None
+        prev_edge[node_id] = None
+    dist[start] = 0
+
+    unvisited = list(graph.nodes.keys())
+
+    while unvisited:
+        u = None
+        u_dist = INF
+        for candidate in unvisited:
+            if dist[candidate] < u_dist:
+                u_dist = dist[candidate]
+                u = candidate
+
+        if u is None or u_dist == INF:
+            break
+
+        unvisited.remove(u)
+
+        for edge in graph.get_neighbors(u):
+            if edge["from"] == u:
+                v = edge["to"]
+            elif edge["to"] == u and not graph.directed:
+                v = edge["from"]
+            else:
+                continue
+
+            if v not in unvisited:
+                continue
+
+            weight_info = weight_func(edge)
+            if weight_info is None:
+                continue
+
+            new_dist = u_dist + weight_info["weight"]
+            if new_dist < dist[v]:
+                dist[v] = new_dist
+                prev[v] = u
+                prev_edge[v] = (edge, weight_info)
+
+    return {"dist": dist, "prev": prev, "prev_edge": prev_edge}
+
+
+def reconstruct_path_from_prev(prev, start, end):
+    """
+    根据 prev 指针回溯路径。
+
+    返回:
+        [node_id, ...] 或 [] (不可达)
+    """
+    if start == end:
+        return [start]
+    if prev.get(end) is None and start != end:
+        return []
+    path = []
+    curr = end
+    while curr is not None:
+        path.append(curr)
+        curr = prev.get(curr)
+    path.reverse()
+    # 验证回溯到了 start
+    if not path or path[0] != start:
+        return []
+    return path
+
+
+def reconstruct_segments_from_prev(graph, prev, prev_edge, start, end):
+    """
+    根据 prev / prev_edge 指针还原路径的 segments、总距离、总时间。
+
+    返回:
+        {
+            "path": [node_id, ...],
+            "segments": [...],
+            "total_distance": float,
+            "total_time": float,
+        }
+    """
+    path = reconstruct_path_from_prev(prev, start, end)
+
+    if not path:
+        return {
+            "path": [],
+            "segments": [],
+            "total_distance": INF,
+            "total_time": INF,
+        }
+
+    if len(path) == 1:
+        return {
+            "path": path,
+            "segments": [],
+            "total_distance": 0,
+            "total_time": 0,
+        }
+
+    segments = []
+    total_distance = 0
+    total_time = 0
+
+    for i in range(len(path) - 1):
+        f = path[i]
+        t = path[i + 1]
+        edge_and_info = prev_edge.get(t)
+        if edge_and_info is None:
+            # 缺少边信息（数据异常）
+            return {
+                "path": [],
+                "segments": [],
+                "total_distance": INF,
+                "total_time": INF,
+            }
+        edge, weight_info = edge_and_info
+
+        seg_distance = edge["distance"]
+        total_distance += seg_distance
+        seg_time = weight_info.get("time", 0)
+        total_time += seg_time
+        seg_geometry = _get_segment_geometry(edge, f, t)
+
+        segments.append({
+            "from": f,
+            "to": t,
+            "from_name": graph.get_node_name(f),
+            "to_name": graph.get_node_name(t),
+            "distance": seg_distance,
+            "transport": weight_info.get("transport"),
+            "congestion": edge.get("congestion"),
+            "ideal_speed": weight_info.get("ideal_speed"),
+            "real_speed": weight_info.get("real_speed"),
+            "time": seg_time,
+            "geometry": seg_geometry,
+        })
+
+    return {
+        "path": path,
+        "segments": segments,
+        "total_distance": total_distance,
+        "total_time": total_time,
+    }
+
+
+# ============================================================
 # 距离最短策略
 # ============================================================
 def _weight_distance(edge):
@@ -377,22 +551,18 @@ def multi_point_route(graph, start, targets, strategy="shortest_distance",
             "reachable": True,
         }
 
-    # 选择权函数
+    # 选择权函数 —— 多目标场景下，时间策略统一使用 mixed（自动选最快交通工具），
+    # 避免 campus 下 bike 无法到达 walk-only 路段导致节点不可达。
     if strategy == "shortest_distance":
         route_fn = dijkstra_shortest_distance
-    elif strategy == "mixed_time":
+        compare_key = "total_distance"
+    elif strategy in ("shortest_time", "mixed_time"):
         def route_fn(g, s, e):
             return dijkstra_mixed_time(g, s, e, destination_type)
-    elif strategy == "shortest_time":
-        transport = "walk"
-        if destination_type == "campus":
-            transport = "bike"
-        elif destination_type == "attraction":
-            transport = "walk"
-        def route_fn(g, s, e):
-            return dijkstra_shortest_time(g, s, e, transport)
+        compare_key = "total_time"
     else:
         route_fn = dijkstra_shortest_distance
+        compare_key = "total_distance"
 
     remaining = set(targets)
     current = start
@@ -403,15 +573,15 @@ def multi_point_route(graph, start, targets, strategy="shortest_distance",
     total_time = 0
 
     while remaining:
-        # 找最近的未访问目标
+        # 找最近的未访问目标（按对应策略比较距离/时间）
         best_target = None
-        best_dist = INF
+        best_val = INF
         best_result = None
 
         for t in remaining:
             result = route_fn(graph, current, t)
-            if result["reachable"] and result["total_distance"] < best_dist:
-                best_dist = result["total_distance"]
+            if result["reachable"] and result[compare_key] < best_val:
+                best_val = result[compare_key]
                 best_target = t
                 best_result = result
 
@@ -442,6 +612,8 @@ def multi_point_route(graph, start, targets, strategy="shortest_distance",
     if current != start:
         result = route_fn(graph, current, start)
         if result["reachable"]:
+            for seg in result["segments"]:
+                seg["is_return"] = True
             all_path.extend(result["path"][1:])
             all_segments.extend(result["segments"])
             total_distance += result["total_distance"]

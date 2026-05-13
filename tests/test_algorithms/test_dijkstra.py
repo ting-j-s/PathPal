@@ -8,6 +8,9 @@ from backend.algorithms.dijkstra import (
     dijkstra_shortest_time,
     dijkstra_mixed_time,
     multi_point_route,
+    dijkstra_all_distances,
+    reconstruct_path_from_prev,
+    reconstruct_segments_from_prev,
     calculate_edge_time,
     choose_best_transport_for_edge,
     INF,
@@ -237,3 +240,86 @@ class TestMultiPointRoute:
         assert result["reachable"] is True
         assert result["visit_order"] == []
         assert result["total_distance"] == 0
+
+
+class TestDijkstraAllDistances:
+    """单源全节点 Dijkstra 测试。"""
+
+    @pytest.fixture(autouse=True)
+    def load_graphs(self, internal_nodes, internal_edges):
+        self.campus = load_graph_from_data(internal_nodes, internal_edges, "MAP_CAMPUS_001")
+
+    def test_returns_all_nodes(self):
+        s = list(self.campus.nodes.keys())[0]
+        result = dijkstra_all_distances(self.campus, s)
+        assert "dist" in result
+        assert "prev" in result
+        assert "prev_edge" in result
+        assert len(result["dist"]) == self.campus.node_count()
+        # start node distance is 0
+        assert result["dist"][s] == 0
+        assert result["prev"][s] is None
+
+    def test_all_reachable_nodes_have_finite_distance(self):
+        s = list(self.campus.nodes.keys())[0]
+        result = dijkstra_all_distances(self.campus, s)
+        reachable = sum(1 for d in result["dist"].values() if d < INF)
+        # in a connected graph, most nodes should be reachable
+        assert reachable >= 2
+
+    def test_consistent_with_single_pair_dijkstra(self):
+        """验证全节点距离与逐对 Dijkstra 结果一致。"""
+        node_ids = list(self.campus.nodes.keys())
+        s = node_ids[0]
+        all_dist = dijkstra_all_distances(self.campus, s)
+
+        for target in node_ids[1:]:
+            single = dijkstra_shortest_distance(self.campus, s, target)
+            if single["reachable"]:
+                assert abs(all_dist["dist"][target] - single["total_distance"]) < 0.01, \
+                    f"Distance mismatch for {target}"
+            else:
+                assert all_dist["dist"][target] == INF
+
+    def test_reconstruct_path(self):
+        node_ids = list(self.campus.nodes.keys())
+        s, e = node_ids[0], node_ids[1]
+        all_dist = dijkstra_all_distances(self.campus, s)
+        path = reconstruct_path_from_prev(all_dist["prev"], s, e)
+        assert len(path) >= 2
+        assert path[0] == s
+        assert path[-1] == e
+
+    def test_reconstruct_path_same_node(self):
+        node_ids = list(self.campus.nodes.keys())
+        s = node_ids[0]
+        all_dist = dijkstra_all_distances(self.campus, s)
+        path = reconstruct_path_from_prev(all_dist["prev"], s, s)
+        assert path == [s]
+
+    def test_reconstruct_segments(self):
+        node_ids = list(self.campus.nodes.keys())
+        s, e = node_ids[0], node_ids[1]
+        all_dist = dijkstra_all_distances(self.campus, s)
+        result = reconstruct_segments_from_prev(
+            self.campus, all_dist["prev"], all_dist["prev_edge"], s, e
+        )
+        assert len(result["segments"]) >= 1
+        assert result["total_distance"] > 0
+        assert len(result["path"]) == len(result["segments"]) + 1
+        for seg in result["segments"]:
+            assert "geometry" in seg
+            assert seg["geometry"] is not None
+            assert len(seg["geometry"]) >= 2
+
+    def test_reconstruct_segments_same_node(self):
+        node_ids = list(self.campus.nodes.keys())
+        s = node_ids[0]
+        all_dist = dijkstra_all_distances(self.campus, s)
+        result = reconstruct_segments_from_prev(
+            self.campus, all_dist["prev"], all_dist["prev_edge"], s, s
+        )
+        assert result["path"] == [s]
+        assert result["segments"] == []
+        assert result["total_distance"] == 0
+        assert result["total_time"] == 0

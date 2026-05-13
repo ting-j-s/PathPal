@@ -221,7 +221,27 @@ weight_func(edge) → {
 - 返回完整合并后的 path、segments、visit_order
 - 文档明确说明这是贪心近似，非最优解
 
-### 5.6 错误处理
+### 5.6 dijkstra_all_distances(graph, start, weight_func=None)
+
+- **单源全节点 Dijkstra**：从 start 出发，计算到图中所有节点的最短距离
+- 返回 `{"dist": {node_id: distance}, "prev": {node_id: prev_node_id}, "prev_edge": {node_id: (edge, weight_info)}}`
+- 与 `dijkstra` 共享相同的松弛逻辑，区别是不指定终点，遍历所有可达节点
+- 时间复杂度 O(V²)，空间复杂度 O(V)
+- 用于场所查询优化：多个设施共享同一棵最短路径树
+
+### 5.7 reconstruct_path_from_prev(prev, start, end)
+
+- 根据 prev 指针回溯路径
+- 处理 start == end、不可达等边界情况
+- 返回 `[node_id, ...]` 或 `[]`
+
+### 5.8 reconstruct_segments_from_prev(graph, prev, prev_edge, start, end)
+
+- 根据 prev / prev_edge 还原完整路段信息
+- 返回 `{"path": [...], "segments": [...], "total_distance": float, "total_time": float}`
+- 与 `dijkstra` 返回的 segments 结构完全一致
+
+### 5.9 错误处理
 
 - start/end 不存在：`raise ValueError`
 - 不可达：返回 `reachable: False`, `total_distance: INF`, `total_time: INF`, `path: []`
@@ -234,12 +254,19 @@ weight_func(edge) → {
 
 ### 6.1 calculate_nearby_facilities_by_road_distance(graph, origin_node_id, facilities, radius, category, keyword)
 
-**流程**：
+**优化后流程（单源 Dijkstra）**：
 1. 类别过滤（category 参数）
 2. 关键词过滤（keyword 匹配 name/category/description）
-3. 对每个候选 facility，用 `dijkstra_shortest_distance` 计算 origin → linked_node_id 的道路最短距离
-4. 半径过滤（radius 参数）
-5. 按 `road_distance` 升序排序（使用 `merge_sort`）
+3. **对 origin_node_id 运行一次 `dijkstra_all_distances`**，得到到所有节点的最短距离和 prev 指针
+4. 遍历候选 facilities，直接从 `dist[linked_node_id]` 读取道路距离（O(1) 查询）
+5. 半径过滤（radius 参数）
+6. 对每个通过过滤的 facility，使用 `reconstruct_segments_from_prev` 还原 path / segments / route_geometry
+7. 按 `road_distance` 升序排序（使用 `merge_sort`，O(F log F)）
+
+**优化原因**：
+- 同一次查询起点固定，多个设施目标共享同一棵最短路径树
+- 旧方案对每个设施分别调用 `dijkstra_shortest_distance`，重复计算大量相同子问题
+- 新方案一次 Dijkstra 得到所有节点距离，后续只需 O(1) 查表 + O(V) 回溯路径
 
 **关键约束**：
 - 禁止使用经纬度直线距离作为排序依据
@@ -266,7 +293,9 @@ weight_func(edge) → {
 | 线性搜索 | O(N) | O(1) | 中文关键词匹配 |
 | 哈希搜索 | O(1) | O(N) | 预处理哈希索引 |
 | Dijkstra | O(V²) | O(V) | 小图，线性扫描未访问节点 |
-| 附近查询 | O(F × V²) | O(V) | F 为候选设施数，每个设施一次 Dijkstra |
+| 单源全节点 Dijkstra | O(V²) | O(V) | 计算从 start 到所有节点的最短距离 |
+| 附近查询（优化前） | O(F × V²) | O(V) | F 为候选设施数，每个设施一次 Dijkstra |
+| 附近查询（优化后） | O(V² + F log F) | O(V) | 一次单源 Dijkstra + 查表 + 路径回溯 + 排序 |
 | 多点路线 (TSP 贪心) | O(T × V²) | O(V) | T 为目标点数，贪心迭代 |
 
 其中 V 为节点数（≤ 40），E 为边数（≤ 102），N 为数据规模（200+）。
@@ -277,7 +306,7 @@ weight_func(edge) → {
 
 | 文件 | 状态 | 测试 |
 |------|------|------|
-| `backend/algorithms/graph.py` | 已实现 | 101 测试全部通过 |
+| `backend/algorithms/graph.py` | 已实现 | 113 测试全部通过 |
 | `backend/algorithms/sorting.py` | 已实现 | 同上 |
 | `backend/algorithms/search.py` | 已实现 | 同上 |
 | `backend/algorithms/topk.py` | 已实现 | 同上 |

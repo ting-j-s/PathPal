@@ -424,6 +424,44 @@ footer {
     margin-top: 20px;
 }
 
+/* ========== 复选框列表 ========== */
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.1s;
+    font-size: 0.9em;
+}
+
+.checkbox-item:hover {
+    background: #eef5fc;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.checkbox-item .node-name {
+    flex: 1;
+}
+
+.checkbox-item .node-type-tag {
+    font-size: 0.75em;
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.checkbox-item .node-type-gate    { background: #27ae60; }
+.checkbox-item .node-type-building { background: #3498db; }
+.checkbox-item .node-type-scenic   { background: #e67e22; }
+.checkbox-item .node-type-intersect{ background: #95a5a6; }
+.checkbox-item .node-type-other    { background: #7f8c8d; }
+
 /* ========== 响应式 ========== */
 @media (max-width: 768px) {
     .navbar {

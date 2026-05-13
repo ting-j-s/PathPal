@@ -15,6 +15,8 @@
     var currentDestType = null;
     var currentEdges = [];
     var currentFacilities = [];
+    var allSelectableNodes = []; // 用于多目标复选框列表
+    var checkedTargets = {}; // 持久化选中的途经节点 {nodeId: true}
 
     // ---- 工具函数 ----
 
@@ -251,6 +253,9 @@
         if (!destId) {
             setSelectOptions("select-start", [], "", "");
             setSelectOptions("select-end", [], "", "");
+            allSelectableNodes = [];
+            checkedTargets = {};
+            populateTargetsCheckboxes([], "");
             updateTileNote(null);
             if (mapState) {
                 MapMod.clearBaseLayers(mapState);
@@ -262,6 +267,7 @@
 
         updateTransportHint(destId);
         clearResults();
+        checkedTargets = {};
         if (mapState) {
             MapMod.clearBaseLayers(mapState);
             MapMod.clearRouteLayers(mapState);
@@ -298,6 +304,10 @@
                 }
                 setSelectOptions("select-start", selectableNodes, "id", "name");
                 setSelectOptions("select-end", selectableNodes, "id", "name");
+
+                // 存储并填充多目标复选框列表
+                allSelectableNodes = selectableNodes;
+                populateTargetsCheckboxes(selectableNodes, "");
 
                 // 处理 internal_map metadata
                 currentMapMeta = data.internal_map || null;
@@ -412,22 +422,24 @@
     function planMultiPoint() {
         var destId = getSelectVal("select-dest");
         var start = getSelectVal("select-start");
-        var targetsRaw = document.getElementById("input-targets").value.trim();
         var strategy = getSelectVal("select-multi-strategy");
 
-        if (!destId || !start || !targetsRaw) {
-            API.showError("route-result", new Error("请选择目的地、起点并输入途经节点"));
+        // 从复选框列表获取选中的目标节点
+        var checkboxes = document.querySelectorAll("#targets-checkbox-list input[type='checkbox']:checked");
+        var targets = [];
+        checkboxes.forEach(function (cb) {
+            if (cb.value !== start) {
+                targets.push(cb.value);
+            }
+        });
+
+        if (!destId || !start) {
+            API.showError("route-result", new Error("请选择目的地和起点"));
             return;
         }
 
-        var targets = targetsRaw
-            .split(/[,，\s]+/)
-            .filter(function (t) {
-                return t.length > 0;
-            });
-
         if (targets.length === 0) {
-            API.showError("route-result", new Error("请输入至少一个途经节点"));
+            API.showError("route-result", new Error("请在途经节点列表中至少勾选一个节点"));
             return;
         }
 
@@ -449,6 +461,82 @@
             });
     }
 
+    // ---- 多目标复选框列表 ----
+
+    function getNodeTypeClass(nodeType) {
+        var t = nodeType || "";
+        if (t === "gate") return "node-type-gate";
+        if (t === "building" || t === "teaching_building" || t === "office_building" || t === "classroom_building") return "node-type-building";
+        if (t === "scenic_spot") return "node-type-scenic";
+        if (t === "intersection") return "node-type-intersect";
+        return "node-type-other";
+    }
+
+    function populateTargetsCheckboxes(nodes, filterText) {
+        var container = document.getElementById("targets-checkbox-list");
+        if (!container) return;
+
+        var startId = getSelectVal("select-start");
+        var ft = (filterText || "").toLowerCase();
+
+        var filtered = nodes;
+        if (ft) {
+            filtered = nodes.filter(function (n) {
+                return n.name.toLowerCase().indexOf(ft) !== -1 ||
+                       n.id.toLowerCase().indexOf(ft) !== -1;
+            });
+        }
+
+        if (filtered.length === 0) {
+            container.innerHTML = '<p class="hint">' + (ft ? '无匹配节点' : '无可用节点') + '</p>';
+            return;
+        }
+
+        var html = "";
+        filtered.forEach(function (n) {
+            var isStart = (n.id === startId);
+            html += '<div class="checkbox-item">';
+            html += '<input type="checkbox" value="' + API.escapeHtml(n.id) + '"';
+            html += ' id="cb-' + API.escapeHtml(n.id) + '"';
+            if (checkedTargets[n.id]) {
+                html += ' checked';
+            }
+            if (isStart) {
+                html += ' disabled title="该节点为起点"';
+            }
+            html += '>';
+            html += '<label for="cb-' + API.escapeHtml(n.id) + '" class="node-name">';
+            html += API.escapeHtml(n.name || n.id);
+            if (isStart) {
+                html += ' <span style="color:#999;font-size:0.85em;">（起点）</span>';
+            }
+            html += '</label>';
+            html += '<span class="node-type-tag ' + getNodeTypeClass(n.type) + '">';
+            html += API.escapeHtml(n.type || "node");
+            html += '</span>';
+            html += '</div>';
+        });
+
+        container.innerHTML = html;
+
+        // 绑定 checkbox change 事件更新计数并同步状态
+        var cbs = container.querySelectorAll("input[type='checkbox']");
+        cbs.forEach(function (cb) {
+            cb.addEventListener("change", function () {
+                checkedTargets[cb.value] = cb.checked;
+                updateTargetsCount();
+            });
+        });
+        updateTargetsCount();
+    }
+
+    function updateTargetsCount() {
+        var el = document.getElementById("targets-count");
+        if (!el) return;
+        var checked = document.querySelectorAll("#targets-checkbox-list input[type='checkbox']:checked").length;
+        el.textContent = "已选 " + checked + " 个";
+    }
+
     // ---- 初始化 ----
 
     function init() {
@@ -459,6 +547,32 @@
         document.getElementById("select-strategy").addEventListener("change", updateTransportVisibility);
         document.getElementById("btn-plan").addEventListener("click", planRoute);
         document.getElementById("btn-multi-plan").addEventListener("click", planMultiPoint);
+
+        // 多目标复选框列表事件
+        document.getElementById("input-target-filter").addEventListener("input", function () {
+            populateTargetsCheckboxes(allSelectableNodes, this.value);
+        });
+        document.getElementById("btn-targets-select-all").addEventListener("click", function () {
+            var cbs = document.querySelectorAll("#targets-checkbox-list input[type='checkbox']:not(:disabled)");
+            cbs.forEach(function (cb) {
+                cb.checked = true;
+                checkedTargets[cb.value] = true;
+            });
+            updateTargetsCount();
+        });
+        document.getElementById("btn-targets-clear-all").addEventListener("click", function () {
+            var cbs = document.querySelectorAll("#targets-checkbox-list input[type='checkbox']");
+            cbs.forEach(function (cb) {
+                cb.checked = false;
+                checkedTargets[cb.value] = false;
+            });
+            updateTargetsCount();
+        });
+        document.getElementById("select-start").addEventListener("change", function () {
+            // 起点变更时刷新复选框列表（标记新起点为 disabled）
+            populateTargetsCheckboxes(allSelectableNodes, document.getElementById("input-target-filter").value);
+        });
+
         updateTransportVisibility();
     }
 

@@ -8,6 +8,11 @@ from backend.algorithms.nearby import (
     validate_facilities_same_map,
     extract_path_coordinates,
 )
+from backend.algorithms.dijkstra import (
+    dijkstra_shortest_distance,
+    dijkstra_all_distances,
+    reconstruct_segments_from_prev,
+)
 from backend.algorithms.search import filter_by_map_id
 
 
@@ -116,6 +121,46 @@ class TestNearbyFacilities:
         )
         # should work for scenic map too
         assert isinstance(results, list)
+
+    def test_consistent_with_per_facility_dijkstra(self):
+        """验证单源 Dijkstra 优化结果与逐设施 Dijkstra 距离一致。"""
+        node_ids = list(self.campus.nodes.keys())
+        start = node_ids[0]
+        results = calculate_nearby_facilities_by_road_distance(
+            self.campus, start, self.campus_facs
+        )
+        for r in results:
+            single = dijkstra_shortest_distance(self.campus, start, r["linked_node_id"])
+            if single["reachable"]:
+                assert abs(r["road_distance"] - single["total_distance"]) < 0.01, \
+                    f"Distance mismatch for {r.get('id')}: {r['road_distance']} vs {single['total_distance']}"
+
+    def test_route_geometry_in_results(self):
+        """每个结果应包含 route_geometry。"""
+        node_ids = list(self.campus.nodes.keys())
+        start = node_ids[0]
+        results = calculate_nearby_facilities_by_road_distance(
+            self.campus, start, self.campus_facs
+        )
+        for r in results:
+            assert "route_geometry" in r
+            rg = r["route_geometry"]
+            if rg:
+                assert len(rg) >= 2
+                for pt in rg:
+                    assert len(pt) == 2
+
+    def test_uses_single_source_dijkstra(self):
+        """验证 nearby.py 使用 dijkstra_all_distances 而非逐设施循环调用 dijkstra_shortest_distance。
+        通过检查 calculate_nearby_facilities_by_road_distance 的源码来验证。
+        """
+        import inspect
+        source = inspect.getsource(calculate_nearby_facilities_by_road_distance)
+        # 应该包含 dijkstra_all_distances
+        assert "dijkstra_all_distances" in source
+        # 不应在循环内调用 dijkstra_shortest_distance
+        # 检查 dijkstra_shortest_distance 不出现在函数体内
+        assert "dijkstra_shortest_distance" not in source
 
 
 class TestValidateFacilities:

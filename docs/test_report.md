@@ -62,11 +62,11 @@ pytest tests/ -q
 | E2E Smoke | `python backend/scripts/e2e_smoke_check.py` | 见运行结果 | 端到端 API 数据流验证 |
 
 **汇总**：
-- 算法测试：**101 passed**
-- 服务测试：**50 passed** (含地图元数据 + 坐标范围)
+- 算法测试：**113 passed**
+- 服务测试：**55 passed** (含地图元数据 + 坐标范围)
 - 路由测试：**39 passed** (含 map-layers API)
-- 总计自动化：**190 passed**
-- 数据校验：**5829/5829 passed**
+- 总计自动化：**207 passed**
+- 数据校验：**384969/384969 passed**
 - 前端文件检查：**All passed**
 - 地图坐标诊断：**All clean**
 
@@ -105,10 +105,13 @@ pytest tests/ -q
 - 验证：小图手动计算结果对比
 
 ### Nearby（附近查询）
-- Dijkstra 道路距离计算
+- Dijkstra 道路距离计算（单源全节点优化）
 - 按 road_distance 升序排列
 - 类别/关键词过滤
 - 半径限制
+- 与逐设施 Dijkstra 距离一致性验证
+- path 和 route_geometry 完整性验证
+- 单源 Dijkstra 使用验证（源码检查）
 
 ## 业务测试说明
 
