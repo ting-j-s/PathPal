@@ -354,21 +354,101 @@ def validate_users(users, v: Validator):
 def validate_indoor_graphs(indoor_data, v: Validator):
     print("\n--- Indoor Graphs ---")
     indoor_maps = indoor_data.get("indoor_maps", [])
-    v.check(len(indoor_maps) >= 1,
-            f"indoor_maps count {len(indoor_maps)} < 1 required")
-    print(f"  Indoor buildings: {len(indoor_maps)} {'OK' if len(indoor_maps) >= 1 else 'FAIL'}")
+
+    # 1. 至少 2 个建筑
+    v.check(len(indoor_maps) >= 2,
+            f"indoor_maps count {len(indoor_maps)} < 2 required")
+    print(f"  Indoor buildings: {len(indoor_maps)} {'OK' if len(indoor_maps) >= 2 else 'FAIL'}")
+
+    # 2-3. 必须包含 campus_building 和 scenic_exhibition
+    btypes = {b.get("building_type") for b in indoor_maps}
+    v.check("campus_building" in btypes,
+            "must have at least one campus_building")
+    v.check("scenic_exhibition" in btypes,
+            "must have at least one scenic_exhibition")
+    print(f"  Building types: {btypes}")
 
     for bld in indoor_maps:
+        bid = bld.get("building_id", "?")
         nodes = bld.get("nodes", [])
         edges = bld.get("edges", [])
         node_ids = {n["id"] for n in nodes}
-        v.check(len(nodes) > 0,
-                f"{bld.get('building_id')}: must have nodes")
+        btype = bld.get("building_type", "")
+
+        # 4. 必要字段
+        for field in ["building_id", "building_name", "building_type",
+                       "floors", "nodes", "edges"]:
+            v.check(field in bld, f"{bid}: missing '{field}' field")
+        v.check(len(bld.get("floors", [])) >= 2,
+                f"{bid}: must have >= 2 floors")
+
+        # 5. Node 字段
+        for n in nodes:
+            for field in ["id", "name", "floor", "type", "x", "y"]:
+                v.check(field in n, f"{bid}/{n.get('id','?')}: missing node field '{field}'")
+
+        # 6. Edge 字段
+        for e in edges:
+            for field in ["id", "from", "to", "distance", "type"]:
+                v.check(field in e, f"{bid}/{e.get('id','?')}: missing edge field '{field}'")
+
+        # 7. Edge 引用
         for e in edges:
             v.check(e["from"] in node_ids,
-                    f"{bld.get('building_id')}: indoor edge from '{e['from']}' not found")
+                    f"{bid}: edge '{e['id']}' from '{e['from']}' not found")
             v.check(e["to"] in node_ids,
-                    f"{bld.get('building_id')}: indoor edge to '{e['to']}' not found")
+                    f"{bid}: edge '{e['id']}' to '{e['to']}' not found")
+
+        # 8. distance > 0
+        for e in edges:
+            v.check(e.get("distance", 0) > 0,
+                    f"{bid}: edge '{e['id']}' distance must be > 0")
+
+        # 9. 连通性
+        is_connected, total, unreachable = check_connectivity(bid, nodes, edges)
+        v.check(is_connected,
+                f"{bid}: indoor graph not fully connected ({unreachable}/{total} unreachable)")
+
+        # 10-11. 规模要求
+        if btype == "campus_building":
+            v.check(len(nodes) >= 35,
+                    f"{bid}: campus_building nodes {len(nodes)} < 35 required")
+            v.check(len(edges) >= 45,
+                    f"{bid}: campus_building edges {len(edges)} < 45 required")
+        elif btype == "scenic_exhibition":
+            v.check(len(nodes) >= 25,
+                    f"{bid}: scenic_exhibition nodes {len(nodes)} < 25 required")
+            v.check(len(edges) >= 30,
+                    f"{bid}: scenic_exhibition edges {len(edges)} < 30 required")
+
+        # 12. 电梯跨层边
+        has_elevator_edge = any(e.get("type") == "elevator" for e in edges)
+        v.check(has_elevator_edge, f"{bid}: must have elevator cross-floor edges")
+
+        # 13. 楼梯跨层边
+        has_stairs_edge = any(e.get("type") == "stairs" for e in edges)
+        v.check(has_stairs_edge, f"{bid}: must have stairs cross-floor edges")
+
+        # 14. entrance
+        has_entrance = any(n.get("type") == "entrance" for n in nodes)
+        v.check(has_entrance, f"{bid}: must have entrance node")
+
+        # 15. restroom
+        has_restroom = any(n.get("type") == "restroom" for n in nodes)
+        v.check(has_restroom, f"{bid}: must have restroom node")
+
+        # 16. 目标节点 (classroom/office/exhibition_hall)
+        has_target = any(n.get("type") in ("classroom", "office", "exhibition_hall") for n in nodes)
+        v.check(has_target, f"{bid}: must have classroom/office/exhibition_hall nodes")
+
+        # 汇总
+        ntype_summary = Counter(n.get("type", "") for n in nodes)
+        etype_summary = Counter(e.get("type", "") for e in edges)
+        con_str = "connected" if is_connected else "DISCONNECTED"
+        print(f"  {bid}: type={btype}, floors={bld.get('floors')}, "
+              f"nodes={len(nodes)}, edges={len(edges)}, connectivity={con_str}")
+        print(f"    Node types: {dict(ntype_summary)}")
+        print(f"    Edge types: {dict(etype_summary)}")
 
 
 def validate_coordinate_bounds(nodes, facilities, maps, v: Validator):

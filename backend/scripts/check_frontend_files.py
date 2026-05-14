@@ -199,6 +199,60 @@ def check_map_layers_api():
             errors.append(f"MISSING MAP LAYERS API: 前端 JS 未包含 '{kw}'")
 
 
+# 室内导航页面关键字
+INDOOR_HTML_KEYWORDS = [
+    "indoor",
+    "室内",
+    "svg",
+    "楼层",
+]
+
+INDOOR_ALGO_KEYWORDS = [
+    "Dijkstra",
+    "最短距离",
+    "邻接表",
+    "室内图",
+    "电梯",
+    "distance",
+]
+
+INDOOR_JS_FUNCTIONS = [
+    "loadBuildings",
+    "planIndoorRoute",
+    "renderFloorGraphs",
+    "svg",
+]
+
+
+def check_indoor_navigation():
+    """检查室内导航页面的完整性。"""
+    # HTML 检查
+    html_path = FRONTEND_DIR / "indoor_navigation.html"
+    if not html_path.is_file():
+        errors.append("MISSING: frontend/indoor_navigation.html")
+        return
+    html_content = html_path.read_text(encoding="utf-8").lower()
+
+    for kw in INDOOR_HTML_KEYWORDS:
+        if kw.lower() not in html_content:
+            errors.append(f"INDOOR HTML: indoor_navigation.html 未包含 '{kw}'")
+
+    for kw in INDOOR_ALGO_KEYWORDS:
+        if kw.lower() not in html_content:
+            errors.append(f"INDOOR ALGO: indoor_navigation.html 未包含算法说明 '{kw}'")
+
+    # JS 检查
+    js_path = FRONTEND_DIR / "js/indoor_navigation.js"
+    if not js_path.is_file():
+        errors.append("MISSING: frontend/js/indoor_navigation.js")
+        return
+    js_content = js_path.read_text(encoding="utf-8")
+
+    for fn in INDOOR_JS_FUNCTIONS:
+        if fn not in js_content:
+            errors.append(f"INDOOR JS: indoor_navigation.js 未包含 '{fn}'")
+
+
 def check_route_geometry():
     """检查前端是否正确使用 route_geometry。"""
     all_text = ""
@@ -269,6 +323,11 @@ def main():
     check_route_geometry()
     if not any("ROUTE GEOMETRY" in e for e in errors):
         print("  Route geometry usage OK")
+
+    # 5.9 检查室内导航页面
+    check_indoor_navigation()
+    if not any("INDOOR" in e for e in errors):
+        print("  Indoor navigation page OK")
 
     # 6. 检查算法说明文字
     check_algo_text()

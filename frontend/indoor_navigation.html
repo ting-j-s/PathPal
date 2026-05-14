@@ -1,102 +1,120 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PathPal — 室内导航 Demo</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PathPal — 室内导航</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .svg-floor-panel {
+    display: inline-block;
+    vertical-align: top;
+    margin: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 8px;
+    background: #fafafa;
+  }
+  .svg-floor-panel h4 {
+    margin: 0 0 4px 0;
+    text-align: center;
+    font-size: 14px;
+  }
+  .svg-floor-panel svg {
+    display: block;
+  }
+  .node-circle { cursor: pointer; }
+  .node-rect { cursor: pointer; }
+  .edge-line { stroke: #ccc; stroke-width: 2; }
+  .edge-line.path-highlight { stroke: #3388ff; stroke-width: 3.5; }
+  .edge-label { font-size: 9px; fill: #888; }
+  .node-label { font-size: 10px; fill: #333; pointer-events: none; }
+  .floor-container { text-align: center; }
+</style>
 </head>
 <body>
 
-<header class="navbar">
-    <span class="brand">PathPal <small>路伴</small></span>
-    <nav>
-        <a href="index.html">首页</a>
-        <a href="recommendation.html">旅游推荐</a>
-        <a href="route_planning.html">路线规划</a>
-        <a href="nearby.html">场所查询</a>
-        <a href="indoor_navigation.html" class="active">室内导航 Demo</a>
-    </nav>
-</header>
+<nav class="navbar">
+  <div class="nav-brand">PathPal 室内导航</div>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="recommendation.html">智能推荐</a>
+    <a href="route_planning.html">路线规划</a>
+    <a href="nearby.html">场所查询</a>
+    <a class="active" href="indoor_navigation.html">室内导航</a>
+  </div>
+</nav>
 
-<div class="page-container">
+<div class="container">
 
-    <section class="page-hero">
-        <h1>室内导航 Demo</h1>
-        <p>模拟教学楼/展馆内部导航 — 大门到电梯、楼层间电梯、楼层内到房间</p>
-    </section>
+  <div class="card" id="description-panel">
+    <h2>室内导航</h2>
+    <p>室内导航用于<strong>教学楼</strong>和<strong>景区展馆</strong>内部路径规划。支持大门到电梯、楼层间电梯换乘、楼层内到房间的完整导航。</p>
+    <p>当前策略为<strong>最短距离（shortest_distance）</strong>，数据为模拟真实建筑逻辑的室内图。</p>
+  </div>
 
-    <!-- 功能说明 -->
-    <section class="card">
-        <h2>功能说明</h2>
-        <ul style="margin-left:18px; line-height:1.8;">
-            <li>模拟教学楼/展馆内部的简单室内导航</li>
-            <li>支持大门到电梯、楼层间电梯、楼层内到房间的路径规划</li>
-            <li>当前为 <span class="tag tag-warning">Demo</span>，包含 1 个示例建筑</li>
-            <li>使用自实现 Dijkstra 算法计算室内最短路径</li>
-        </ul>
-    </section>
+  <div class="card" id="input-panel">
+    <h3>选择建筑与起终点</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="building-select">建筑 <span id="building-status" style="font-size:12px;color:#999;"></span></label>
+        <select id="building-select"><option value="">— 请选择建筑 —</option></select>
+      </div>
+      <div class="form-group">
+        <label for="floor-filter">楼层过滤（可选）</label>
+        <select id="floor-filter"><option value="">全部楼层</option></select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="start-select">起点</label>
+        <select id="start-select"><option value="">— 请先选择建筑 —</option></select>
+      </div>
+      <div class="form-group">
+        <label for="end-select">终点</label>
+        <select id="end-select"><option value="">— 请先选择建筑 —</option></select>
+      </div>
+    </div>
+    <div class="form-row">
+      <button id="plan-btn" class="btn btn-primary" onclick="window.indoorNav.planIndoorRoute()">查询路线</button>
+    </div>
+  </div>
 
-    <!-- 输入区 -->
-    <section class="card">
-        <h2>室内路线查询</h2>
+  <div id="indoor-error"></div>
 
-        <div class="form-row">
-            <div class="form-group" style="min-width:250px;">
-                <label for="select-building">建筑</label>
-                <select id="select-building">
-                    <option value="">— 请选择建筑 —</option>
-                </select>
-            </div>
-        </div>
+  <div class="card" id="route-result-panel" style="display:none;">
+    <h3>路线结果</h3>
+    <div id="route-summary"></div>
+  </div>
 
-        <div class="form-row">
-            <div class="form-group" style="min-width:200px;">
-                <label for="select-start-room">起点</label>
-                <select id="select-start-room">
-                    <option value="">— 请选择起点 —</option>
-                </select>
-            </div>
-            <div class="form-group" style="min-width:200px;">
-                <label for="select-end-room">终点</label>
-                <select id="select-end-room">
-                    <option value="">— 请选择终点 —</option>
-                </select>
-            </div>
-        </div>
+  <div class="card" id="steps-panel" style="display:none;">
+    <h3>步骤列表</h3>
+    <table class="data-table" id="steps-table">
+      <thead><tr><th>#</th><th>步骤</th><th>类型</th><th>距离(m)</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
 
-        <button id="btn-plan-indoor">查询室内路线</button>
-    </section>
+  <div class="card" id="floor-graphs-panel" style="display:none;">
+    <h3>楼层拓扑图 (SVG)</h3>
+    <p class="hint">灰色边 = 走廊 · 蓝色粗边 = 路径 · 绿色实心 = 电梯 · 橙色实心 = 楼梯</p>
+    <div class="floor-container" id="floor-graphs-container"></div>
+  </div>
 
-    <!-- 结果区 -->
-    <section class="card">
-        <h2>路线结果</h2>
-        <div id="indoor-result"><p class="hint">请选择建筑、起点和终点后点击查询</p></div>
-    </section>
-
-    <!-- 步骤详情 -->
-    <section class="card" id="indoor-steps-card" style="display:none;">
-        <h2>导航步骤</h2>
-        <div id="indoor-steps-container"></div>
-    </section>
-
-    <!-- 算法说明区 -->
-    <section class="card">
-        <h2>算法与数据结构说明</h2>
-        <div class="algo-detail">
-            <p><strong>数据结构：</strong>室内图邻接表 (Indoor Graph Adjacency List) — 节点为房间/电梯/大门，边为走廊/楼梯</p>
-            <p><strong>核心算法：</strong>Dijkstra — 计算室内最短路径</p>
-            <p><strong>边权：</strong>distance（空间距离）</p>
-            <p><strong>节点类型：</strong>entrance（大门）、elevator（电梯）、room（房间）、corridor（走廊交叉点）</p>
-            <p style="margin-top:6px;"><span class="tag tag-warning">注意：</span>室内导航为简单 Demo 功能，仅用于展示图算法在室内场景的应用。当前包含 1 个示例建筑。</p>
-        </div>
-    </section>
+  <div class="card" id="algo-panel">
+    <h3>算法说明</h3>
+    <ul>
+      <li><strong>数据结构：</strong>室内图邻接表，节点存储楼层/类型/坐标，边存储连接与距离。</li>
+      <li><strong>节点类型：</strong>入口、大厅、电梯、楼梯、走廊、教室、办公室、卫生间、展厅、服务点</li>
+      <li><strong>边类型：</strong>走廊（corridor）、电梯（elevator）、楼梯（stairs）、门（doorway）</li>
+      <li><strong>图结构：</strong>无向图，每条边对应两个方向的邻接关系。</li>
+      <li><strong>算法：</strong>Dijkstra 最短路径，权重 = edge.distance（米）。</li>
+      <li><strong>路径策略：</strong>大门 → 走廊 → 电梯/楼梯 → 跨层 → 走廊 → 目标房间。</li>
+      <li><strong>当前限制：</strong>暂不接入室外路线、暂不做真实楼层平面图、暂只做最短距离策略。</li>
+    </ul>
+  </div>
 
 </div>
-
-<footer>
-    <p>PathPal 路伴 &copy; 2025 数据结构课程设计</p>
-</footer>
 
 <script src="js/api.js"></script>
 <script src="js/indoor_navigation.js"></script>

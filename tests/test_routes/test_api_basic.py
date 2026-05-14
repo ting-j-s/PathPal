@@ -184,13 +184,15 @@ class TestIndoorAPI:
         resp = client.get("/api/indoor/buildings")
         assert resp.status_code == 200
         data = resp.get_json()
-        assert data["count"] == 1
+        assert data["count"] >= 2
 
     def test_indoor_route(self, client):
         resp = client.get(
-            "/api/indoor/route?building_id=BUILDING_BUPT_MAIN"
-            "&start=IN_B101&end=IN_B201"
+            "/api/indoor/route?building_id=BUILDING_BUPT_TEACHING"
+            "&start=BUPT_T_GATE&end=BUPT_T_ROOM_301"
         )
         assert resp.status_code == 200
         data = resp.get_json()
         assert data["reachable"] is True
+        assert data["distance"] > 0
+        assert len(data["path"]) > 0

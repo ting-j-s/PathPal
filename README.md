@@ -4,8 +4,8 @@
 
 ## 项目简介
 
-PathPal 是一个基于 Python Flask 的个性化旅游辅助系统。当前阶段聚焦于三个核心功能模块：
-景区/校园内部的路线规划、场所查询和目的地推荐。
+PathPal 是一个基于 Python Flask 的个性化旅游辅助系统。当前阶段聚焦于四个核心功能模块：
+景区/校园内部的路线规划、场所查询、目的地推荐和室内导航。
 
 ### 地图数据说明
 
@@ -30,6 +30,7 @@ PathPal 是一个基于 Python Flask 的个性化旅游辅助系统。当前阶�
 | 旅游推荐 | 按热度/评分/用户兴趣推荐目的地 Top-K，支持关键词搜索 |
 | 内部路线规划 | 景区/校园内部道路图的最短路径规划（距离/时间/交通/混合策略） |
 | 场所查询 | 基于道路距离的附近服务设施查询（洗手间、商店、食堂等） |
+| 室内导航 | 多层建筑室内路径规划（大门→电梯→楼层→房间），SVG 拓扑图展示 |
 
 ### 路线规划策略
 
@@ -135,7 +136,7 @@ PathPal/
 | 服务设施 | >= 50 | **1,740** |
 | 设施类别 | >= 10 | **28** |
 | 用户 | >= 10 | **12** |
-| 室内建筑 | >= 1 | **1** |
+| 室内建筑 | >= 1 | **2** (校园建筑 + 景区展馆) |
 
 ### 核心设计说明
 
@@ -187,7 +188,7 @@ http://127.0.0.1:8080
 | 旅游推荐 | http://127.0.0.1:8080/recommendation.html |
 | 路线规划 | http://127.0.0.1:8080/route_planning.html |
 | 场所查询 | http://127.0.0.1:8080/nearby.html |
-| 室内导航 Demo | http://127.0.0.1:8080/indoor_navigation.html |
+| 室内导航 | http://127.0.0.1:8080/indoor_navigation.html |
 
 ## 测试命令
 
@@ -195,19 +196,19 @@ http://127.0.0.1:8080
 # 地图坐标诊断
 python backend/scripts/diagnose_map_coordinates.py
 
-# 数据校验（384,969 checks）
+# 数据校验
 python backend/scripts/validate_data.py
 
-# 算法测试（113 tests）
+# 算法测试
 pytest tests/test_algorithms -q
 
-# 服务层测试（55 tests）
+# 服务层测试
 pytest tests/test_services -q
 
-# API 路由测试（39 tests）
+# API 路由测试
 pytest tests/test_routes -q
 
-# 全部测试（207 tests）
+# 全部测试（248 tests）
 pytest tests/ -q
 
 # 前端文件检查
@@ -232,6 +233,7 @@ python backend/scripts/e2e_smoke_check.py
 | [测试报告](docs/test_report.md) | 测试范围、结果、覆盖统计 |
 | [阶段完成报告](docs/phase1_completion_report.md) | Phase 1 实现总结 |
 | [未来扩展](docs/future_extensions.md) | Phase 2 扩展备忘 |
+| [室内导航设计](docs/indoor_navigation_design.md) | 室内数据结构、算法、API、前端 |
 
 ## 开发阶段
 
@@ -244,6 +246,7 @@ python backend/scripts/e2e_smoke_check.py
 - [x] 地图真实性修正：新增 MAP_BUPT_REAL + MAP_SCENIC_REAL，前端 show_tile 逻辑，新增 API
 - [x] 地图展示与坐标修复：修复 BUPT 坐标偏移、抽象模板 (0,0) 坐标、前端分层管理（baseLayer/routeLayer/markerLayer）、完整内部路网绘制、新增 map-layers API、新增坐标诊断脚本
 - [x] 附近查询优化：单源 Dijkstra (O(F×V²) → O(V²+F log F))，多目标复选框交互替换文本输入，测试 207 passed
+- [x] 室内导航增强：2 个多层建筑（教学楼+展馆），室内 Dijkstra，SVG 楼层拓扑图，跨层电梯/楼梯导航，40 项室内测试，测试总计 248 passed
 
 ## 课程信息
 

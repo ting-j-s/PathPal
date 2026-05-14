@@ -113,49 +113,62 @@ if status == 200 and isinstance(stats, dict):
           f"{stats.get('facilities', '?')} facilities, "
           f"{stats.get('users', '?')} users")
 
+def _unwrap(data):
+    """兼容新旧 API 格式：若返回 dict 包裹的 {results: [...]}，提取 results 列表。"""
+    if isinstance(data, dict) and "results" in data:
+        return data["results"]
+    return data
+
 # ============================================================
 # 2. Recommendations
 # ============================================================
 # 2a. Hot top-10
 status, hot = _req(f"{API}/recommendations/hot", {"k": 10})
-check(status == 200 and isinstance(hot, list) and len(hot) <= 10,
-      f"Recommendations hot (got {len(hot) if isinstance(hot, list) else 0}): OK",
+hot_results = _unwrap(hot) if status == 200 else []
+check(status == 200 and isinstance(hot_results, list) and len(hot_results) <= 10,
+      f"Recommendations hot (got {len(hot_results) if isinstance(hot_results, list) else 0}): OK",
       f"Recommendations hot: FAILED (status={status})")
 
 # 2b. Rating top-10
 status, rating = _req(f"{API}/recommendations/rating", {"k": 10})
-check(status == 200 and isinstance(rating, list) and len(rating) <= 10,
-      f"Recommendations rating (got {len(rating) if isinstance(rating, list) else 0}): OK",
+rating_results = _unwrap(rating) if status == 200 else []
+check(status == 200 and isinstance(rating_results, list) and len(rating_results) <= 10,
+      f"Recommendations rating (got {len(rating_results) if isinstance(rating_results, list) else 0}): OK",
       f"Recommendations rating: FAILED (status={status})")
 
 # 2c. Interest recommendations
 status, interest = _req(f"{API}/recommendations/interest", {"user_id": "USER_001", "k": 10})
-check(status == 200 and isinstance(interest, list) and len(interest) <= 10,
-      f"Recommendations interest USER_001 (got {len(interest) if isinstance(interest, list) else 0}): OK",
+interest_results = _unwrap(interest) if status == 200 else []
+check(status == 200 and isinstance(interest_results, list) and len(interest_results) <= 10,
+      f"Recommendations interest USER_001 (got {len(interest_results) if isinstance(interest_results, list) else 0}): OK",
       f"Recommendations interest: FAILED (status={status})")
-if status == 200 and isinstance(interest, list) and len(interest) > 0:
-    has_interest_score = any("interest_score" in item for item in interest)
+if status == 200 and isinstance(interest_results, list) and len(interest_results) > 0:
+    has_interest_score = any("interest_score" in item for item in interest_results)
     check(has_interest_score,
           "Interest results contain interest_score: OK",
           "Interest results missing interest_score: FAILED")
 
 # 2d. Keyword search
 status, search = _req(f"{API}/destinations/search", {"keyword": "北京"})
-check(status == 200 and isinstance(search, list),
-      f"Search '北京' (got {len(search) if isinstance(search, list) else 0}): OK",
+search_results = _unwrap(search) if status == 200 else []
+check(status == 200 and isinstance(search_results, list),
+      f"Search '北京' (got {len(search_results) if isinstance(search_results, list) else 0}): OK",
       f"Search '北京': FAILED (status={status})")
 
 # 2e. List destinations
 status, dest_list = _req(f"{API}/destinations", {"limit": 5})
-check(status == 200 and isinstance(dest_list, list) and len(dest_list) <= 5,
-      f"List destinations limit=5 (got {len(dest_list) if isinstance(dest_list, list) else 0}): OK",
+dest_results = _unwrap(dest_list) if status == 200 else []
+check(status == 200 and isinstance(dest_results, list) and len(dest_results) <= 5,
+      f"List destinations limit=5 (got {len(dest_results) if isinstance(dest_results, list) else 0}): OK",
       f"List destinations: FAILED (status={status})")
 
 # 2f. Destination detail
-if isinstance(dest_list, list) and len(dest_list) > 0:
-    first_id = dest_list[0].get("id")
+if isinstance(dest_results, list) and len(dest_results) > 0:
+    first_id = dest_results[0].get("id")
     status, detail = _req(f"{API}/destinations/{first_id}")
-    check(status == 200 and isinstance(detail, dict) and detail.get("id") == first_id,
+    # 兼容新旧格式：新版 API 将详情包裹在 result 字段中
+    detail_data = detail.get("result", detail) if isinstance(detail, dict) else detail
+    check(status == 200 and isinstance(detail_data, dict) and detail_data.get("id") == first_id,
           f"Destination detail ({first_id}): OK",
           f"Destination detail: FAILED (status={status})")
 
@@ -164,11 +177,12 @@ if isinstance(dest_list, list) and len(dest_list) > 0:
 # ============================================================
 
 # Find a campus and an attraction from destinations
-all_dests = _req(f"{API}/destinations", {"limit": 250})
+all_status, all_data = _req(f"{API}/destinations", {"limit": 250})
+all_dests_list = _unwrap(all_data) if all_status == 200 else []
 campus_dest = None
 attraction_dest = None
-if all_dests[0] == 200 and isinstance(all_dests[1], list):
-    for d in all_dests[1]:
+if all_status == 200 and isinstance(all_dests_list, list):
+    for d in all_dests_list:
         if d.get("type") == "campus" and campus_dest is None:
             campus_dest = d
         if d.get("type") == "attraction" and attraction_dest is None:
@@ -188,7 +202,8 @@ if campus_dest:
 
     # Get nodes
     status, cnodes = _req(f"{API}/route/nodes", {"destination_id": campus_id})
-    real_nodes = [n for n in (cnodes if isinstance(cnodes, list) else [])
+    cnodes_list = cnodes.get("nodes", cnodes) if isinstance(cnodes, dict) else cnodes if isinstance(cnodes, list) else []
+    real_nodes = [n for n in cnodes_list
                   if n.get("latitude", 0) > 0.01] if status == 200 else []
     check(status == 200 and len(real_nodes) >= 2,
           f"Campus '{campus_name}' nodes (real={len(real_nodes)}): OK",
@@ -261,7 +276,8 @@ if attraction_dest:
     attr_name = attraction_dest.get("name", attr_id)
 
     status, anodes = _req(f"{API}/route/nodes", {"destination_id": attr_id})
-    real_anodes = [n for n in (anodes if isinstance(anodes, list) else [])
+    anodes_list = anodes.get("nodes", anodes) if isinstance(anodes, dict) else anodes if isinstance(anodes, list) else []
+    real_anodes = [n for n in anodes_list
                    if n.get("latitude", 0) > 0.01] if status == 200 else []
     check(status == 200 and len(real_anodes) >= 2,
           f"Attraction '{attr_name}' nodes (real={len(real_anodes)}): OK",
@@ -360,7 +376,7 @@ check(status == 200 and isinstance(bld_list, list),
       f"Indoor buildings: FAILED (status={status})")
 
 if isinstance(bld_list, list) and len(bld_list) > 0:
-    bid = bld_list[0] if isinstance(bld_list[0], str) else bld_list[0].get("id", "")
+    bid = bld_list[0] if isinstance(bld_list[0], str) else (bld_list[0].get("building_id") or bld_list[0].get("id", ""))
     if bid:
         # Get first building's nodes from data to pick start/end
         data_dir = Path(__file__).resolve().parent.parent.parent / "data"

@@ -52,6 +52,9 @@ pytest tests/ -q
 | Dijkstra 测试 | `pytest tests/test_algorithms/test_dijkstra.py -q` | passed | 4 种权函数 + 多点 TSP |
 | Nearby 测试 | `pytest tests/test_algorithms/test_nearby.py -q` | passed | 道路距离附近查询 |
 | 推荐服务测试 | `pytest tests/test_services/test_recommendation_service.py -q` | passed | 热度/评分/兴趣/搜索/过滤 |
+| 室内服务测试 | `pytest tests/test_services/test_indoor_service.py -q` | passed | 20 tests: 建筑列表/详情/节点/路径/楼层 |
+| 室内路由测试 | `pytest tests/test_routes/test_indoor_routes.py -q` | passed | 14 tests: buildings/building/nodes/floors/route API |
+| 室内 API 基础测试 | `pytest tests/test_routes/test_api_basic.py -q` | passed | 更新室内测试，使用新建筑 ID |
 | 路线服务测试 | `pytest tests/test_services/test_route_service.py -q` | passed | 4 种策略 + 交通校验 |
 | 场所服务测试 | `pytest tests/test_services/test_nearby_service.py -q` | passed | 附近/类别/关键词/排序 |
 | API 集成测试 | `pytest tests/test_routes/test_api_basic.py -q` | passed | 24 个路由端点测试 |
@@ -63,12 +66,11 @@ pytest tests/ -q
 
 **汇总**：
 - 算法测试：**113 passed**
-- 服务测试：**55 passed** (含地图元数据 + 坐标范围)
-- 路由测试：**40 passed** (含 map-layers API + OSM 模板)
-- 总计自动化：**208 passed**
-- 数据校验：**660807/660810 passed**
-- 前端文件检查：**All passed**
-- 地图坐标诊断：**All clean**
+- 服务测试：**75 passed** (含地图元数据 + 室内服务 20)
+- 路由测试：**60 passed** (含 map-layers API + 室内路由 14)
+- 总计自动化：**248 passed**
+- 数据校验：**662,726/662,729 passed** (3 项已知连通性告警)
+- 前端文件检查：**All passed** (含室内导航页面)
 
 ## 核心算法测试说明
 

@@ -1,195 +1,1152 @@
 {
   "indoor_maps": [
     {
-      "building_id": "BUILDING_BUPT_MAIN",
-      "name": "北京邮电大学主楼",
-      "floors": 2,
+      "building_id": "BUILDING_BUPT_TEACHING",
+      "building_name": "北邮教学楼",
+      "building_type": "campus_building",
+      "destination_id": "DEST_001",
+      "description": "模拟北邮教学楼多层室内结构，含大门、大厅、电梯、楼梯、教室、实验室、办公室、卫生间、值班室",
+      "floors": [
+        1,
+        2,
+        3,
+        4
+      ],
       "nodes": [
         {
-          "id": "IN_B101",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "name": "主楼大门",
+          "id": "BUPT_T_GATE",
+          "name": "教学楼大门",
+          "floor": 1,
           "type": "entrance",
-          "floor": 1,
-          "latitude": 39.962,
-          "longitude": 116.35
+          "x": 200,
+          "y": 380
         },
         {
-          "id": "IN_B102",
-          "building_id": "BUILDING_BUPT_MAIN",
+          "id": "BUPT_T_LOBBY_1F",
           "name": "一层大厅",
-          "type": "hall",
           "floor": 1,
-          "latitude": 39.962050000000005,
-          "longitude": 116.35
+          "type": "lobby",
+          "x": 200,
+          "y": 340
         },
         {
-          "id": "IN_B103",
-          "building_id": "BUILDING_BUPT_MAIN",
+          "id": "BUPT_T_ELEV_1F",
           "name": "一层电梯",
-          "type": "elevator",
           "floor": 1,
-          "latitude": 39.96210000000001,
-          "longitude": 116.35
-        },
-        {
-          "id": "IN_B201",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "name": "201教室",
-          "type": "classroom",
-          "floor": 2,
-          "latitude": 39.96210000000001,
-          "longitude": 116.34994999999999
-        },
-        {
-          "id": "IN_B202",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "name": "202教室",
-          "type": "classroom",
-          "floor": 2,
-          "latitude": 39.96210000000001,
-          "longitude": 116.35005
-        },
-        {
-          "id": "IN_B203",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "name": "二层电梯",
           "type": "elevator",
-          "floor": 2,
-          "latitude": 39.96210000000001,
-          "longitude": 116.35
+          "x": 120,
+          "y": 240
         },
         {
-          "id": "IN_B204",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "name": "教师办公室",
+          "id": "BUPT_T_STAIR_1F",
+          "name": "一层楼梯",
+          "floor": 1,
+          "type": "stairs",
+          "x": 280,
+          "y": 240
+        },
+        {
+          "id": "BUPT_T_COR_E_1F",
+          "name": "一层东走廊",
+          "floor": 1,
+          "type": "corridor",
+          "x": 120,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_COR_W_1F",
+          "name": "一层西走廊",
+          "floor": 1,
+          "type": "corridor",
+          "x": 280,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_DUTY",
+          "name": "值班室",
+          "floor": 1,
+          "type": "service_point",
+          "x": 60,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_TOILET_1F",
+          "name": "一层卫生间",
+          "floor": 1,
+          "type": "restroom",
+          "x": 340,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_ROOM_101",
+          "name": "教室101",
+          "floor": 1,
+          "type": "classroom",
+          "x": 60,
+          "y": 200
+        },
+        {
+          "id": "BUPT_T_ROOM_102",
+          "name": "教室102",
+          "floor": 1,
+          "type": "classroom",
+          "x": 120,
+          "y": 160
+        },
+        {
+          "id": "BUPT_T_ELEV_2F",
+          "name": "二层电梯",
+          "floor": 2,
+          "type": "elevator",
+          "x": 120,
+          "y": 240
+        },
+        {
+          "id": "BUPT_T_STAIR_2F",
+          "name": "二层楼梯",
+          "floor": 2,
+          "type": "stairs",
+          "x": 280,
+          "y": 240
+        },
+        {
+          "id": "BUPT_T_COR_E_2F",
+          "name": "二层东走廊",
+          "floor": 2,
+          "type": "corridor",
+          "x": 120,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_COR_W_2F",
+          "name": "二层西走廊",
+          "floor": 2,
+          "type": "corridor",
+          "x": 280,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_TOILET_2F",
+          "name": "二层卫生间",
+          "floor": 2,
+          "type": "restroom",
+          "x": 340,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_ROOM_201",
+          "name": "教室201",
+          "floor": 2,
+          "type": "classroom",
+          "x": 60,
+          "y": 200
+        },
+        {
+          "id": "BUPT_T_ROOM_202",
+          "name": "教室202",
+          "floor": 2,
+          "type": "classroom",
+          "x": 120,
+          "y": 160
+        },
+        {
+          "id": "BUPT_T_ROOM_203",
+          "name": "教室203",
+          "floor": 2,
+          "type": "classroom",
+          "x": 180,
+          "y": 140
+        },
+        {
+          "id": "BUPT_T_OFF_201",
+          "name": "办公室201",
+          "floor": 2,
           "type": "office",
-          "floor": 2,
-          "latitude": 39.96215,
-          "longitude": 116.35
+          "x": 340,
+          "y": 200
         },
         {
-          "id": "IN_B205",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "name": "二层洗手间",
-          "type": "toilet",
+          "id": "BUPT_T_OFF_202",
+          "name": "办公室202",
           "floor": 2,
-          "latitude": 39.96215,
-          "longitude": 116.35005
+          "type": "office",
+          "x": 340,
+          "y": 140
+        },
+        {
+          "id": "BUPT_T_ELEV_3F",
+          "name": "三层电梯",
+          "floor": 3,
+          "type": "elevator",
+          "x": 120,
+          "y": 240
+        },
+        {
+          "id": "BUPT_T_STAIR_3F",
+          "name": "三层楼梯",
+          "floor": 3,
+          "type": "stairs",
+          "x": 280,
+          "y": 240
+        },
+        {
+          "id": "BUPT_T_COR_E_3F",
+          "name": "三层东走廊",
+          "floor": 3,
+          "type": "corridor",
+          "x": 120,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_COR_W_3F",
+          "name": "三层西走廊",
+          "floor": 3,
+          "type": "corridor",
+          "x": 280,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_TOILET_3F",
+          "name": "三层卫生间",
+          "floor": 3,
+          "type": "restroom",
+          "x": 340,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_ROOM_301",
+          "name": "教室301",
+          "floor": 3,
+          "type": "classroom",
+          "x": 60,
+          "y": 200
+        },
+        {
+          "id": "BUPT_T_ROOM_302",
+          "name": "教室302",
+          "floor": 3,
+          "type": "classroom",
+          "x": 120,
+          "y": 160
+        },
+        {
+          "id": "BUPT_T_LAB_301",
+          "name": "实验室301",
+          "floor": 3,
+          "type": "classroom",
+          "x": 180,
+          "y": 120
+        },
+        {
+          "id": "BUPT_T_OFF_301",
+          "name": "办公室301",
+          "floor": 3,
+          "type": "office",
+          "x": 340,
+          "y": 200
+        },
+        {
+          "id": "BUPT_T_OFF_302",
+          "name": "办公室302",
+          "floor": 3,
+          "type": "office",
+          "x": 340,
+          "y": 140
+        },
+        {
+          "id": "BUPT_T_ELEV_4F",
+          "name": "四层电梯",
+          "floor": 4,
+          "type": "elevator",
+          "x": 120,
+          "y": 240
+        },
+        {
+          "id": "BUPT_T_STAIR_4F",
+          "name": "四层楼梯",
+          "floor": 4,
+          "type": "stairs",
+          "x": 280,
+          "y": 240
+        },
+        {
+          "id": "BUPT_T_COR_E_4F",
+          "name": "四层东走廊",
+          "floor": 4,
+          "type": "corridor",
+          "x": 120,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_COR_W_4F",
+          "name": "四层西走廊",
+          "floor": 4,
+          "type": "corridor",
+          "x": 280,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_TOILET_4F",
+          "name": "四层卫生间",
+          "floor": 4,
+          "type": "restroom",
+          "x": 340,
+          "y": 300
+        },
+        {
+          "id": "BUPT_T_ROOM_401",
+          "name": "教室401",
+          "floor": 4,
+          "type": "classroom",
+          "x": 60,
+          "y": 200
+        },
+        {
+          "id": "BUPT_T_ROOM_402",
+          "name": "教室402",
+          "floor": 4,
+          "type": "classroom",
+          "x": 120,
+          "y": 160
+        },
+        {
+          "id": "BUPT_T_MEET_401",
+          "name": "会议室401",
+          "floor": 4,
+          "type": "office",
+          "x": 340,
+          "y": 200
+        },
+        {
+          "id": "BUPT_T_OFF_401",
+          "name": "办公室401",
+          "floor": 4,
+          "type": "office",
+          "x": 340,
+          "y": 140
+        },
+        {
+          "id": "BUPT_T_OFF_402",
+          "name": "办公室402",
+          "floor": 4,
+          "type": "office",
+          "x": 280,
+          "y": 140
         }
       ],
       "edges": [
         {
-          "id": "IN_E001",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B101",
-          "to": "IN_B102",
+          "id": "IE_BUPT_000",
+          "from": "BUPT_T_GATE",
+          "to": "BUPT_T_LOBBY_1F",
           "distance": 8,
-          "type": "corridor"
+          "type": "doorway"
         },
         {
-          "id": "IN_E002",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B102",
-          "to": "IN_B101",
-          "distance": 8,
-          "type": "corridor"
-        },
-        {
-          "id": "IN_E003",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B102",
-          "to": "IN_B103",
-          "distance": 6,
-          "type": "corridor"
-        },
-        {
-          "id": "IN_E004",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B103",
-          "to": "IN_B102",
-          "distance": 6,
-          "type": "corridor"
-        },
-        {
-          "id": "IN_E005",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B103",
-          "to": "IN_B203",
-          "distance": 3,
-          "type": "elevator"
-        },
-        {
-          "id": "IN_E006",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B203",
-          "to": "IN_B103",
-          "distance": 3,
-          "type": "elevator"
-        },
-        {
-          "id": "IN_E007",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B203",
-          "to": "IN_B201",
-          "distance": 8,
-          "type": "corridor"
-        },
-        {
-          "id": "IN_E008",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B201",
-          "to": "IN_B203",
-          "distance": 8,
-          "type": "corridor"
-        },
-        {
-          "id": "IN_E009",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B203",
-          "to": "IN_B202",
-          "distance": 8,
-          "type": "corridor"
-        },
-        {
-          "id": "IN_E010",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B202",
-          "to": "IN_B203",
-          "distance": 8,
-          "type": "corridor"
-        },
-        {
-          "id": "IN_E011",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B203",
-          "to": "IN_B204",
-          "distance": 6,
-          "type": "corridor"
-        },
-        {
-          "id": "IN_E012",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B204",
-          "to": "IN_B203",
-          "distance": 6,
-          "type": "corridor"
-        },
-        {
-          "id": "IN_E013",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B204",
-          "to": "IN_B205",
+          "id": "IE_BUPT_001",
+          "from": "BUPT_T_LOBBY_1F",
+          "to": "BUPT_T_COR_E_1F",
           "distance": 5,
           "type": "corridor"
         },
         {
-          "id": "IN_E014",
-          "building_id": "BUILDING_BUPT_MAIN",
-          "from": "IN_B205",
-          "to": "IN_B204",
+          "id": "IE_BUPT_002",
+          "from": "BUPT_T_LOBBY_1F",
+          "to": "BUPT_T_COR_W_1F",
           "distance": 5,
           "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_003",
+          "from": "BUPT_T_COR_E_1F",
+          "to": "BUPT_T_COR_W_1F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_004",
+          "from": "BUPT_T_COR_E_1F",
+          "to": "BUPT_T_ELEV_1F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_005",
+          "from": "BUPT_T_COR_W_1F",
+          "to": "BUPT_T_STAIR_1F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_006",
+          "from": "BUPT_T_ELEV_1F",
+          "to": "BUPT_T_STAIR_1F",
+          "distance": 5,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_007",
+          "from": "BUPT_T_COR_E_1F",
+          "to": "BUPT_T_DUTY",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_008",
+          "from": "BUPT_T_COR_W_1F",
+          "to": "BUPT_T_TOILET_1F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_009",
+          "from": "BUPT_T_COR_E_1F",
+          "to": "BUPT_T_ROOM_101",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_010",
+          "from": "BUPT_T_COR_E_1F",
+          "to": "BUPT_T_ROOM_102",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_011",
+          "from": "BUPT_T_LOBBY_1F",
+          "to": "BUPT_T_DUTY",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_012",
+          "from": "BUPT_T_COR_E_2F",
+          "to": "BUPT_T_COR_W_2F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_013",
+          "from": "BUPT_T_COR_E_2F",
+          "to": "BUPT_T_ELEV_2F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_014",
+          "from": "BUPT_T_COR_W_2F",
+          "to": "BUPT_T_STAIR_2F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_015",
+          "from": "BUPT_T_ELEV_2F",
+          "to": "BUPT_T_STAIR_2F",
+          "distance": 5,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_016",
+          "from": "BUPT_T_COR_W_2F",
+          "to": "BUPT_T_TOILET_2F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_017",
+          "from": "BUPT_T_COR_E_2F",
+          "to": "BUPT_T_ROOM_201",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_018",
+          "from": "BUPT_T_COR_E_2F",
+          "to": "BUPT_T_ROOM_202",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_019",
+          "from": "BUPT_T_COR_W_2F",
+          "to": "BUPT_T_ROOM_203",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_020",
+          "from": "BUPT_T_COR_W_2F",
+          "to": "BUPT_T_OFF_201",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_021",
+          "from": "BUPT_T_COR_W_2F",
+          "to": "BUPT_T_OFF_202",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_022",
+          "from": "BUPT_T_COR_E_3F",
+          "to": "BUPT_T_COR_W_3F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_023",
+          "from": "BUPT_T_COR_E_3F",
+          "to": "BUPT_T_ELEV_3F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_024",
+          "from": "BUPT_T_COR_W_3F",
+          "to": "BUPT_T_STAIR_3F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_025",
+          "from": "BUPT_T_ELEV_3F",
+          "to": "BUPT_T_STAIR_3F",
+          "distance": 5,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_026",
+          "from": "BUPT_T_COR_W_3F",
+          "to": "BUPT_T_TOILET_3F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_027",
+          "from": "BUPT_T_COR_E_3F",
+          "to": "BUPT_T_ROOM_301",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_028",
+          "from": "BUPT_T_COR_E_3F",
+          "to": "BUPT_T_ROOM_302",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_029",
+          "from": "BUPT_T_COR_W_3F",
+          "to": "BUPT_T_LAB_301",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_030",
+          "from": "BUPT_T_COR_W_3F",
+          "to": "BUPT_T_OFF_301",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_031",
+          "from": "BUPT_T_COR_W_3F",
+          "to": "BUPT_T_OFF_302",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_032",
+          "from": "BUPT_T_COR_E_4F",
+          "to": "BUPT_T_COR_W_4F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_033",
+          "from": "BUPT_T_COR_E_4F",
+          "to": "BUPT_T_ELEV_4F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_034",
+          "from": "BUPT_T_COR_W_4F",
+          "to": "BUPT_T_STAIR_4F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_035",
+          "from": "BUPT_T_ELEV_4F",
+          "to": "BUPT_T_STAIR_4F",
+          "distance": 5,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_036",
+          "from": "BUPT_T_COR_W_4F",
+          "to": "BUPT_T_TOILET_4F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_037",
+          "from": "BUPT_T_COR_E_4F",
+          "to": "BUPT_T_ROOM_401",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_038",
+          "from": "BUPT_T_COR_E_4F",
+          "to": "BUPT_T_ROOM_402",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_039",
+          "from": "BUPT_T_COR_W_4F",
+          "to": "BUPT_T_MEET_401",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_040",
+          "from": "BUPT_T_COR_W_4F",
+          "to": "BUPT_T_OFF_401",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_041",
+          "from": "BUPT_T_COR_W_4F",
+          "to": "BUPT_T_OFF_402",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_BUPT_042",
+          "from": "BUPT_T_ELEV_1F",
+          "to": "BUPT_T_ELEV_2F",
+          "distance": 4,
+          "type": "elevator"
+        },
+        {
+          "id": "IE_BUPT_043",
+          "from": "BUPT_T_ELEV_2F",
+          "to": "BUPT_T_ELEV_3F",
+          "distance": 4,
+          "type": "elevator"
+        },
+        {
+          "id": "IE_BUPT_044",
+          "from": "BUPT_T_ELEV_3F",
+          "to": "BUPT_T_ELEV_4F",
+          "distance": 4,
+          "type": "elevator"
+        },
+        {
+          "id": "IE_BUPT_045",
+          "from": "BUPT_T_STAIR_1F",
+          "to": "BUPT_T_STAIR_2F",
+          "distance": 6,
+          "type": "stairs"
+        },
+        {
+          "id": "IE_BUPT_046",
+          "from": "BUPT_T_STAIR_2F",
+          "to": "BUPT_T_STAIR_3F",
+          "distance": 6,
+          "type": "stairs"
+        },
+        {
+          "id": "IE_BUPT_047",
+          "from": "BUPT_T_STAIR_3F",
+          "to": "BUPT_T_STAIR_4F",
+          "distance": 6,
+          "type": "stairs"
+        }
+      ]
+    },
+    {
+      "building_id": "BUILDING_TIANTAN_EXHIBITION",
+      "building_name": "天坛展馆",
+      "building_type": "scenic_exhibition",
+      "destination_id": "DEST_032",
+      "description": "模拟天坛公园内展馆的三层室内结构，含入口、服务台、展厅、观景点、文创商店、休息区",
+      "floors": [
+        1,
+        2,
+        3
+      ],
+      "nodes": [
+        {
+          "id": "TTE_GATE",
+          "name": "展馆入口",
+          "floor": 1,
+          "type": "entrance",
+          "x": 200,
+          "y": 360
+        },
+        {
+          "id": "TTE_LOBBY_1F",
+          "name": "一层大厅",
+          "floor": 1,
+          "type": "lobby",
+          "x": 200,
+          "y": 320
+        },
+        {
+          "id": "TTE_SERVICE",
+          "name": "服务台",
+          "floor": 1,
+          "type": "service_point",
+          "x": 140,
+          "y": 320
+        },
+        {
+          "id": "TTE_ELEV_1F",
+          "name": "一层电梯",
+          "floor": 1,
+          "type": "elevator",
+          "x": 200,
+          "y": 240
+        },
+        {
+          "id": "TTE_STAIR_1F",
+          "name": "一层楼梯",
+          "floor": 1,
+          "type": "stairs",
+          "x": 300,
+          "y": 240
+        },
+        {
+          "id": "TTE_TOILET_1F",
+          "name": "一层卫生间",
+          "floor": 1,
+          "type": "restroom",
+          "x": 360,
+          "y": 200
+        },
+        {
+          "id": "TTE_SHOP",
+          "name": "文创商店",
+          "floor": 1,
+          "type": "service_point",
+          "x": 60,
+          "y": 260
+        },
+        {
+          "id": "TTE_EXHIBIT_1",
+          "name": "展厅1",
+          "floor": 1,
+          "type": "exhibition_hall",
+          "x": 80,
+          "y": 160
+        },
+        {
+          "id": "TTE_EXHIBIT_2",
+          "name": "展厅2",
+          "floor": 1,
+          "type": "exhibition_hall",
+          "x": 180,
+          "y": 140
+        },
+        {
+          "id": "TTE_ELEV_2F",
+          "name": "二层电梯",
+          "floor": 2,
+          "type": "elevator",
+          "x": 200,
+          "y": 240
+        },
+        {
+          "id": "TTE_STAIR_2F",
+          "name": "二层楼梯",
+          "floor": 2,
+          "type": "stairs",
+          "x": 300,
+          "y": 240
+        },
+        {
+          "id": "TTE_TOILET_2F",
+          "name": "二层卫生间",
+          "floor": 2,
+          "type": "restroom",
+          "x": 360,
+          "y": 200
+        },
+        {
+          "id": "TTE_EXHIBIT_3",
+          "name": "展厅3",
+          "floor": 2,
+          "type": "exhibition_hall",
+          "x": 80,
+          "y": 160
+        },
+        {
+          "id": "TTE_EXHIBIT_4",
+          "name": "展厅4",
+          "floor": 2,
+          "type": "exhibition_hall",
+          "x": 180,
+          "y": 140
+        },
+        {
+          "id": "TTE_REST_2F",
+          "name": "休息区",
+          "floor": 2,
+          "type": "service_point",
+          "x": 60,
+          "y": 300
+        },
+        {
+          "id": "TTE_VIEW_2F",
+          "name": "观景点",
+          "floor": 2,
+          "type": "exhibition_hall",
+          "x": 360,
+          "y": 120
+        },
+        {
+          "id": "TTE_COR_E_2F",
+          "name": "二层东走廊",
+          "floor": 2,
+          "type": "corridor",
+          "x": 200,
+          "y": 300
+        },
+        {
+          "id": "TTE_COR_W_2F",
+          "name": "二层西走廊",
+          "floor": 2,
+          "type": "corridor",
+          "x": 300,
+          "y": 300
+        },
+        {
+          "id": "TTE_ELEV_3F",
+          "name": "三层电梯",
+          "floor": 3,
+          "type": "elevator",
+          "x": 200,
+          "y": 240
+        },
+        {
+          "id": "TTE_STAIR_3F",
+          "name": "三层楼梯",
+          "floor": 3,
+          "type": "stairs",
+          "x": 300,
+          "y": 240
+        },
+        {
+          "id": "TTE_TOILET_3F",
+          "name": "三层卫生间",
+          "floor": 3,
+          "type": "restroom",
+          "x": 360,
+          "y": 200
+        },
+        {
+          "id": "TTE_EXHIBIT_5",
+          "name": "展厅5",
+          "floor": 3,
+          "type": "exhibition_hall",
+          "x": 80,
+          "y": 160
+        },
+        {
+          "id": "TTE_EXHIBIT_6",
+          "name": "展厅6",
+          "floor": 3,
+          "type": "exhibition_hall",
+          "x": 180,
+          "y": 140
+        },
+        {
+          "id": "TTE_OFFICE_M",
+          "name": "管理办公室",
+          "floor": 3,
+          "type": "office",
+          "x": 60,
+          "y": 300
+        },
+        {
+          "id": "TTE_EXIT_GUIDE",
+          "name": "出口指引点",
+          "floor": 3,
+          "type": "exit",
+          "x": 360,
+          "y": 300
+        },
+        {
+          "id": "TTE_COR_E_3F",
+          "name": "三层东走廊",
+          "floor": 3,
+          "type": "corridor",
+          "x": 200,
+          "y": 300
+        },
+        {
+          "id": "TTE_COR_W_3F",
+          "name": "三层西走廊",
+          "floor": 3,
+          "type": "corridor",
+          "x": 300,
+          "y": 300
+        }
+      ],
+      "edges": [
+        {
+          "id": "IE_TTE_000",
+          "from": "TTE_GATE",
+          "to": "TTE_LOBBY_1F",
+          "distance": 6,
+          "type": "doorway"
+        },
+        {
+          "id": "IE_TTE_001",
+          "from": "TTE_LOBBY_1F",
+          "to": "TTE_SERVICE",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_002",
+          "from": "TTE_LOBBY_1F",
+          "to": "TTE_ELEV_1F",
+          "distance": 5,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_003",
+          "from": "TTE_LOBBY_1F",
+          "to": "TTE_SHOP",
+          "distance": 5,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_004",
+          "from": "TTE_ELEV_1F",
+          "to": "TTE_STAIR_1F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_005",
+          "from": "TTE_ELEV_1F",
+          "to": "TTE_EXHIBIT_1",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_006",
+          "from": "TTE_ELEV_1F",
+          "to": "TTE_EXHIBIT_2",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_007",
+          "from": "TTE_STAIR_1F",
+          "to": "TTE_TOILET_1F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_008",
+          "from": "TTE_SERVICE",
+          "to": "TTE_SHOP",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_009",
+          "from": "TTE_EXHIBIT_1",
+          "to": "TTE_EXHIBIT_2",
+          "distance": 5,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_010",
+          "from": "TTE_EXHIBIT_2",
+          "to": "TTE_TOILET_1F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_011",
+          "from": "TTE_ELEV_2F",
+          "to": "TTE_STAIR_2F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_012",
+          "from": "TTE_ELEV_2F",
+          "to": "TTE_COR_E_2F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_013",
+          "from": "TTE_STAIR_2F",
+          "to": "TTE_COR_W_2F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_014",
+          "from": "TTE_COR_E_2F",
+          "to": "TTE_COR_W_2F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_015",
+          "from": "TTE_COR_E_2F",
+          "to": "TTE_REST_2F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_016",
+          "from": "TTE_COR_W_2F",
+          "to": "TTE_TOILET_2F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_017",
+          "from": "TTE_ELEV_2F",
+          "to": "TTE_EXHIBIT_3",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_018",
+          "from": "TTE_ELEV_2F",
+          "to": "TTE_EXHIBIT_4",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_019",
+          "from": "TTE_STAIR_2F",
+          "to": "TTE_VIEW_2F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_020",
+          "from": "TTE_EXHIBIT_3",
+          "to": "TTE_EXHIBIT_4",
+          "distance": 5,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_021",
+          "from": "TTE_ELEV_3F",
+          "to": "TTE_STAIR_3F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_022",
+          "from": "TTE_ELEV_3F",
+          "to": "TTE_COR_E_3F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_023",
+          "from": "TTE_STAIR_3F",
+          "to": "TTE_COR_W_3F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_024",
+          "from": "TTE_COR_E_3F",
+          "to": "TTE_COR_W_3F",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_025",
+          "from": "TTE_COR_E_3F",
+          "to": "TTE_OFFICE_M",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_026",
+          "from": "TTE_COR_W_3F",
+          "to": "TTE_EXIT_GUIDE",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_027",
+          "from": "TTE_COR_W_3F",
+          "to": "TTE_TOILET_3F",
+          "distance": 3,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_028",
+          "from": "TTE_ELEV_3F",
+          "to": "TTE_EXHIBIT_5",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_029",
+          "from": "TTE_ELEV_3F",
+          "to": "TTE_EXHIBIT_6",
+          "distance": 4,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_030",
+          "from": "TTE_EXHIBIT_5",
+          "to": "TTE_EXHIBIT_6",
+          "distance": 5,
+          "type": "corridor"
+        },
+        {
+          "id": "IE_TTE_031",
+          "from": "TTE_ELEV_1F",
+          "to": "TTE_ELEV_2F",
+          "distance": 4,
+          "type": "elevator"
+        },
+        {
+          "id": "IE_TTE_032",
+          "from": "TTE_ELEV_2F",
+          "to": "TTE_ELEV_3F",
+          "distance": 4,
+          "type": "elevator"
+        },
+        {
+          "id": "IE_TTE_033",
+          "from": "TTE_STAIR_1F",
+          "to": "TTE_STAIR_2F",
+          "distance": 6,
+          "type": "stairs"
+        },
+        {
+          "id": "IE_TTE_034",
+          "from": "TTE_STAIR_2F",
+          "to": "TTE_STAIR_3F",
+          "distance": 6,
+          "type": "stairs"
         }
       ]
     }
