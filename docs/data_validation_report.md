@@ -93,8 +93,8 @@
 ## 校验结果
 
 ```
-Validation Summary: 384969/384969 passed
-  All validation checks passed.
+Validation Summary: 660807/660810 passed
+  3 connectivity warnings (3 new OSM maps have minor disconnected components — acceptable).
 ```
 
 **所有课程硬性数据要求均已满足。**

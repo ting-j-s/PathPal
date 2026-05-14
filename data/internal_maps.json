@@ -102,5 +102,65 @@
     ],
     "tile_note": "该地图基于 OpenStreetMap 矢量道路数据构建，Dijkstra 在导入的 OSM 内部道路图上运行。8706 节点，18719 边。",
     "semi_real_map": false
+  },
+  {
+    "map_id": "MAP_BNU_REAL",
+    "name": "北京师范大学 OSM 矢量校园内部图",
+    "type": "campus",
+    "description": "基于 OpenStreetMap 数据的北师大内部道路图",
+    "source": "openstreetmap_vector",
+    "is_real_map": true,
+    "show_tile": true,
+    "semi_real_map": false,
+    "center": [
+      39.962925,
+      116.365919
+    ],
+    "default_zoom": 17,
+    "supported_transports": [
+      "walk",
+      "bike"
+    ],
+    "tile_note": "该地图基于 OpenStreetMap 矢量道路数据构建，Dijkstra 在导入的 OSM 内部道路图上运行。863 节点，1879 边。"
+  },
+  {
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "清华大学 OSM 矢量校园内部图（学校模板）",
+    "type": "campus",
+    "description": "基于 OpenStreetMap 数据的清华大学内部道路图，供其他学校目的地复用",
+    "source": "openstreetmap_vector",
+    "is_real_map": true,
+    "show_tile": true,
+    "semi_real_map": false,
+    "center": [
+      39.999991,
+      116.325005
+    ],
+    "default_zoom": 16,
+    "supported_transports": [
+      "walk",
+      "bike"
+    ],
+    "tile_note": "该地图基于 OpenStreetMap 矢量道路数据构建，Dijkstra 在导入的 OSM 内部道路图上运行。6530 节点，14597 边。"
+  },
+  {
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "颐和园 OSM 矢量内部图（景区模板）",
+    "type": "attraction",
+    "description": "基于 OpenStreetMap 数据的颐和园内部道路图，供其他景区目的地复用",
+    "source": "openstreetmap_vector",
+    "is_real_map": true,
+    "show_tile": true,
+    "semi_real_map": false,
+    "center": [
+      39.998114,
+      116.272523
+    ],
+    "default_zoom": 16,
+    "supported_transports": [
+      "walk",
+      "sightseeing_car"
+    ],
+    "tile_note": "该地图基于 OpenStreetMap 矢量道路数据构建，Dijkstra 在导入的 OSM 内部道路图上运行。1605 节点，3340 边。"
   }
 ]

@@ -64,9 +64,9 @@ pytest tests/ -q
 **汇总**：
 - 算法测试：**113 passed**
 - 服务测试：**55 passed** (含地图元数据 + 坐标范围)
-- 路由测试：**39 passed** (含 map-layers API)
-- 总计自动化：**207 passed**
-- 数据校验：**384969/384969 passed**
+- 路由测试：**40 passed** (含 map-layers API + OSM 模板)
+- 总计自动化：**208 passed**
+- 数据校验：**660807/660810 passed**
 - 前端文件检查：**All passed**
 - 地图坐标诊断：**All clean**
 

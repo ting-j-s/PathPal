@@ -15,18 +15,33 @@ PathPal 的路线规划和场所查询发生在景区/校园**内部道路图**�
 | map_id | 名称 | 类型 | 数据来源 |
 |--------|------|------|----------|
 | MAP_BUPT_REAL | 北京邮电大学真实校园内部图 | campus | OpenStreetMap |
+| MAP_BNU_REAL | 北京师范大学真实校园内部图 | campus | OpenStreetMap |
 | MAP_SCENIC_REAL | 天坛公园真实内部图 | attraction | OpenStreetMap |
 
 **特征**：
 - `is_real_map: true`
 - `show_tile: true`
-- `source: "openstreetmap"`
+- `source: "openstreetmap_vector"`
 - 节点、边、设施基于真实地理位置
 - 前端加载 OpenStreetMap 瓦片叠加路线
 
 **绑定关系**：
 - DEST_001 (北京邮电大学) → MAP_BUPT_REAL
+- DEST_007 (北京师范大学) → MAP_BNU_REAL
 - DEST_032 (天坛公园) → MAP_SCENIC_REAL
+
+### OSM 矢量模板 (OSM Vector Templates)
+
+| map_id | 名称 | 类型 | 数据来源 |
+|--------|------|------|----------|
+| MAP_CAMPUS_OSM | 清华大学 OSM 校园模板 | campus | OpenStreetMap |
+| MAP_SCENIC_OSM | 颐和园 OSM 景区模板 | attraction | OpenStreetMap |
+
+**特征**：
+- 基于真实 OSM 矢量数据
+- 供多个目的地复用（类似抽象模板，但使用真实地理位置）
+- 学校类目的地（除北邮、北师大外）→ MAP_CAMPUS_OSM
+- 景区类目的地（除天坛外）→ MAP_SCENIC_OSM
 
 ### 抽象模板 (Simulated Templates)
 
@@ -45,9 +60,11 @@ PathPal 的路线规划和场所查询发生在景区/校园**内部道路图**�
 - 页面显示提示："当前目的地复用抽象内部地图模板，不叠加真实地图瓦片"
 
 **绑定关系**：
-- 29 个 campus 目的地 → MAP_CAMPUS_001
-- 117 个 attraction 目的地 → MAP_SCENIC_001
-- 69 个 attraction 目的地 → MAP_MIXED_001
+- 28 个 campus 目的地 → MAP_CAMPUS_OSM（OSM 模板）
+- 117 个 attraction 目的地 → MAP_SCENIC_OSM（OSM 模板）
+- 69 个 attraction 目的地 → MAP_MIXED_001（抽象模板）
+
+> **备注**：MAP_CAMPUS_001 和 MAP_SCENIC_001 作为备用抽象模板保留，当前无目的地绑定。
 
 ---
 
@@ -55,8 +72,8 @@ PathPal 的路线规划和场所查询发生在景区/校园**内部道路图**�
 
 1. **工作量**：为 217 个目的地逐一爬取/整理真实地图不现实
 2. **课程设计允许**：课程要求中明确指出"景区和校园内部可以一致"，即允许复用内部地图模板
-3. **数据丰富度**：只有部分知名景区/校园在 OSM 上有足够丰富的内部道路数据
-4. **展示效果**：真实地图展示核心能力，抽象模板满足数据规模要求
+3. **OSM 数据丰富度**：部分知名景区/校园在 OSM 上有足够丰富的内部道路数据
+4. **展示效果**：真实地图展示核心能力，OSM 矢量模板兼顾数据规模要求
 
 ---
 

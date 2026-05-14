@@ -36,10 +36,10 @@
 ├─────────────────────────────────────────────────────────────┤
 │                 数据层 (JSON Files)                          │
 │  ├─ destinations.json    217 目的地                         │
-│  ├─ internal_maps.json   5 个地图模板                       │
-│  ├─ internal_nodes.json  12,008 个内部节点                  │
-│  ├─ internal_edges.json  26,298 条道路边                    │
-│  ├─ facilities.json      1,695 个服务设施（12 类别）        │
+│  ├─ internal_maps.json   8 个地图模板                       │
+│  ├─ internal_nodes.json  21,006 个内部节点                  │
+│  ├─ internal_edges.json  46,114 条道路边                    │
+│  ├─ facilities.json      1,740 个服务设施（28 类别）        │
 │  ├─ users.json           12 个用户                          │
 │  └─ indoor_graphs.json   1 个室内建筑 Demo                  │
 └─────────────────────────────────────────────────────────────┘

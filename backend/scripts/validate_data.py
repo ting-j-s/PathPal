@@ -19,7 +19,8 @@ ENTITY_TYPES = {
 }
 
 REQUIRED_MAP_IDS = {"MAP_CAMPUS_001", "MAP_SCENIC_001", "MAP_MIXED_001"}
-REAL_MAP_IDS = {"MAP_BUPT_REAL", "MAP_SCENIC_REAL"}
+REAL_MAP_IDS = {"MAP_BUPT_REAL", "MAP_BNU_REAL", "MAP_SCENIC_REAL",
+                "MAP_CAMPUS_OSM", "MAP_SCENIC_OSM"}
 ALL_MAP_IDS = REQUIRED_MAP_IDS | REAL_MAP_IDS
 
 
@@ -125,16 +126,18 @@ def validate_destinations(destinations, maps, v: Validator):
         v.check(0 < d.get("rating", 0) <= 5.0,
                 f"{d['id']}: rating must be in (0, 5.0]")
         if d["type"] == "campus":
-            v.check(d.get("internal_map_id") in ("MAP_CAMPUS_001", "MAP_MIXED_001", "MAP_BUPT_REAL"),
+            v.check(d.get("internal_map_id") in ("MAP_CAMPUS_001", "MAP_MIXED_001",
+                       "MAP_BUPT_REAL", "MAP_BNU_REAL", "MAP_CAMPUS_OSM"),
                     f"{d['id']}: campus must use campus or mixed map, got {d.get('internal_map_id')}")
         elif d["type"] == "attraction":
-            v.check(d.get("internal_map_id") in ("MAP_SCENIC_001", "MAP_MIXED_001", "MAP_SCENIC_REAL"),
+            v.check(d.get("internal_map_id") in ("MAP_SCENIC_001", "MAP_MIXED_001",
+                       "MAP_SCENIC_REAL", "MAP_SCENIC_OSM"),
                     f"{d['id']}: attraction must use scenic or mixed map, got {d.get('internal_map_id')}")
 
 
 def validate_internal_maps(maps, v: Validator):
     print("\n--- Internal Maps ---")
-    v.check(len(maps) >= 5, f"internal_maps count >= 5 (actual: {len(maps)})")
+    v.check(len(maps) >= 8, f"internal_maps count >= 8 (actual: {len(maps)})")
     print(f"  Internal maps: {len(maps)} {'OK' if len(maps) >= 5 else 'FAIL'}")
 
     map_ids = set()
@@ -185,6 +188,30 @@ def validate_internal_maps(maps, v: Validator):
                 f"MAP_SCENIC_REAL: type must be 'attraction', got '{scenic.get('type')}'")
         v.check("bike" not in scenic.get("supported_transports", []),
                 "MAP_SCENIC_REAL: scenic must not support bike")
+
+    # MAP_BNU_REAL specific checks
+    bnu = next((m for m in maps if (m.get("map_id") or m.get("id")) == "MAP_BNU_REAL"), None)
+    if bnu:
+        v.check(bnu.get("type") == "campus",
+                f"MAP_BNU_REAL: type must be 'campus', got '{bnu.get('type')}'")
+        v.check("sightseeing_car" not in bnu.get("supported_transports", []),
+                "MAP_BNU_REAL: campus must not support sightseeing_car")
+
+    # MAP_CAMPUS_OSM specific checks (school OSM template)
+    campus_osm = next((m for m in maps if (m.get("map_id") or m.get("id")) == "MAP_CAMPUS_OSM"), None)
+    if campus_osm:
+        v.check(campus_osm.get("type") == "campus",
+                f"MAP_CAMPUS_OSM: type must be 'campus', got '{campus_osm.get('type')}'")
+        v.check("sightseeing_car" not in campus_osm.get("supported_transports", []),
+                "MAP_CAMPUS_OSM: campus must not support sightseeing_car")
+
+    # MAP_SCENIC_OSM specific checks (scenic OSM template)
+    scenic_osm = next((m for m in maps if (m.get("map_id") or m.get("id")) == "MAP_SCENIC_OSM"), None)
+    if scenic_osm:
+        v.check(scenic_osm.get("type") == "attraction",
+                f"MAP_SCENIC_OSM: type must be 'attraction', got '{scenic_osm.get('type')}'")
+        v.check("bike" not in scenic_osm.get("supported_transports", []),
+                "MAP_SCENIC_OSM: scenic must not support bike")
 
 
 def validate_internal_nodes(nodes, maps, v: Validator):
@@ -349,7 +376,10 @@ def validate_coordinate_bounds(nodes, facilities, maps, v: Validator):
     print("\n--- Coordinate Bounds ---")
 
     REF_BUPT = {"lat": (39.9490, 39.9730), "lng": (116.3430, 116.3700)}
+    REF_BNU = {"lat": (39.9560, 39.9700), "lng": (116.3590, 116.3730)}
     REF_SCENIC = {"lat": (39.8590, 39.9080), "lng": (116.3790, 116.4390)}
+    REF_CAMPUS_OSM = {"lat": (39.9880, 40.0120), "lng": (116.3080, 116.3420)}
+    REF_SCENIC_OSM = {"lat": (39.9860, 40.0100), "lng": (116.2580, 116.2870)}
 
     nodes_by_map = defaultdict(list)
     for n in nodes:
@@ -391,6 +421,39 @@ def validate_coordinate_bounds(nodes, facilities, maps, v: Validator):
             v.check(lat_ok and lng_ok,
                     f"{n['id']}: SCENIC node ({n['latitude']:.4f}, {n['longitude']:.4f}) outside expected range")
         print(f"  MAP_SCENIC_REAL: lat [{min(lats):.4f}, {max(lats):.4f}], lng [{min(lngs):.4f}, {max(lngs):.4f}]")
+
+    # MAP_BNU_REAL coordinate check
+    bnu_nodes = nodes_by_map.get("MAP_BNU_REAL", [])
+    if bnu_nodes:
+        lats = [n["latitude"] for n in bnu_nodes]
+        lngs = [n["longitude"] for n in bnu_nodes]
+        v.check(min(lats) >= REF_BNU["lat"][0] and max(lats) <= REF_BNU["lat"][1],
+                f"BNU lat range [{min(lats):.4f}, {max(lats):.4f}] outside expected")
+        v.check(min(lngs) >= REF_BNU["lng"][0] and max(lngs) <= REF_BNU["lng"][1],
+                f"BNU lng range [{min(lngs):.4f}, {max(lngs):.4f}] outside expected")
+        print(f"  MAP_BNU_REAL: lat [{min(lats):.4f}, {max(lats):.4f}], lng [{min(lngs):.4f}, {max(lngs):.4f}]")
+
+    # MAP_CAMPUS_OSM coordinate check (Tsinghua)
+    campus_osm_nodes = nodes_by_map.get("MAP_CAMPUS_OSM", [])
+    if campus_osm_nodes:
+        lats = [n["latitude"] for n in campus_osm_nodes]
+        lngs = [n["longitude"] for n in campus_osm_nodes]
+        v.check(min(lats) >= REF_CAMPUS_OSM["lat"][0] and max(lats) <= REF_CAMPUS_OSM["lat"][1],
+                f"MAP_CAMPUS_OSM lat range [{min(lats):.4f}, {max(lats):.4f}] outside expected")
+        v.check(min(lngs) >= REF_CAMPUS_OSM["lng"][0] and max(lngs) <= REF_CAMPUS_OSM["lng"][1],
+                f"MAP_CAMPUS_OSM lng range [{min(lngs):.4f}, {max(lngs):.4f}] outside expected")
+        print(f"  MAP_CAMPUS_OSM: lat [{min(lats):.4f}, {max(lats):.4f}], lng [{min(lngs):.4f}, {max(lngs):.4f}]")
+
+    # MAP_SCENIC_OSM coordinate check (Summer Palace)
+    scenic_osm_nodes = nodes_by_map.get("MAP_SCENIC_OSM", [])
+    if scenic_osm_nodes:
+        lats = [n["latitude"] for n in scenic_osm_nodes]
+        lngs = [n["longitude"] for n in scenic_osm_nodes]
+        v.check(min(lats) >= REF_SCENIC_OSM["lat"][0] and max(lats) <= REF_SCENIC_OSM["lat"][1],
+                f"MAP_SCENIC_OSM lat range [{min(lats):.4f}, {max(lats):.4f}] outside expected")
+        v.check(min(lngs) >= REF_SCENIC_OSM["lng"][0] and max(lngs) <= REF_SCENIC_OSM["lng"][1],
+                f"MAP_SCENIC_OSM lng range [{min(lngs):.4f}, {max(lngs):.4f}] outside expected")
+        print(f"  MAP_SCENIC_OSM: lat [{min(lats):.4f}, {max(lats):.4f}], lng [{min(lngs):.4f}, {max(lngs):.4f}]")
 
     # Abstract templates: just check no facilities at (0,0)
     for mid in REQUIRED_MAP_IDS:

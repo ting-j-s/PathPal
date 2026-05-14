@@ -520,306 +520,6 @@
     "description": "乐寿堂旁的古典茶室"
   },
   {
-    "id": "FAC_BUPT_OSM_001",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "图书馆(4)",
-    "category": "餐饮",
-    "linked_node_id": "POI_BUPT_005",
-    "latitude": 39.9622,
-    "longitude": 116.3563,
-    "description": "图书馆一楼咖啡厅"
-  },
-  {
-    "id": "FAC_BUPT_OSM_002",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "主楼(3)",
-    "category": "卫生间",
-    "linked_node_id": "POI_BUPT_006",
-    "latitude": 39.96295,
-    "longitude": 116.35705,
-    "description": "主楼一层公共洗手间"
-  },
-  {
-    "id": "FAC_BUPT_OSM_003",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "教学楼(教三楼)",
-    "category": "卫生间",
-    "linked_node_id": "POI_BUPT_007",
-    "latitude": 39.96195,
-    "longitude": 116.35705,
-    "description": "教三楼一层洗手间"
-  },
-  {
-    "id": "FAC_BUPT_OSM_004",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "食堂",
-    "category": "餐饮",
-    "linked_node_id": "POI_BUPT_013",
-    "latitude": 39.9604,
-    "longitude": 116.3568,
-    "description": "学生食堂"
-  },
-  {
-    "id": "FAC_BUPT_OSM_005",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "学生公寓区",
-    "category": "商店",
-    "linked_node_id": "POI_BUPT_012",
-    "latitude": 39.959,
-    "longitude": 116.3571,
-    "description": "学生公寓区便利店"
-  },
-  {
-    "id": "FAC_BUPT_OSM_006",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "图书馆(4)",
-    "category": "图书馆",
-    "linked_node_id": "POI_BUPT_005",
-    "latitude": 39.9622,
-    "longitude": 116.3563,
-    "description": "北京邮电大学图书馆"
-  },
-  {
-    "id": "FAC_BUPT_OSM_007",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "操场",
-    "category": "卫生间",
-    "linked_node_id": "POI_BUPT_010",
-    "latitude": 39.9595,
-    "longitude": 116.3555,
-    "description": "操场旁公共洗手间"
-  },
-  {
-    "id": "FAC_BUPT_OSM_008",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "北邮北门",
-    "category": "服务",
-    "linked_node_id": "POI_BUPT_001",
-    "latitude": 39.9636,
-    "longitude": 116.3575,
-    "description": "北门访客登记处"
-  },
-  {
-    "id": "FAC_BUPT_OSM_009",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "北邮南门",
-    "category": "服务",
-    "linked_node_id": "POI_BUPT_002",
-    "latitude": 39.9589,
-    "longitude": 116.3573,
-    "description": "南门服务咨询"
-  },
-  {
-    "id": "FAC_BUPT_OSM_010",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "体育馆(4)",
-    "category": "服务",
-    "linked_node_id": "POI_BUPT_009",
-    "latitude": 39.9592,
-    "longitude": 116.356,
-    "description": "体育馆前台"
-  },
-  {
-    "id": "FAC_BUPT_OSM_011",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "教学楼(教三楼)",
-    "category": "餐饮",
-    "linked_node_id": "POI_BUPT_007",
-    "latitude": 39.96195,
-    "longitude": 116.35705,
-    "description": "教三楼自动咖啡机"
-  },
-  {
-    "id": "FAC_BUPT_OSM_012",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "食堂",
-    "category": "卫生间",
-    "linked_node_id": "POI_BUPT_013",
-    "latitude": 39.9604,
-    "longitude": 116.3568,
-    "description": "食堂旁洗手间"
-  },
-  {
-    "id": "FAC_BUPT_OSM_013",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "科研楼(3)",
-    "category": "商店",
-    "linked_node_id": "POI_BUPT_008",
-    "latitude": 39.9605,
-    "longitude": 116.3558,
-    "description": "科研楼小卖部"
-  },
-  {
-    "id": "FAC_BUPT_OSM_014",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "学生活动中心(4)",
-    "category": "卫生间",
-    "linked_node_id": "POI_BUPT_011",
-    "latitude": 39.961,
-    "longitude": 116.356,
-    "description": "学生活动中心洗手间"
-  },
-  {
-    "id": "FAC_BUPT_OSM_015",
-    "map_id": "MAP_BUPT_REAL",
-    "name": "北邮西门",
-    "category": "服务",
-    "linked_node_id": "POI_BUPT_003",
-    "latitude": 39.9615,
-    "longitude": 116.3542,
-    "description": "西门快递收发点"
-  },
-  {
-    "id": "FAC_TSR_OSM_001",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "游客服务中心(2)",
-    "category": "服务",
-    "linked_node_id": "POI_TSR_010",
-    "latitude": 39.8875,
-    "longitude": 116.4063,
-    "description": "旅游咨询、导览图、轮椅租赁"
-  },
-  {
-    "id": "FAC_TSR_OSM_002",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "天坛北门(2)",
-    "category": "卫生间",
-    "linked_node_id": "POI_TSR_002",
-    "latitude": 39.889,
-    "longitude": 116.4066,
-    "description": "北门附近公共洗手间"
-  },
-  {
-    "id": "FAC_TSR_OSM_003",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "天坛南门",
-    "category": "卫生间",
-    "linked_node_id": "POI_TSR_001",
-    "latitude": 39.876,
-    "longitude": 116.4066,
-    "description": "南门附近公共洗手间"
-  },
-  {
-    "id": "FAC_TSR_OSM_004",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "天坛东门(2)",
-    "category": "卫生间",
-    "linked_node_id": "POI_TSR_003",
-    "latitude": 39.8822,
-    "longitude": 116.411,
-    "description": "东门附近公共洗手间"
-  },
-  {
-    "id": "FAC_TSR_OSM_005",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "天坛西门",
-    "category": "卫生间",
-    "linked_node_id": "POI_TSR_004",
-    "latitude": 39.8822,
-    "longitude": 116.4022,
-    "description": "西门附近公共洗手间"
-  },
-  {
-    "id": "FAC_TSR_OSM_006",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "祈年殿(2)",
-    "category": "商店",
-    "linked_node_id": "POI_TSR_005",
-    "latitude": 39.8855,
-    "longitude": 116.4066,
-    "description": "天坛主题文创纪念品"
-  },
-  {
-    "id": "FAC_TSR_OSM_007",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "回音壁",
-    "category": "餐饮",
-    "linked_node_id": "POI_TSR_006",
-    "latitude": 39.8832,
-    "longitude": 116.4072,
-    "description": "景区自动咖啡售卖"
-  },
-  {
-    "id": "FAC_TSR_OSM_008",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "圜丘",
-    "category": "售票处",
-    "linked_node_id": "POI_TSR_007",
-    "latitude": 39.88,
-    "longitude": 116.4066,
-    "description": "圜丘景区入口售票"
-  },
-  {
-    "id": "FAC_TSR_OSM_009",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "丹陛桥",
-    "category": "餐饮",
-    "linked_node_id": "POI_TSR_008",
-    "latitude": 39.8825,
-    "longitude": 116.4066,
-    "description": "中轴线休息区"
-  },
-  {
-    "id": "FAC_TSR_OSM_010",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "斋宫",
-    "category": "卫生间",
-    "linked_node_id": "POI_TSR_009",
-    "latitude": 39.881,
-    "longitude": 116.404,
-    "description": "斋宫景区洗手间"
-  },
-  {
-    "id": "FAC_TSR_OSM_011",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "祈年殿(2)",
-    "category": "卫生间",
-    "linked_node_id": "POI_TSR_005",
-    "latitude": 39.8855,
-    "longitude": 116.4066,
-    "description": "祈年殿附近洗手间"
-  },
-  {
-    "id": "FAC_TSR_OSM_012",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "天坛北门(2)",
-    "category": "售票处",
-    "linked_node_id": "POI_TSR_002",
-    "latitude": 39.889,
-    "longitude": 116.4066,
-    "description": "北门入口售票处"
-  },
-  {
-    "id": "FAC_TSR_OSM_013",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "天坛南门",
-    "category": "售票处",
-    "linked_node_id": "POI_TSR_001",
-    "latitude": 39.876,
-    "longitude": 116.4066,
-    "description": "南门入口售票处"
-  },
-  {
-    "id": "FAC_TSR_OSM_014",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "游客服务中心(2)",
-    "category": "餐饮",
-    "linked_node_id": "POI_TSR_010",
-    "latitude": 39.8875,
-    "longitude": 116.4063,
-    "description": "游客服务中心咖啡吧"
-  },
-  {
-    "id": "FAC_TSR_OSM_015",
-    "map_id": "MAP_SCENIC_REAL",
-    "name": "天坛东门(2)",
-    "category": "服务",
-    "linked_node_id": "POI_TSR_003",
-    "latitude": 39.8822,
-    "longitude": 116.411,
-    "description": "东门游客服务点"
-  },
-  {
     "id": "FAC_AUTO_NODE_BUPT_OSM_000533",
     "name": "校训石",
     "category": "景点",
@@ -20174,5 +19874,755 @@
     "description": "北邮东门（出入口）",
     "node_type": "gate",
     "node_subtype": null
+  },
+  {
+    "id": "FAC_BNU_OSM_001",
+    "map_id": "MAP_BNU_REAL",
+    "name": "图书馆咖啡厅",
+    "category": "cafe",
+    "linked_node_id": "POI_BNU_005",
+    "latitude": 39.963,
+    "longitude": 116.366,
+    "description": "图书馆一楼咖啡厅"
+  },
+  {
+    "id": "FAC_BNU_OSM_002",
+    "map_id": "MAP_BNU_REAL",
+    "name": "主楼洗手间(1F)",
+    "category": "toilet",
+    "linked_node_id": "POI_BNU_006",
+    "latitude": 39.9635,
+    "longitude": 116.3675,
+    "description": "教七楼一层公共洗手间"
+  },
+  {
+    "id": "FAC_BNU_OSM_003",
+    "map_id": "MAP_BNU_REAL",
+    "name": "教二楼洗手间(1F)",
+    "category": "toilet",
+    "linked_node_id": "POI_BNU_007",
+    "latitude": 39.9615,
+    "longitude": 116.367,
+    "description": "教二楼一层洗手间"
+  },
+  {
+    "id": "FAC_BNU_OSM_004",
+    "map_id": "MAP_BNU_REAL",
+    "name": "学五食堂",
+    "category": "canteen",
+    "linked_node_id": "POI_BNU_010",
+    "latitude": 39.9618,
+    "longitude": 116.3655,
+    "description": "学生食堂"
+  },
+  {
+    "id": "FAC_BNU_OSM_005",
+    "map_id": "MAP_BNU_REAL",
+    "name": "校园超市",
+    "category": "supermarket",
+    "linked_node_id": "POI_BNU_011",
+    "latitude": 39.96,
+    "longitude": 116.3675,
+    "description": "学生宿舍区便利店"
+  },
+  {
+    "id": "FAC_BNU_OSM_006",
+    "map_id": "MAP_BNU_REAL",
+    "name": "图书馆",
+    "category": "library",
+    "linked_node_id": "POI_BNU_005",
+    "latitude": 39.963,
+    "longitude": 116.366,
+    "description": "北京师范大学图书馆"
+  },
+  {
+    "id": "FAC_BNU_OSM_007",
+    "map_id": "MAP_BNU_REAL",
+    "name": "体育场洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_BNU_009",
+    "latitude": 39.961,
+    "longitude": 116.364,
+    "description": "操场旁公共洗手间"
+  },
+  {
+    "id": "FAC_BNU_OSM_008",
+    "map_id": "MAP_BNU_REAL",
+    "name": "南门服务点",
+    "category": "service_desk",
+    "linked_node_id": "POI_BNU_001",
+    "latitude": 39.959,
+    "longitude": 116.3668,
+    "description": "南门访客登记处"
+  },
+  {
+    "id": "FAC_BNU_OSM_009",
+    "map_id": "MAP_BNU_REAL",
+    "name": "东门服务点",
+    "category": "service_desk",
+    "linked_node_id": "POI_BNU_003",
+    "latitude": 39.9628,
+    "longitude": 116.371,
+    "description": "东门访客登记处"
+  },
+  {
+    "id": "FAC_BNU_OSM_010",
+    "map_id": "MAP_BNU_REAL",
+    "name": "体育馆服务台",
+    "category": "service_desk",
+    "linked_node_id": "POI_BNU_008",
+    "latitude": 39.9605,
+    "longitude": 116.365,
+    "description": "体育馆前台"
+  },
+  {
+    "id": "FAC_BNU_OSM_011",
+    "map_id": "MAP_BNU_REAL",
+    "name": "教二楼咖啡点",
+    "category": "cafe",
+    "linked_node_id": "POI_BNU_007",
+    "latitude": 39.9615,
+    "longitude": 116.367,
+    "description": "教二楼自动咖啡机"
+  },
+  {
+    "id": "FAC_BNU_OSM_012",
+    "map_id": "MAP_BNU_REAL",
+    "name": "食堂洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_BNU_010",
+    "latitude": 39.9618,
+    "longitude": 116.3655,
+    "description": "食堂旁洗手间"
+  },
+  {
+    "id": "FAC_BNU_OSM_013",
+    "map_id": "MAP_BNU_REAL",
+    "name": "科技楼超市",
+    "category": "shop",
+    "linked_node_id": "POI_BNU_012",
+    "latitude": 39.964,
+    "longitude": 116.3645,
+    "description": "科技楼小卖部"
+  },
+  {
+    "id": "FAC_BNU_OSM_014",
+    "map_id": "MAP_BNU_REAL",
+    "name": "英东楼洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_BNU_013",
+    "latitude": 39.962,
+    "longitude": 116.368,
+    "description": "英东楼洗手间"
+  },
+  {
+    "id": "FAC_BNU_OSM_015",
+    "map_id": "MAP_BNU_REAL",
+    "name": "西门快递站",
+    "category": "service_desk",
+    "linked_node_id": "POI_BNU_004",
+    "latitude": 39.9628,
+    "longitude": 116.361,
+    "description": "西门快递收发点"
+  },
+  {
+    "id": "FAC_BUPT_OSM_001",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "图书馆(4)",
+    "category": "餐饮",
+    "linked_node_id": "POI_BUPT_005",
+    "latitude": 39.9622,
+    "longitude": 116.3563,
+    "description": "图书馆一楼咖啡厅"
+  },
+  {
+    "id": "FAC_BUPT_OSM_002",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "主楼(3)",
+    "category": "卫生间",
+    "linked_node_id": "POI_BUPT_006",
+    "latitude": 39.96295,
+    "longitude": 116.35705,
+    "description": "主楼一层公共洗手间"
+  },
+  {
+    "id": "FAC_BUPT_OSM_003",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "教学楼(教三楼)",
+    "category": "卫生间",
+    "linked_node_id": "POI_BUPT_007",
+    "latitude": 39.96195,
+    "longitude": 116.35705,
+    "description": "教三楼一层洗手间"
+  },
+  {
+    "id": "FAC_BUPT_OSM_004",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "食堂",
+    "category": "餐饮",
+    "linked_node_id": "POI_BUPT_013",
+    "latitude": 39.9604,
+    "longitude": 116.3568,
+    "description": "学生食堂"
+  },
+  {
+    "id": "FAC_BUPT_OSM_005",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "学生公寓区",
+    "category": "商店",
+    "linked_node_id": "POI_BUPT_012",
+    "latitude": 39.959,
+    "longitude": 116.3571,
+    "description": "学生公寓区便利店"
+  },
+  {
+    "id": "FAC_BUPT_OSM_006",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "图书馆(4)",
+    "category": "图书馆",
+    "linked_node_id": "POI_BUPT_005",
+    "latitude": 39.9622,
+    "longitude": 116.3563,
+    "description": "北京邮电大学图书馆"
+  },
+  {
+    "id": "FAC_BUPT_OSM_007",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "操场",
+    "category": "卫生间",
+    "linked_node_id": "POI_BUPT_010",
+    "latitude": 39.9595,
+    "longitude": 116.3555,
+    "description": "操场旁公共洗手间"
+  },
+  {
+    "id": "FAC_BUPT_OSM_008",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "北邮北门",
+    "category": "服务",
+    "linked_node_id": "POI_BUPT_001",
+    "latitude": 39.9636,
+    "longitude": 116.3575,
+    "description": "北门访客登记处"
+  },
+  {
+    "id": "FAC_BUPT_OSM_009",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "北邮南门",
+    "category": "服务",
+    "linked_node_id": "POI_BUPT_002",
+    "latitude": 39.9589,
+    "longitude": 116.3573,
+    "description": "南门服务咨询"
+  },
+  {
+    "id": "FAC_BUPT_OSM_010",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "体育馆(4)",
+    "category": "服务",
+    "linked_node_id": "POI_BUPT_009",
+    "latitude": 39.9592,
+    "longitude": 116.356,
+    "description": "体育馆前台"
+  },
+  {
+    "id": "FAC_BUPT_OSM_011",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "教学楼(教三楼)",
+    "category": "餐饮",
+    "linked_node_id": "POI_BUPT_007",
+    "latitude": 39.96195,
+    "longitude": 116.35705,
+    "description": "教三楼自动咖啡机"
+  },
+  {
+    "id": "FAC_BUPT_OSM_012",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "食堂",
+    "category": "卫生间",
+    "linked_node_id": "POI_BUPT_013",
+    "latitude": 39.9604,
+    "longitude": 116.3568,
+    "description": "食堂旁洗手间"
+  },
+  {
+    "id": "FAC_BUPT_OSM_013",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "科研楼(3)",
+    "category": "商店",
+    "linked_node_id": "POI_BUPT_008",
+    "latitude": 39.9605,
+    "longitude": 116.3558,
+    "description": "科研楼小卖部"
+  },
+  {
+    "id": "FAC_BUPT_OSM_014",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "学生活动中心(4)",
+    "category": "卫生间",
+    "linked_node_id": "POI_BUPT_011",
+    "latitude": 39.961,
+    "longitude": 116.356,
+    "description": "学生活动中心洗手间"
+  },
+  {
+    "id": "FAC_BUPT_OSM_015",
+    "map_id": "MAP_BUPT_REAL",
+    "name": "北邮西门",
+    "category": "服务",
+    "linked_node_id": "POI_BUPT_003",
+    "latitude": 39.9615,
+    "longitude": 116.3542,
+    "description": "西门快递收发点"
+  },
+  {
+    "id": "FAC_THU_OSM_001",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "图书馆咖啡厅",
+    "category": "cafe",
+    "linked_node_id": "POI_THU_005",
+    "latitude": 39.9995,
+    "longitude": 116.322,
+    "description": "逸夫馆一楼咖啡厅"
+  },
+  {
+    "id": "FAC_THU_OSM_002",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "大礼堂洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_THU_006",
+    "latitude": 39.998,
+    "longitude": 116.3205,
+    "description": "大礼堂公共洗手间"
+  },
+  {
+    "id": "FAC_THU_OSM_003",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "观畴园食堂",
+    "category": "canteen",
+    "linked_node_id": "POI_THU_011",
+    "latitude": 40.003,
+    "longitude": 116.325,
+    "description": "万人食堂"
+  },
+  {
+    "id": "FAC_THU_OSM_004",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "紫荆园食堂",
+    "category": "canteen",
+    "linked_node_id": "POI_THU_012",
+    "latitude": 40.005,
+    "longitude": 116.327,
+    "description": "紫荆园学生食堂"
+  },
+  {
+    "id": "FAC_THU_OSM_005",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "学生区超市",
+    "category": "supermarket",
+    "linked_node_id": "POI_THU_013",
+    "latitude": 40.006,
+    "longitude": 116.329,
+    "description": "学生公寓区便利店"
+  },
+  {
+    "id": "FAC_THU_OSM_006",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "图书馆",
+    "category": "library",
+    "linked_node_id": "POI_THU_005",
+    "latitude": 39.9995,
+    "longitude": 116.322,
+    "description": "清华大学图书馆"
+  },
+  {
+    "id": "FAC_THU_OSM_007",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "操场洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_THU_010",
+    "latitude": 39.997,
+    "longitude": 116.331,
+    "description": "东大操场旁洗手间"
+  },
+  {
+    "id": "FAC_THU_OSM_008",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "西门服务点",
+    "category": "service_desk",
+    "linked_node_id": "POI_THU_001",
+    "latitude": 39.997,
+    "longitude": 116.315,
+    "description": "西门访客登记处"
+  },
+  {
+    "id": "FAC_THU_OSM_009",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "东门服务点",
+    "category": "service_desk",
+    "linked_node_id": "POI_THU_003",
+    "latitude": 40.0,
+    "longitude": 116.338,
+    "description": "主校门访客服务中心"
+  },
+  {
+    "id": "FAC_THU_OSM_010",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "综合体育馆服务台",
+    "category": "service_desk",
+    "linked_node_id": "POI_THU_009",
+    "latitude": 39.9965,
+    "longitude": 116.332,
+    "description": "体育馆前台"
+  },
+  {
+    "id": "FAC_THU_OSM_011",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "清华学堂咖啡",
+    "category": "cafe",
+    "linked_node_id": "POI_THU_007",
+    "latitude": 39.999,
+    "longitude": 116.321,
+    "description": "清华学堂咖啡角"
+  },
+  {
+    "id": "FAC_THU_OSM_012",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "食堂洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_THU_011",
+    "latitude": 40.003,
+    "longitude": 116.325,
+    "description": "观畴园旁洗手间"
+  },
+  {
+    "id": "FAC_THU_OSM_013",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "美术学院超市",
+    "category": "shop",
+    "linked_node_id": "POI_THU_014",
+    "latitude": 40.0,
+    "longitude": 116.317,
+    "description": "美术学院小卖部"
+  },
+  {
+    "id": "FAC_THU_OSM_014",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "近春园洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_THU_015",
+    "latitude": 39.996,
+    "longitude": 116.3185,
+    "description": "荷塘附近洗手间"
+  },
+  {
+    "id": "FAC_THU_OSM_015",
+    "map_id": "MAP_CAMPUS_OSM",
+    "name": "南门快递站",
+    "category": "service_desk",
+    "linked_node_id": "POI_THU_002",
+    "latitude": 39.993,
+    "longitude": 116.326,
+    "description": "南门快递收发点"
+  },
+  {
+    "id": "FAC_TSR_OSM_001",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "游客服务中心(2)",
+    "category": "服务",
+    "linked_node_id": "POI_TSR_010",
+    "latitude": 39.8875,
+    "longitude": 116.4063,
+    "description": "旅游咨询、导览图、轮椅租赁"
+  },
+  {
+    "id": "FAC_TSR_OSM_002",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "天坛北门(2)",
+    "category": "卫生间",
+    "linked_node_id": "POI_TSR_002",
+    "latitude": 39.889,
+    "longitude": 116.4066,
+    "description": "北门附近公共洗手间"
+  },
+  {
+    "id": "FAC_TSR_OSM_003",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "天坛南门",
+    "category": "卫生间",
+    "linked_node_id": "POI_TSR_001",
+    "latitude": 39.876,
+    "longitude": 116.4066,
+    "description": "南门附近公共洗手间"
+  },
+  {
+    "id": "FAC_TSR_OSM_004",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "天坛东门(2)",
+    "category": "卫生间",
+    "linked_node_id": "POI_TSR_003",
+    "latitude": 39.8822,
+    "longitude": 116.411,
+    "description": "东门附近公共洗手间"
+  },
+  {
+    "id": "FAC_TSR_OSM_005",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "天坛西门",
+    "category": "卫生间",
+    "linked_node_id": "POI_TSR_004",
+    "latitude": 39.8822,
+    "longitude": 116.4022,
+    "description": "西门附近公共洗手间"
+  },
+  {
+    "id": "FAC_TSR_OSM_006",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "祈年殿(2)",
+    "category": "商店",
+    "linked_node_id": "POI_TSR_005",
+    "latitude": 39.8855,
+    "longitude": 116.4066,
+    "description": "天坛主题文创纪念品"
+  },
+  {
+    "id": "FAC_TSR_OSM_007",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "回音壁",
+    "category": "餐饮",
+    "linked_node_id": "POI_TSR_006",
+    "latitude": 39.8832,
+    "longitude": 116.4072,
+    "description": "景区自动咖啡售卖"
+  },
+  {
+    "id": "FAC_TSR_OSM_008",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "圜丘",
+    "category": "售票处",
+    "linked_node_id": "POI_TSR_007",
+    "latitude": 39.88,
+    "longitude": 116.4066,
+    "description": "圜丘景区入口售票"
+  },
+  {
+    "id": "FAC_TSR_OSM_009",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "丹陛桥",
+    "category": "餐饮",
+    "linked_node_id": "POI_TSR_008",
+    "latitude": 39.8825,
+    "longitude": 116.4066,
+    "description": "中轴线休息区"
+  },
+  {
+    "id": "FAC_TSR_OSM_010",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "斋宫",
+    "category": "卫生间",
+    "linked_node_id": "POI_TSR_009",
+    "latitude": 39.881,
+    "longitude": 116.404,
+    "description": "斋宫景区洗手间"
+  },
+  {
+    "id": "FAC_TSR_OSM_011",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "祈年殿(2)",
+    "category": "卫生间",
+    "linked_node_id": "POI_TSR_005",
+    "latitude": 39.8855,
+    "longitude": 116.4066,
+    "description": "祈年殿附近洗手间"
+  },
+  {
+    "id": "FAC_TSR_OSM_012",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "天坛北门(2)",
+    "category": "售票处",
+    "linked_node_id": "POI_TSR_002",
+    "latitude": 39.889,
+    "longitude": 116.4066,
+    "description": "北门入口售票处"
+  },
+  {
+    "id": "FAC_TSR_OSM_013",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "天坛南门",
+    "category": "售票处",
+    "linked_node_id": "POI_TSR_001",
+    "latitude": 39.876,
+    "longitude": 116.4066,
+    "description": "南门入口售票处"
+  },
+  {
+    "id": "FAC_TSR_OSM_014",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "游客服务中心(2)",
+    "category": "餐饮",
+    "linked_node_id": "POI_TSR_010",
+    "latitude": 39.8875,
+    "longitude": 116.4063,
+    "description": "游客服务中心咖啡吧"
+  },
+  {
+    "id": "FAC_TSR_OSM_015",
+    "map_id": "MAP_SCENIC_REAL",
+    "name": "天坛东门(2)",
+    "category": "服务",
+    "linked_node_id": "POI_TSR_003",
+    "latitude": 39.8822,
+    "longitude": 116.411,
+    "description": "东门游客服务点"
+  },
+  {
+    "id": "FAC_YHY_OSM_001",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "游客服务中心",
+    "category": "service_desk",
+    "linked_node_id": "POI_YHY_014",
+    "latitude": 39.998,
+    "longitude": 116.2815,
+    "description": "旅游咨询、导览图、轮椅租赁"
+  },
+  {
+    "id": "FAC_YHY_OSM_002",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "东宫门洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_YHY_001",
+    "latitude": 39.9985,
+    "longitude": 116.281,
+    "description": "东宫门附近公共洗手间"
+  },
+  {
+    "id": "FAC_YHY_OSM_003",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "北宫门洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_YHY_002",
+    "latitude": 40.0055,
+    "longitude": 116.2755,
+    "description": "北宫门附近公共洗手间"
+  },
+  {
+    "id": "FAC_YHY_OSM_004",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "新建宫门洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_YHY_003",
+    "latitude": 39.9935,
+    "longitude": 116.271,
+    "description": "新建宫门附近洗手间"
+  },
+  {
+    "id": "FAC_YHY_OSM_005",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "佛香阁洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_YHY_007",
+    "latitude": 40.0015,
+    "longitude": 116.276,
+    "description": "佛香阁附近洗手间"
+  },
+  {
+    "id": "FAC_YHY_OSM_006",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "长廊文创商店",
+    "category": "shop",
+    "linked_node_id": "POI_YHY_009",
+    "latitude": 40.0,
+    "longitude": 116.276,
+    "description": "颐和园主题文创纪念品"
+  },
+  {
+    "id": "FAC_YHY_OSM_007",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "石舫咖啡点",
+    "category": "cafe",
+    "linked_node_id": "POI_YHY_010",
+    "latitude": 40.003,
+    "longitude": 116.274,
+    "description": "景区自动咖啡售卖"
+  },
+  {
+    "id": "FAC_YHY_OSM_008",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "东宫门售票处",
+    "category": "ticket",
+    "linked_node_id": "POI_YHY_001",
+    "latitude": 39.9985,
+    "longitude": 116.281,
+    "description": "东宫门入口售票处"
+  },
+  {
+    "id": "FAC_YHY_OSM_009",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "北宫门售票处",
+    "category": "ticket",
+    "linked_node_id": "POI_YHY_002",
+    "latitude": 40.0055,
+    "longitude": 116.2755,
+    "description": "北宫门入口售票处"
+  },
+  {
+    "id": "FAC_YHY_OSM_010",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "苏州街洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_YHY_011",
+    "latitude": 40.006,
+    "longitude": 116.277,
+    "description": "苏州街景区洗手间"
+  },
+  {
+    "id": "FAC_YHY_OSM_011",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "德和园洗手间",
+    "category": "toilet",
+    "linked_node_id": "POI_YHY_012",
+    "latitude": 39.999,
+    "longitude": 116.279,
+    "description": "德和园附近洗手间"
+  },
+  {
+    "id": "FAC_YHY_OSM_012",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "南如意门售票处",
+    "category": "ticket",
+    "linked_node_id": "POI_YHY_004",
+    "latitude": 39.9895,
+    "longitude": 116.268,
+    "description": "南如意门售票处"
+  },
+  {
+    "id": "FAC_YHY_OSM_013",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "十七孔桥休息点",
+    "category": "restaurant",
+    "linked_node_id": "POI_YHY_008",
+    "latitude": 39.996,
+    "longitude": 116.2785,
+    "description": "昆明湖畔休息区"
+  },
+  {
+    "id": "FAC_YHY_OSM_014",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "游客中心咖啡",
+    "category": "cafe",
+    "linked_node_id": "POI_YHY_014",
+    "latitude": 39.998,
+    "longitude": 116.2815,
+    "description": "游客服务中心咖啡吧"
+  },
+  {
+    "id": "FAC_YHY_OSM_015",
+    "map_id": "MAP_SCENIC_OSM",
+    "name": "西门服务点",
+    "category": "service_desk",
+    "linked_node_id": "POI_YHY_005",
+    "latitude": 39.997,
+    "longitude": 116.2615,
+    "description": "西门游客服务点"
   }
 ]

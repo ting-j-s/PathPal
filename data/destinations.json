@@ -43,7 +43,7 @@
       "双一流",
       "C9"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_003",
@@ -66,7 +66,7 @@
       "双一流",
       "C9"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_004",
@@ -89,7 +89,7 @@
       "双一流",
       "工科"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_005",
@@ -112,7 +112,7 @@
       "双一流",
       "工科"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_006",
@@ -135,7 +135,7 @@
       "双一流",
       "综合"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_007",
@@ -158,7 +158,7 @@
       "双一流",
       "师范"
     ],
-    "internal_map_id": "MAP_BUPT_REAL"
+    "internal_map_id": "MAP_BNU_REAL"
   },
   {
     "id": "DEST_008",
@@ -181,7 +181,7 @@
       "双一流",
       "农科"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_009",
@@ -204,7 +204,7 @@
       "双一流",
       "工科"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_010",
@@ -227,7 +227,7 @@
       "双一流",
       "工科"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_011",
@@ -250,7 +250,7 @@
       "双一流",
       "工科"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_012",
@@ -273,7 +273,7 @@
       "双一流",
       "工科"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_013",
@@ -296,7 +296,7 @@
       "双一流",
       "农林"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_014",
@@ -319,7 +319,7 @@
       "双一流",
       "医科"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_015",
@@ -342,7 +342,7 @@
       "双一流",
       "政法"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_016",
@@ -365,7 +365,7 @@
       "双一流",
       "民族"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_017",
@@ -388,7 +388,7 @@
       "双一流",
       "财经"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_018",
@@ -411,7 +411,7 @@
       "双一流",
       "语言"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_019",
@@ -434,7 +434,7 @@
       "双一流",
       "艺术"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_020",
@@ -457,7 +457,7 @@
       "双一流",
       "体育"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_021",
@@ -480,7 +480,7 @@
       "双一流",
       "财经"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_022",
@@ -503,7 +503,7 @@
       "双一流",
       "工科"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_023",
@@ -526,7 +526,7 @@
       "双一流",
       "理工"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_024",
@@ -548,7 +548,7 @@
       "双一流",
       "研究型"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_025",
@@ -570,7 +570,7 @@
       "语言",
       "国际"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_026",
@@ -592,7 +592,7 @@
       "双一流",
       "师范"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_027",
@@ -614,7 +614,7 @@
       "医科",
       "市重点"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_028",
@@ -636,7 +636,7 @@
       "市重点",
       "财经"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_029",
@@ -659,7 +659,7 @@
       "双一流",
       "工科"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_030",
@@ -681,7 +681,7 @@
       "市重点",
       "工科"
     ],
-    "internal_map_id": "MAP_CAMPUS_001"
+    "internal_map_id": "MAP_CAMPUS_OSM"
   },
   {
     "id": "DEST_031",
@@ -704,7 +704,7 @@
       "5A景区",
       "博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_032",
@@ -795,7 +795,7 @@
       "世界遗产",
       "5A景区"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_036",
@@ -862,7 +862,7 @@
       "国家一级博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_039",
@@ -884,7 +884,7 @@
       "奥运场馆",
       "地标"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_040",
@@ -906,7 +906,7 @@
       "奥运场馆",
       "地标"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_041",
@@ -928,7 +928,7 @@
       "4A景区",
       "科普"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_042",
@@ -950,7 +950,7 @@
       "全国重点文保",
       "寺庙"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_043",
@@ -994,7 +994,7 @@
       "历史文化名街",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_045",
@@ -1038,7 +1038,7 @@
       "世界遗产",
       "5A景区"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_047",
@@ -1060,7 +1060,7 @@
       "5A景区",
       "全国重点文保"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_048",
@@ -1082,7 +1082,7 @@
       "地标",
       "文化"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_049",
@@ -1104,7 +1104,7 @@
       "艺术区",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_050",
@@ -1126,7 +1126,7 @@
       "4A景区",
       "主题公园"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_051",
@@ -1148,7 +1148,7 @@
       "国家一级博物馆",
       "科普"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_052",
@@ -1170,7 +1170,7 @@
       "国家一级博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_053",
@@ -1192,7 +1192,7 @@
       "国家一级博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_054",
@@ -1214,7 +1214,7 @@
       "地标",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_055",
@@ -1370,7 +1370,7 @@
       "全国重点文保",
       "寺庙"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_062",
@@ -1392,7 +1392,7 @@
       "全国重点文保",
       "寺庙"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_063",
@@ -1414,7 +1414,7 @@
       "科普",
       "4A景区"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_064",
@@ -1436,7 +1436,7 @@
       "国家一级博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_065",
@@ -1458,7 +1458,7 @@
       "全国重点文保",
       "博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_066",
@@ -1480,7 +1480,7 @@
       "全国重点文保",
       "道观"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_067",
@@ -1502,7 +1502,7 @@
       "全国重点文保",
       "寺庙"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_068",
@@ -1524,7 +1524,7 @@
       "全国重点文保",
       "博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_069",
@@ -1546,7 +1546,7 @@
       "历史文化名街",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_070",
@@ -1568,7 +1568,7 @@
       "国家一级图书馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_071",
@@ -1590,7 +1590,7 @@
       "国家一级博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_072",
@@ -1612,7 +1612,7 @@
       "全国重点文保",
       "地标"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_073",
@@ -1634,7 +1634,7 @@
       "全国重点文保",
       "博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_074",
@@ -1656,7 +1656,7 @@
       "全国重点文保",
       "博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_075",
@@ -1678,7 +1678,7 @@
       "全国重点文保",
       "寺庙"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_076",
@@ -1877,7 +1877,7 @@
       "4A景区",
       "主题公园"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_085",
@@ -1899,7 +1899,7 @@
       "4A景区",
       "科普"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_086",
@@ -1920,7 +1920,7 @@
     "tags": [
       "科普"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_087",
@@ -1941,7 +1941,7 @@
     "tags": [
       "科普"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_088",
@@ -1962,7 +1962,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_089",
@@ -1984,7 +1984,7 @@
       "专题博物馆",
       "科普"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_090",
@@ -2006,7 +2006,7 @@
       "专题博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_091",
@@ -2028,7 +2028,7 @@
       "国家一级博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_092",
@@ -2050,7 +2050,7 @@
       "全国重点文保",
       "博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_093",
@@ -2072,7 +2072,7 @@
       "全国重点文保",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_094",
@@ -2093,7 +2093,7 @@
     "tags": [
       "全国重点文保"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_095",
@@ -2114,7 +2114,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_096",
@@ -2136,7 +2136,7 @@
       "全国重点文保",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_097",
@@ -2157,7 +2157,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_098",
@@ -2179,7 +2179,7 @@
       "科普",
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_099",
@@ -2200,7 +2200,7 @@
     "tags": [
       "科研机构"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_100",
@@ -2244,7 +2244,7 @@
       "专题博物馆",
       "4A景区"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_102",
@@ -2265,7 +2265,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_103",
@@ -2286,7 +2286,7 @@
     "tags": [
       "全国重点文保"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_104",
@@ -2308,7 +2308,7 @@
       "国家一级博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_105",
@@ -2330,7 +2330,7 @@
       "地标",
       "文化"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_106",
@@ -2351,7 +2351,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_107",
@@ -2372,7 +2372,7 @@
     "tags": [
       "私立博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_108",
@@ -2394,7 +2394,7 @@
       "私立美术馆",
       "网红"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_109",
@@ -2415,7 +2415,7 @@
     "tags": [
       "私立美术馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_110",
@@ -2436,7 +2436,7 @@
     "tags": [
       "私立美术馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_111",
@@ -2456,7 +2456,7 @@
     "tags": [
       "私立美术馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_112",
@@ -2476,7 +2476,7 @@
     "tags": [
       "私立美术馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_113",
@@ -2497,7 +2497,7 @@
     "tags": [
       "私立美术馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_114",
@@ -2518,7 +2518,7 @@
     "tags": [
       "学院美术馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_115",
@@ -2539,7 +2539,7 @@
     "tags": [
       "高校博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_116",
@@ -2561,7 +2561,7 @@
       "高校博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_117",
@@ -2605,7 +2605,7 @@
       "动物园",
       "亲子"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_119",
@@ -2627,7 +2627,7 @@
       "4A景区",
       "亲子"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_120",
@@ -2649,7 +2649,7 @@
       "4A景区",
       "主题公园"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_121",
@@ -2671,7 +2671,7 @@
       "4A景区",
       "世界遗产"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_122",
@@ -2693,7 +2693,7 @@
       "4A景区",
       "世界遗产"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_123",
@@ -2715,7 +2715,7 @@
       "5A景区",
       "世界遗产"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_124",
@@ -2737,7 +2737,7 @@
       "4A景区",
       "世界遗产"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_125",
@@ -2759,7 +2759,7 @@
       "4A景区",
       "世界遗产"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_126",
@@ -2934,7 +2934,7 @@
       "全国重点文保",
       "4A景区"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_134",
@@ -2956,7 +2956,7 @@
       "4A景区",
       "寺庙"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_135",
@@ -3386,7 +3386,7 @@
     "tags": [
       "滑雪场"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_155",
@@ -3407,7 +3407,7 @@
     "tags": [
       "滑雪场"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_156",
@@ -3428,7 +3428,7 @@
     "tags": [
       "滑雪场"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_157",
@@ -3449,7 +3449,7 @@
     "tags": [
       "滑雪场"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_158",
@@ -3470,7 +3470,7 @@
     "tags": [
       "滑雪场"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_159",
@@ -3491,7 +3491,7 @@
     "tags": [
       "滑雪场"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_160",
@@ -3512,7 +3512,7 @@
     "tags": [
       "滑雪场"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_161",
@@ -3597,7 +3597,7 @@
     "tags": [
       "科普"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_165",
@@ -3727,7 +3727,7 @@
       "专题博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_171",
@@ -3749,7 +3749,7 @@
       "专题博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_172",
@@ -3770,7 +3770,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_173",
@@ -3791,7 +3791,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_174",
@@ -3812,7 +3812,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_175",
@@ -3834,7 +3834,7 @@
       "高校博物馆",
       "科普"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_176",
@@ -3855,7 +3855,7 @@
     "tags": [
       "高校博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_177",
@@ -3876,7 +3876,7 @@
     "tags": [
       "高校博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_178",
@@ -3897,7 +3897,7 @@
     "tags": [
       "艺术院校"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_179",
@@ -3918,7 +3918,7 @@
     "tags": [
       "艺术院校"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_180",
@@ -3939,7 +3939,7 @@
     "tags": [
       "艺术院校"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_181",
@@ -3960,7 +3960,7 @@
     "tags": [
       "艺术院校"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_182",
@@ -3982,7 +3982,7 @@
       "市重点",
       "语言"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_183",
@@ -4004,7 +4004,7 @@
       "历史文化保护区",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_184",
@@ -4026,7 +4026,7 @@
       "全国重点文保",
       "教堂"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_185",
@@ -4048,7 +4048,7 @@
       "全国重点文保",
       "教堂"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_186",
@@ -4070,7 +4070,7 @@
       "文物保护单位",
       "教堂"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_187",
@@ -4092,7 +4092,7 @@
       "全国重点文保",
       "清真寺"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_188",
@@ -4114,7 +4114,7 @@
       "历史文化名街",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_189",
@@ -4136,7 +4136,7 @@
       "特色市场",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_190",
@@ -4158,7 +4158,7 @@
       "历史文化名街",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_191",
@@ -4180,7 +4180,7 @@
       "历史文化名街",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_192",
@@ -4202,7 +4202,7 @@
       "历史文化保护区",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_193",
@@ -4224,7 +4224,7 @@
       "历史文化保护区",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_194",
@@ -4246,7 +4246,7 @@
       "历史文化保护区",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_195",
@@ -4268,7 +4268,7 @@
       "专题博物馆",
       "4A景区"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_196",
@@ -4289,7 +4289,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_197",
@@ -4310,7 +4310,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_198",
@@ -4332,7 +4332,7 @@
       "专题博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_199",
@@ -4354,7 +4354,7 @@
       "专题博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_200",
@@ -4375,7 +4375,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_201",
@@ -4397,7 +4397,7 @@
       "世界遗产",
       "国家一级博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_202",
@@ -4419,7 +4419,7 @@
       "专题博物馆",
       "免费"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_203",
@@ -4440,7 +4440,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_204",
@@ -4461,7 +4461,7 @@
     "tags": [
       "专题博物馆"
     ],
-    "internal_map_id": "MAP_SCENIC_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_205",

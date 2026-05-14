@@ -50,9 +50,9 @@ class TestBasicAPI:
         assert resp.status_code == 200
         data = resp.get_json()
         assert data["destinations"] == 217
-        assert data["internal_maps"] == 5
-        assert data["internal_nodes"] >= 164
-        assert data["internal_edges"] >= 416
+        assert data["internal_maps"] == 8
+        assert data["internal_nodes"] >= 12000
+        assert data["internal_edges"] >= 26000
 
 
 class TestRecommendationAPI:

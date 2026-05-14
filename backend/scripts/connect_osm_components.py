@@ -150,7 +150,8 @@ def main():
 
     total_bridges = 0
 
-    for map_id in ["MAP_BUPT_REAL", "MAP_SCENIC_REAL"]:
+    for map_id in ["MAP_BUPT_REAL", "MAP_BNU_REAL", "MAP_SCENIC_REAL",
+                   "MAP_CAMPUS_OSM", "MAP_SCENIC_OSM"]:
         print(f"\n{map_id}:")
         bridges = connect_components(map_id, nodes, edges)
         total_bridges += bridges

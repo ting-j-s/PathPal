@@ -49,8 +49,8 @@ class TestMapLayers:
         assert len(edges_with_geom) >= 60
 
     def test_map_layers_abstract_template(self, client):
-        """抽象模板目的地 (DEST_002 北京大学) map-layers 返回 show_tile=false。"""
-        resp = client.get("/api/destinations/DEST_002/map-layers")
+        """抽象模板目的地 (DEST_033 颐和园→MAP_MIXED_001) map-layers 返回 show_tile=false。"""
+        resp = client.get("/api/destinations/DEST_033/map-layers")
         assert resp.status_code == 200
         data = resp.get_json()
         im = data["internal_map"]
@@ -58,6 +58,17 @@ class TestMapLayers:
         assert im["show_tile"] is False
         assert len(data["nodes"]) > 0
         assert len(data["edges"]) > 0
+
+    def test_map_layers_campus_osm_template(self, client):
+        """学校OSM模板目的地 (DEST_002 北京大学→MAP_CAMPUS_OSM) map-layers 返回 show_tile=true。"""
+        resp = client.get("/api/destinations/DEST_002/map-layers")
+        assert resp.status_code == 200
+        data = resp.get_json()
+        im = data["internal_map"]
+        assert im["is_real_map"] is True
+        assert im["show_tile"] is True
+        assert len(data["nodes"]) >= 20
+        assert len(data["edges"]) >= 60
 
     def test_map_layers_bupt_nodes_in_bounds(self, client):
         """MAP_BUPT_REAL 节点坐标应在北邮范围内。"""

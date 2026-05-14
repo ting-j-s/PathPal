@@ -19,8 +19,8 @@ class TestMapRoutes:
         resp = client.get("/api/internal-maps")
         assert resp.status_code == 200
         data = resp.get_json()
-        assert data["count"] == 5
-        assert len(data["maps"]) == 5
+        assert data["count"] == 8
+        assert len(data["maps"]) == 8
         for m in data["maps"]:
             assert "map_id" in m
             assert "is_real_map" in m

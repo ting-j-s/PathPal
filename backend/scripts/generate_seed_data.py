@@ -516,7 +516,7 @@ def generate_destinations():
             "longitude": lng,
             "description": f"{name}是北京市著名高等学府。",
             "tags": tags,
-            "internal_map_id": "MAP_CAMPUS_001"
+            "internal_map_id": "MAP_CAMPUS_OSM"
         })
         idx += 1
 
@@ -525,7 +525,7 @@ def generate_destinations():
         if cat in ("park", "lake", "natural_area", "historical_town", "resort"):
             map_id = "MAP_MIXED_001"
         else:
-            map_id = "MAP_SCENIC_001"
+            map_id = "MAP_SCENIC_OSM"
         destinations.append({
             "id": f"DEST_{idx:03d}",
             "name": name,

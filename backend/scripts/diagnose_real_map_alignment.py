@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 PathPal 真实地图对齐诊断脚本
-诊断 MAP_BUPT_REAL 和 MAP_SCENIC_REAL 的数据质量，检查：
+诊断所有真实 OSM 地图的数据质量，检查：
 - 节点/边/设施数量
 - 坐标范围（bbox）
 - edge 是否包含 geometry

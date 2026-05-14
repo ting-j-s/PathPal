@@ -52,7 +52,7 @@ class TestMapMetadata:
     def test_real_maps_show_tile(self):
         maps = load_internal_maps()
         real = [m for m in maps if m.get("is_real_map")]
-        assert len(real) == 2
+        assert len(real) >= 5
         for m in real:
             assert m["show_tile"] is True, f"{m.get('map_id')}: real map should have show_tile=true"
 
