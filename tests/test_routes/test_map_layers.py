@@ -49,7 +49,7 @@ class TestMapLayers:
         assert len(edges_with_geom) >= 60
 
     def test_map_layers_abstract_template(self, client):
-        """抽象模板目的地 (DEST_033 颐和园→MAP_MIXED_001) map-layers 返回 show_tile=false。"""
+        """共享景区模板目的地 (DEST_033 颐和园→MAP_SCENIC_OSM) map-layers 返回 show_tile=false。"""
         resp = client.get("/api/destinations/DEST_033/map-layers")
         assert resp.status_code == 200
         data = resp.get_json()
@@ -60,7 +60,7 @@ class TestMapLayers:
         assert len(data["edges"]) > 0
 
     def test_map_layers_campus_osm_template(self, client):
-        """学校OSM模板目的地 (DEST_002 北京大学→MAP_CAMPUS_OSM) map-layers 返回 show_tile=true。"""
+        """学校OSM模板目的地 (DEST_002 清华大学→MAP_CAMPUS_OSM) map-layers 返回 show_tile=true（白名单覆盖）。"""
         resp = client.get("/api/destinations/DEST_002/map-layers")
         assert resp.status_code == 200
         data = resp.get_json()

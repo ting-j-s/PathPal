@@ -750,7 +750,7 @@
       "5A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_034",
@@ -773,7 +773,7 @@
       "爱国主义教育基地",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_035",
@@ -818,7 +818,7 @@
       "公园",
       "历史"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_037",
@@ -840,7 +840,7 @@
       "4A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_038",
@@ -972,7 +972,7 @@
       "历史文化保护区",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_044",
@@ -1016,7 +1016,7 @@
       "4A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_046",
@@ -1236,7 +1236,7 @@
       "4A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_056",
@@ -1259,7 +1259,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_057",
@@ -1281,7 +1281,7 @@
       "4A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_058",
@@ -1303,7 +1303,7 @@
       "3A景区",
       "主题公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_059",
@@ -1325,7 +1325,7 @@
       "4A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_060",
@@ -1348,7 +1348,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_061",
@@ -1700,7 +1700,7 @@
       "4A景区",
       "科普"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_077",
@@ -1722,7 +1722,7 @@
       "4A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_078",
@@ -1744,7 +1744,7 @@
       "4A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_079",
@@ -1766,7 +1766,7 @@
       "4A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_080",
@@ -1789,7 +1789,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_081",
@@ -1811,7 +1811,7 @@
       "3A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_082",
@@ -1833,7 +1833,7 @@
       "4A景区",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_083",
@@ -1855,7 +1855,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_084",
@@ -2222,7 +2222,7 @@
       "4A景区",
       "主题公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_101",
@@ -2583,7 +2583,7 @@
       "4A景区",
       "自然保护区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_118",
@@ -2781,7 +2781,7 @@
       "4A景区",
       "度假区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_127",
@@ -2803,7 +2803,7 @@
       "4A景区",
       "地质公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_128",
@@ -2825,7 +2825,7 @@
       "4A景区",
       "地质公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_129",
@@ -2847,7 +2847,7 @@
       "4A景区",
       "地质公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_130",
@@ -2869,7 +2869,7 @@
       "4A景区",
       "地质公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_131",
@@ -2891,7 +2891,7 @@
       "4A景区",
       "国家地质公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_132",
@@ -2912,7 +2912,7 @@
     "tags": [
       "地质公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_133",
@@ -2978,7 +2978,7 @@
       "4A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_136",
@@ -3000,7 +3000,7 @@
       "4A景区",
       "地质公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_137",
@@ -3022,7 +3022,7 @@
       "3A景区",
       "森林公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_138",
@@ -3044,7 +3044,7 @@
       "3A景区",
       "森林公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_139",
@@ -3066,7 +3066,7 @@
       "3A景区",
       "森林公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_140",
@@ -3088,7 +3088,7 @@
       "3A景区",
       "森林公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_141",
@@ -3110,7 +3110,7 @@
       "自然保护区",
       "3A景区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_142",
@@ -3131,7 +3131,7 @@
     "tags": [
       "自然保护区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_143",
@@ -3152,7 +3152,7 @@
     "tags": [
       "森林公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_144",
@@ -3174,7 +3174,7 @@
       "3A景区",
       "风景名胜区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_145",
@@ -3196,7 +3196,7 @@
       "4A景区",
       "地质公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_146",
@@ -3217,7 +3217,7 @@
     "tags": [
       "4A景区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_147",
@@ -3239,7 +3239,7 @@
       "4A景区",
       "度假区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_148",
@@ -3260,7 +3260,7 @@
     "tags": [
       "4A景区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_149",
@@ -3281,7 +3281,7 @@
     "tags": [
       "4A景区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_150",
@@ -3302,7 +3302,7 @@
     "tags": [
       "4A景区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_151",
@@ -3323,7 +3323,7 @@
     "tags": [
       "3A景区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_152",
@@ -3344,7 +3344,7 @@
     "tags": [
       "自然景观"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_153",
@@ -3365,7 +3365,7 @@
     "tags": [
       "3A景区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_154",
@@ -3534,7 +3534,7 @@
       "4A景区",
       "度假区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_162",
@@ -3555,7 +3555,7 @@
     "tags": [
       "度假区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_163",
@@ -3576,7 +3576,7 @@
     "tags": [
       "度假区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_164",
@@ -3619,7 +3619,7 @@
       "公园",
       "生态"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_166",
@@ -3641,7 +3641,7 @@
       "4A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_167",
@@ -3663,7 +3663,7 @@
       "4A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_168",
@@ -3684,7 +3684,7 @@
     "tags": [
       "自然保护区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_169",
@@ -3705,7 +3705,7 @@
     "tags": [
       "4A景区"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_170",
@@ -4483,7 +4483,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_206",
@@ -4505,7 +4505,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_207",
@@ -4527,7 +4527,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_208",
@@ -4549,7 +4549,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_209",
@@ -4571,7 +4571,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_210",
@@ -4593,7 +4593,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_211",
@@ -4615,7 +4615,7 @@
       "4A景区",
       "公园"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_212",
@@ -4637,7 +4637,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_213",
@@ -4659,7 +4659,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_214",
@@ -4681,7 +4681,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_215",
@@ -4703,7 +4703,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_216",
@@ -4725,7 +4725,7 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   },
   {
     "id": "DEST_217",
@@ -4747,6 +4747,6 @@
       "公园",
       "免费"
     ],
-    "internal_map_id": "MAP_MIXED_001"
+    "internal_map_id": "MAP_SCENIC_OSM"
   }
 ]

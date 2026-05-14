@@ -180,7 +180,16 @@ def get_internal_map_by_id(map_id):
     raise ValueError(f"Internal map not found: {map_id}")
 
 
+# 始终展示真实地图瓦片的目的地（即使其地图模板 show_tile=false）
+_TILE_OVERRIDE_DESTINATIONS = {"DEST_002"}  # 清华大学
+
+
 def get_internal_map_for_destination(destination_id):
     """根据 destination_id 获取对应的 internal_map 元数据。"""
     map_id = get_map_id_by_destination_id(destination_id)
-    return get_internal_map_by_id(map_id)
+    m = get_internal_map_by_id(map_id)
+    if destination_id in _TILE_OVERRIDE_DESTINATIONS and m.get("show_tile") is not True:
+        m = dict(m)
+        m["show_tile"] = True
+        m["is_real_map"] = True
+    return m
