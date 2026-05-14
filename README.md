@@ -169,10 +169,10 @@ python backend/scripts/e2e_smoke_check.py
 
 # 8. 启动前端（终端 3）
 cd frontend
-python -m http.server 8000
+python -m http.server 8080
 
 # 9. 浏览器访问前端页面
-http://127.0.0.1:8000
+http://127.0.0.1:8080
 ```
 
 > 后端默认端口 5000，前端默认端口 8000。后端已启用 CORS。
@@ -182,11 +182,11 @@ http://127.0.0.1:8000
 
 | 页面 | 地址 |
 |------|------|
-| 首页 | http://127.0.0.1:8000 |
-| 旅游推荐 | http://127.0.0.1:8000/recommendation.html |
-| 路线规划 | http://127.0.0.1:8000/route_planning.html |
-| 场所查询 | http://127.0.0.1:8000/nearby.html |
-| 室内导航 Demo | http://127.0.0.1:8000/indoor_navigation.html |
+| 首页 | http://127.0.0.1:8080 |
+| 旅游推荐 | http://127.0.0.1:8080/recommendation.html |
+| 路线规划 | http://127.0.0.1:8080/route_planning.html |
+| 场所查询 | http://127.0.0.1:8080/nearby.html |
+| 室内导航 Demo | http://127.0.0.1:8080/indoor_navigation.html |
 
 ## 测试命令
 
